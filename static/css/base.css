@@ -1,5 +1,8 @@
 #the-roastery-logo {
-    font-family: 'lora';
     font-size: 2.5rem;
     padding-left: 1rem;
+}
+
+.navbar {
+    font-family: 'lora';
 }
