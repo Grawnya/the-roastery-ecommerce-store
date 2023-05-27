@@ -8,3 +8,25 @@ The project is very relevant as online shopping is becoming increasingly popular
 
 # Table of Contents
 
+\
+&nbsp;
+
+# UX
+User Experience of UX focuses on how accessible the website is to the user and it’s ease of use, which is pivotal the website’s success.
+
+Therefore, the UX aspect of the project can be broken down into 5 Planes:
+* The Strategy Plane
+* The Scope Plane
+* The Structure Plane
+* The Skeleton Plane
+* The Surface Plane
+\
+&nbsp;
+
+## Strategy
+\
+&nbsp;
+
+### Purpose
+\
+&nbsp;
