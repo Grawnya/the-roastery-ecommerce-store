@@ -30,3 +30,30 @@ Therefore, the UX aspect of the project can be broken down into 5 Planes:
 ### Purpose
 \
 &nbsp;
+
+### User Stories
+| id  |  Content | Label |
+| ------ | ------ | ------ |
+| 1 | As a user, I can navigate through the website easily so that I can get more information about the coffees available to buy. | Must Have |
+| 2 | As a user, I can get information regarding the coffee company's story so that I can decide whether I want to purchase from them or not. | Could Have |
+| 3 | As a user, I can find the coffee company's social media accounts so that I can keep up-to-date with any news. | Must Have |
+| 4 | As a user, I can easily use the navbar to navigate the website so that I can find all relevant content. | Must Have |
+| 5 | As a user, I can easily reach the home page in case I get an error so that I am not stuck on an error page and have to select the back button. | Must Have |
+| 6 | As a user, I can access the website on mobile, tablet or larger screens so that I can view the information regardless of the device. | Must Have |
+| 7 | As a user, I can view all coffee products that are available to purchase. | Must Have |
+| 8 | As a user, I can filter all the coffees by the different categories so that I can view what I prefer. | Should Have |
+| 9 | As a user, I can find all the product details so that I can decide whether I want to add it to my shopping bag. | Must Have |
+| 10 | As a user, I want to preview my order so that I can make a final selection before I purchase it. | Must Have |
+| 11 | As a user, I want to receive an order confirmation via email so that I know that my order went through. | Must Have |
+| 12 | As a user, I am able to purchase the items in my shopping bag by card so that I successfully buy them. | Must Have |
+| 13 |As a user, I can register or log in so that I can manage my orders. | Must Have |
+| 14 | As a user, I can see if I am logged in so that I can easily log out or log in. | Must Have |
+| 15 | As a user, I can edit my user details when logged in so that I can ensure that my details are up-to-date and can be used for shipping and billing. | Should Have |
+| 16 | As a user, I can enter my email to sign up the coffee company's newsletter to keep up-to-date with any news. | Could Have |
+| 17 | As a site owner/admin, I can log in so that I can access the website's backend. | Must Have |
+| 18 | As a site owner/admin, I can add, edit and delete items from the the store so that I can ensure that the website is up-to-date. | Must Have |
+| 19 | As a site owner/admin, I can promote my facebook page so that I can try to increase traffic to my store. | Should Have |
+| 20 | As a site owner/admin, I can implement Search Engine Optimisation tactics so that I can try to increase traffic to my store. | Should Have |
+
+\
+&nbsp;
