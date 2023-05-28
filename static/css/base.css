@@ -81,10 +81,19 @@ body {
 
 .btn-coffee:hover {
     background-color: var(--forest-green);
+    color: var(--beige);
 }
 
 .btn-shopping {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    border: 0;
+    padding: 0;
+    padding-left: 1rem;
+    color: var(--beige);
+}
+
+.btn-shopping:hover {
+    color: var(--orange);
 }
 
 @media screen and (min-width:768px) {
