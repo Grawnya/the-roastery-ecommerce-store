@@ -1,14 +1,17 @@
 :root {
     --forest-green: #005E02;
-    --coffee: #563D00;
+    --coffee: #332501;
     --orange: #D98200;
     --beige: #DFD898;
     --white: #ffffff;
 }
 
 body {
-    font-family: 'lora';
+    font-family: 'quicksand';
+    background-color: var(--white);
 }
+
+/* navbar */
 
 #the-roastery-logo {
     font-size: 1.5rem;
@@ -16,7 +19,9 @@ body {
     padding-right: 1rem;
     color: var(--beige);
     height: 3rem;
+    font-family: 'lora';
 }
+
 .navbar {
     background-color: var(--coffee);
     
@@ -94,6 +99,15 @@ body {
 
 .btn-shopping:hover {
     color: var(--orange);
+}
+
+/* main content */
+
+#main-content {
+    background-image: url('/../media/coffee-home.jpg');
+    background-size: cover;
+    height: 70vh;
+    margin: 3rem;
 }
 
 /* footer */
