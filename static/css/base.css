@@ -110,6 +110,47 @@ body {
     margin: 3rem;
 }
 
+.home-page-container {
+    position:relative;
+}
+
+.fancy-rectangle {
+    position: absolute;
+    top: 30vh;
+    height: 19rem;
+    width: 30vw;
+}
+
+.fancy-rectangle rect{
+    fill: var(--orange);
+    height: 19rem;
+    width: 50vw;
+}
+
+#coffee-home-page-title {
+    position: absolute;
+    top: 30vh;
+    width: 30vw;
+    padding: 0.2rem;
+    font-size: 1.5rem;
+    font-family: 'lora';
+    color: var(--coffee);
+}
+
+.btn-brown {
+    background-color: var(--coffee);
+}
+
+.btn-brown a {
+    text-decoration: none;
+    color: var(--beige);
+    font-size: 1.5rem;
+}
+
+.btn-brown:hover {
+    background-color: var(--forest-green);
+}
+
 /* footer */
 
 footer {
@@ -154,9 +195,32 @@ footer a {
     color: var(--orange);
 }
 
+/* media query for tablets */
+
 @media screen and (min-width:768px) {
     #the-roastery-logo {
         font-size: 3rem;
     }
 
+    #coffee-home-page-title {
+        font-size: 2rem;
+    }
+}
+
+/* media query for large screens*/
+
+@media screen and (min-width:992px) {
+
+    #coffee-home-page-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* media query for larger screens*/
+
+@media screen and (min-width:1400px) {
+
+    #coffee-home-page-title {
+        font-size: 3rem;
+    }
 }
