@@ -6,11 +6,90 @@
     --white: #ffffff;
 }
 
-#the-roastery-logo {
-    font-size: 2.5rem;
-    padding-left: 1rem;
+body {
+    font-family: 'lora';
 }
 
+#the-roastery-logo {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--beige);
+    height: 3rem;
+}
 .navbar {
-    font-family: 'lora';
+    background-color: var(--coffee);
+    
+}
+
+.nav-item a {
+    color: var(--beige);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-link {
+    height: 3rem;
+}
+
+.nav-item {
+    height: 3rem;
+    vertical-align: middle;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.navbar-toggler {
+    background-color: var(--beige);
+    margin: 0 auto;
+}
+
+.navbar-toggler-icon .fa-bars {
+    color:var(--coffee); 
+    font-size: 1.75rem;
+}
+
+.dropdown {
+    --bs-navbar-hover-color: var(--beige);
+}
+
+.dropdown-menu {
+    background-color: var(--beige);
+}
+
+.dropdown-menu a {
+    color: var(--coffee);
+}
+
+.btn-coffee {
+    background-color: var(--beige);
+    border-radius: 0.5rem;
+    height: 3rem;
+    padding: 0 1rem;
+}
+
+.btn-coffee a {
+    color: var(--coffee);
+    font-size: 1.25rem;
+}
+
+.btn-coffee a:hover {
+    color: var(--beige);
+}
+
+.btn-coffee:hover {
+    background-color: var(--forest-green);
+}
+
+.btn-shopping {
+    font-size: 2rem;
+}
+
+@media screen and (min-width:768px) {
+    #the-roastery-logo {
+        font-size: 3rem;
+    }
+
 }
