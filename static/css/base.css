@@ -145,6 +145,7 @@ body {
     text-decoration: none;
     color: var(--beige);
     font-size: 1.5rem;
+    font-family: 'quicksand';
 }
 
 .btn-brown:hover {
@@ -206,7 +207,7 @@ footer a {
         font-size: 3rem;
     }
 
-    #coffee-home-page-title {
+    #coffee-home-page-title, .btn-brown a {
         font-size: 2rem;
     }
 }
