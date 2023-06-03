@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid px-0">
     <div class="row">
         <div class="col text-center">
             <h2 class="logo-font">Products</h2>
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="show_products">
+        <div class="show_products col-10 offset-1 mb-5">
             <div class="row">
                 <div class="col-12 col-md-6 my-auto">
                     <div class="filter-products-section">
@@ -30,8 +30,8 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 order-md-first">
-                    <p class="text-muted mt-3 text-center text-md-left">
+                <div class="col-12 col-sm-6 order-sm-first">
+                    <p class="text-muted mt-3 text-center text-sm-left">
                         {% if search_term or filter_element != 'None_None' %}
                             <span><a href="{% url 'products' %}">Products</a> | </span>
                         {% endif %}
@@ -41,10 +41,10 @@
             </div>
             <div class="row">
                 {% for product in products %}
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card mx-3 mb-3">
                             {% if product.image %}
-                            <a href="{% url 'product_detail' product.id %}">
+                            <a href="#">
                                 <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
                             </a>
                             {% else %}
@@ -58,35 +58,33 @@
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                        {% if product.roast %}
-                                            <small class="text-muted"><i class="fa-solid fa-coffee-bean"></i> {{ product.roast }}</small>
-                                        {% endif %}
-                                        {% if product.rating %}
-                                            <small class="text-muted"><i class="fa-regular fa-star"></i> {{ product.rating }} / 100</small>
-                                        {% else %}
-                                            <small class="text-muted">No Rating</small>
-                                        {% endif %}
+                                        <div class="row">
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.bag_100g_USD }}</p>
+                                        </div>
+                                        <div class="row">
+                                            {% if product.rating %}
+                                                <small class="text-muted"><i class="fa-regular fa-star"></i> {{ product.rating }} / 100</small>
+                                            {% else %}
+                                                <small class="text-muted">No Rating</small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col text-end">
+                                        <div class="row">
+                                            {% if product.roast %}
+                                                <small class="text-muted"><i class="fa-solid fa-coffee-bean"></i> {{ product.roast }} Roast</small>
+                                            {% endif %}
+                                        </div>
+                                        <div class="row">
+                                            {% if product.origin %}
+                                                <small class="text-muted"><i class="fa-solid fa-globe-stand"></i> {{ product.origin }}</small>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:1 %}
-                        <div class="col-12 d-sm-none">
-                            <hr>
-                        </div>
-                    {% endif %}                        
-                    {% if forloop.counter|divisibleby:2 %}
-                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
-                            <hr>
-                        </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:3 %}
-                        <div class="col-12 d-none d-lg-block d-xl-none">
-                            <hr>
-                        </div>
-                    {% endif %}
                 {% endfor %}
             </div>
         </div>

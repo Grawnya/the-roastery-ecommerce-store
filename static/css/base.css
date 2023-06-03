@@ -200,6 +200,15 @@ footer a {
     --bs-gutter-x: 0;
 }
 
+/* products */
+.card-img-top {
+    height: 25rem;
+}
+
+.card-body {
+    height: 5rem;
+}
+
 /* media query for tablets */
 
 @media screen and (min-width:768px) {
