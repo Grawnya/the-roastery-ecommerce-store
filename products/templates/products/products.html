@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="logo-font">Products</h2>
+            <button id="by_roast" class="btn btn-warning">Roast</button>
+            <button id="by_location" class="btn btn-warning">Location</button>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="show_products">
+            <div class="row">
+                <div class="col-12 col-md-6 my-auto">
+                    <div class="filter-products-section">
+                        <select id="filter-products" class="form-select form-select-sm rounded-0 border">
+                            <option value="sort_by" {% if filter_element == 'None_None' %}selected{% endif %}>Sort by...</option>
+                            <option value="price_ascending" {% if filter_element == 'price_ascending' %}selected{% endif %}>Price (low to high)</option>
+                            <option value="price_descending" {% if filter_element == 'price_descending' %}selected{% endif %}>Price (high to low)</option>
+                            <option value="rating_ascending" {% if filter_element == 'rating_ascending' %}selected{% endif %}>Rating (low to high)</option>
+                            <option value="rating_descending" {% if filter_element == 'rating_descending' %}selected{% endif %}>Rating (high to low)</option>
+                            <option value="roast_ascending" {% if filter_element == 'roast_ascending' %}selected{% endif %}>Roast (light to dark)</option>
+                            <option value="roast_descending" {% if filter_element == 'roast_descending' %}selected{% endif %}>Roast (dark to light)</option>
+                            <option value="name_ascending" {% if filter_element == 'name_ascending' %}selected{% endif %}>Name Ascending</option>
+                            <option value="name_descending" {% if filter_element == 'name_descending' %}selected{% endif %}>Name Descending</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-md-first">
+                    <p class="text-muted mt-3 text-center text-md-left">
+                        {% if search_term or filter_element != 'None_None' %}
+                            <span><a href="{% url 'products' %}">Products</a> | </span>
+                        {% endif %}
+                        {{ products|length }} Products{% if search_term %} match your search.{% endif %}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            </a>
+                            {% endif %}
+                            <div class="card-body pb-0">
+                                <p>{{ product.name }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                        {% if product.roast %}
+                                            <small class="text-muted"><i class="fa-solid fa-coffee-bean"></i> {{ product.roast }}</small>
+                                        {% endif %}
+                                        {% if product.rating %}
+                                            <small class="text-muted"><i class="fa-regular fa-star"></i> {{ product.rating }} / 100</small>
+                                        {% else %}
+                                            <small class="text-muted">No Rating</small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:1 %}
+                        <div class="col-12 d-sm-none">
+                            <hr>
+                        </div>
+                    {% endif %}                        
+                    {% if forloop.counter|divisibleby:2 %}
+                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
+                            <hr>
+                        </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:3 %}
+                        <div class="col-12 d-none d-lg-block d-xl-none">
+                            <hr>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
