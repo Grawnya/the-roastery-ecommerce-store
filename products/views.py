@@ -9,8 +9,8 @@ def all_products(request):
     direction = None
     search = None
 
-    print(request.GET)
     if request.GET:
+        print(request.GET)
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey

@@ -3,7 +3,7 @@
    "fields":{
    "sku": 94376215,
    "name": "Ethiopia Shakiso Mormora",
-   "roast": "Medium-Light",
+   "roast": 2,
    "location": "Africa",
    "origin": "Ethiopia",
    "bag_100g_USD": 4.7,
@@ -15,7 +15,7 @@
    "fields":{
    "sku": 51284796,
    "name": "Kenya Nyeri Othaya Gatugi Red Cherry",
-   "roast": "Medium-Dark",
+   "roast": 4,
    "location": "Africa",
    "origin": "Kenya",
    "bag_100g_USD": 5.29,
@@ -27,7 +27,7 @@
    "fields":{
    "sku": 68942137,
    "name": "Panama Auromar Geisha Natural",
-   "roast": "Medium-Light",
+   "roast": 2,
    "location": "Central America",
    "origin": "Panama",
    "bag_100g_USD": 16.17,
@@ -39,7 +39,7 @@
    "fields":{
    "sku": 72583649,
    "name": "Kona Bourbon Pointu Laurina",
-   "roast": "Light",
+   "roast": 1,
    "location": "North America",
    "origin": "Hawaii",
    "bag_100g_USD": 19.82,
@@ -51,7 +51,7 @@
    "fields":{
    "sku": 26497351,
    "name": "Indonesia Emerald Mandheling",
-   "roast": "Medium-Light",
+   "roast": 2,
    "location": "Asia",
    "origin": "Indonesia",
    "bag_100g_USD": 8.02,
@@ -63,7 +63,7 @@
    "fields":{
    "sku": 81760549,
    "name": "Peru Natural Jose Herrera Lot 21",
-   "roast": "Medium-Light",
+   "roast": 2,
    "location": "South America",
    "origin": "Peru",
    "bag_100g_USD": 3.68,
@@ -75,7 +75,7 @@
    "fields":{
    "sku": 93685217,
    "name": "Lekali Coffee",
-   "roast": "Medium",
+   "roast": 3,
    "location": "Asia",
    "origin": "Nepal",
    "bag_100g_USD": 8.77,
@@ -87,7 +87,7 @@
    "fields":{
    "sku": 40321586,
    "name": "Costa Rica Tarrazu",
-   "roast": "Medium-Light",
+   "roast": 2,
    "location": "Central America",
    "origin": "Costa Rica",
    "bag_100g_USD": 7.35,
@@ -99,7 +99,7 @@
    "fields":{
    "sku": 72849653,
    "name": "Burundi Gaharo Hill Long Miles",
-   "roast": "Medium-Light",
+   "roast": 2,
    "location": "Africa",
    "origin": "Burundi",
    "bag_100g_USD": 9.16,
@@ -111,7 +111,7 @@
    "fields":{
    "sku": 53986427,
    "name": "Kona Extra Fancy",
-   "roast": "Dark",
+   "roast": 5,
    "location": "North America",
    "origin": "Hawaii",
    "bag_100g_USD": 13.52,
@@ -123,7 +123,7 @@
    "fields":{
    "sku": 67219843,
    "name": "YCFCU Banko Gotiti Coop G1",
-   "roast": "Medium-Dark",
+   "roast": 4,
    "location": "Africa",
    "origin": "Ethiopia",
    "bag_100g_USD": 6.02,
@@ -135,7 +135,7 @@
    "fields":{
    "sku": 42135796,
    "name": "Indonesia Sumatra Gayo Espresso",
-   "roast": "Dark",
+   "roast": 5,
    "location": "Asia",
    "origin": "Indonesia",
    "bag_100g_USD": 8.5,
@@ -147,7 +147,7 @@
    "fields":{
    "sku": 98570624,
    "name": "Ethiopia Natural Gedeb Violent Andromeda",
-   "roast": "Medium-Dark",
+   "roast": 4,
    "location": "Africa",
    "origin": "Ethiopia",
    "bag_100g_USD": 15.58,
@@ -159,7 +159,7 @@
    "fields":{
    "sku": 13824579,
    "name": "Colombia Finca El Paraiso Double Anaerobic Geisha",
-   "roast": "Medium-Light",
+   "roast": 2,
    "location": "South America",
    "origin": "Colombia",
    "bag_100g_USD": 25.6,
@@ -171,7 +171,7 @@
    "fields":{
    "sku": 72634958,
    "name": "Trident Carmo de Minas",
-   "roast": "Light",
+   "roast": 1,
    "location": "South America",
    "origin": "Brazil",
    "bag_100g_USD": 5.28,
@@ -183,7 +183,7 @@
    "fields":{
    "sku": 61857032,
    "name": "Taiwan Natural Alishan Ching-Ye",
-   "roast": "Medium-Light",
+   "roast": 2,
    "location": "Asia",
    "origin": "Taiwan",
    "bag_100g_USD": 15.58,
@@ -195,7 +195,7 @@
    "fields":{
    "sku": 89421675,
    "name": "Mexico Altura Natural Water Process Decaf",
-   "roast": "Medium-Light",
+   "roast": 2,
    "location": "Central America",
    "origin": "Mexico",
    "bag_100g_USD": 4.12,

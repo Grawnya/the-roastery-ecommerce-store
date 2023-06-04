@@ -19,8 +19,8 @@
                     <div class="filter-products-section">
                         <select id="filter-products" class="form-select form-select-sm rounded-0 border">
                             <option value="sort_by" {% if filter_element == 'None_None' %}selected{% endif %}>Sort by...</option>
-                            <option value="price_ascending" {% if filter_element == 'price_ascending' %}selected{% endif %}>Price (low to high)</option>
-                            <option value="price_descending" {% if filter_element == 'price_descending' %}selected{% endif %}>Price (high to low)</option>
+                            <option value="bag_100g_USD_ascending" {% if filter_element == 'bag_100g_USD_ascending' %}selected{% endif %}>Price (low to high)</option>
+                            <option value="bag_100g_USD_descending" {% if filter_element == 'bag_100g_USD_descending' %}selected{% endif %}>Price (high to low)</option>
                             <option value="rating_ascending" {% if filter_element == 'rating_ascending' %}selected{% endif %}>Rating (low to high)</option>
                             <option value="rating_descending" {% if filter_element == 'rating_descending' %}selected{% endif %}>Rating (high to low)</option>
                             <option value="roast_ascending" {% if filter_element == 'roast_ascending' %}selected{% endif %}>Roast (light to dark)</option>
@@ -72,7 +72,19 @@
                                     <div class="col text-end">
                                         <div class="row">
                                             {% if product.roast %}
-                                                <small class="text-muted"><i class="fa-solid fa-coffee-bean"></i> {{ product.roast }} Roast</small>
+                                                <small class="text-muted"><i class="fa-solid fa-mug-saucer"></i>
+                                                    {% if product.roast == '1' %}
+                                                    Light
+                                                    {% elif product.roast == '2' %}
+                                                    Medium-Light
+                                                    {% elif product.roast == '3' %}
+                                                    Medium
+                                                    {% elif product.roast == '4' %}
+                                                    Medium-Dark
+                                                    {% elif product.roast == '5' %}
+                                                    Dark
+                                                    {% endif %}
+                                                </small>
                                             {% endif %}
                                         </div>
                                         <div class="row">
@@ -90,4 +102,29 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+    <script type="text/javascript">
+        $('#filter-products').click(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "sort_by"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}
