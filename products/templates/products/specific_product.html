@@ -23,14 +23,20 @@
                     <div class="row">
                         <h3 class="logo-font">Characteristics</h3>
                         <div class="col-12 col-sm-6">
-                            <div class="row"><i class="fa-sharp fa-solid fa-sack"></i> Size: 100g</div>
-                            <div class="row"><i class="fa-regular fa-tag"></i> Price: ${{ product.bag_100g_USD }}</div>
-                            <div class="row"><i class="fa-regular fa-star"></i> Rating: ${{ product.rating }}</div>
+                            <div class="row">
+                                <span><i class="fa-solid fa-weight-hanging"></i> Size: 100g</span>
+                            </div>
+                            <div class="row">
+                                <span><i class="fa-solid fa-money-bill"></i> Price: ${{ product.bag_100g_USD }}</span>
+                            </div>
+                            <div class="row">
+                                <span><i class="fa-solid fa-star"></i> Rating: {{ product.rating }}</span>
+                            </div>
                         </div>
                         <div class="col-12 col-sm-6">
                             <div class="row">
                                 {% if product.roast %}
-                                <i class="fa-solid fa-mug-saucer"></i> Roast: 
+                                <span><i class="fa-solid fa-mug-saucer"></i> Roast: 
                                     {% if product.roast == '1' %}
                                     Light
                                     {% elif product.roast == '2' %}
@@ -42,10 +48,15 @@
                                     {% elif product.roast == '5' %}
                                     Dark
                                     {% endif %}
+                                </span>
                             {% endif %}
                             </div>
-                            <div class="row"><i class="fa-regular fa-map-pin"></i> Origin {{ product.origin }}</div>
-                            <div class="row"><i class="fa-solid fa-globe-stand"></i> Continent {{ product.location }}</div>
+                            <div class="row">
+                                <span><i class="fa-solid fa-location-pin"></i> Origin {{ product.origin }}</span>
+                            </div>
+                            <div class="row">
+                                <span><i class="fa-solid fa-map-location"></i> Continent {{ product.location }}</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
