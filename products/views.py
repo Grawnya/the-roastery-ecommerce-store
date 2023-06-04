@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import *
 from django.db.models import Q
 
@@ -40,3 +40,14 @@ def all_products(request):
     }
 
     return render(request, 'products/products.html', context)
+
+
+def specific_product(request, product_id):
+
+    specific_product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': specific_product,
+    }
+
+    return render(request, 'products/specific_product.html', context)
