@@ -61,13 +61,13 @@
                     </div>
                     <div class="row">
                         <div class="remove-products mx-auto">
-                            <button id="minus_button_of_{{product.id}}">
+                            <button id="minus_button_of_{{product.id}}" data-product_id="{{ product.id }}">
                                 <span><i class="fa-solid fa-circle-minus"></i></span>
                             </button>
                         </div>
-                        <input class="form-control quantity_of_{{product.id}}" type="number" name="order_quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}">
+                        <input class="form-control quantity_value quantity_of_{{product.id}}" type="number" name="order_quantity" value="1" min="1" max="99" data-product_id="{{ product.id }}">
                         <div class="add-products">
-                            <button id="plus_button_of_{{product.id}}">
+                            <button id="plus_button_of_{{product.id}}" data-product_id="{{ product.id }}">
                                 <span><i class="fa-solid fa-circle-plus"></i></span>
                             </button>
                         </div>
