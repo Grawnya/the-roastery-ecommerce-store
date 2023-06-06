@@ -30,3 +30,15 @@ $('.add_more').click(function(event) {
     $(specificQuantityInput).val(newValue);
     disableButtons(productID);
 });
+
+$('.remove_some').click(function(event) {
+    event.preventDefault();
+    var productID = $(this).data('product_id');
+    var productInput = $(this).closest('.input-group').find('.quantity_value')[0];
+    var specificQuantityInput = $(`.input-group-single-${productID} input[name='order_quantity']`);
+    var specificProductQuantity = parseInt($(productInput).val());
+
+    var newValue = specificProductQuantity - 1;
+    $(specificQuantityInput).val(newValue);
+    disableButtons(productID);
+});
