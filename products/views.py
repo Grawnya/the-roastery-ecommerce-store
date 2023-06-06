@@ -10,13 +10,12 @@ def all_products(request):
     search = None
 
     if request.GET:
-        print(request.GET)
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
             if 'direction' in request.GET:
                 direction = request.GET['direction']
-                if direction == 'desc':
+                if direction == 'descending':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
