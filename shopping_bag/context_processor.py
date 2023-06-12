@@ -11,8 +11,8 @@ def current_shopping_bag_content(request):
     shopping_bag = request.session.get('shopping_bag', {})
 
     for item_id, quantity in shopping_bag.items():
-        product = get_object_or_404(Product, pk=pk)
-        final_value += quantity * product.price
+        product = get_object_or_404(Product, pk=item_id)
+        final_value += quantity * product.bag_100g_USD
         item_count += quantity
         
         items_in_shopping_bag.append({'item_id': item_id,

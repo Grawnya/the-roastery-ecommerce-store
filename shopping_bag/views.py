@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from products.models import *
 
 def shopping_bag_items(request):
@@ -6,7 +6,7 @@ def shopping_bag_items(request):
 
     return render(request, 'shopping_bag/shopping_bag.html')
 
-def add_item(request):
+def add_item(request, item_id):
     """ add item to shopping bag """
     
     shopping_bag_item = get_object_or_404(Product, pk=item_id)
