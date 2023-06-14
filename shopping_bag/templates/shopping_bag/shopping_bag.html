@@ -35,7 +35,27 @@
                         <!--quantity <span>Order Cost: ${{ item.product.bag_100g_USD }}</span> -->
                     </div>
                     <div class="row">
-                        <!-- quantity -->
+                        <form action="{% url 'add_item' item.product.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="row input-group">
+                                <div class="remove-products mx-auto">
+                                    <button class="minus_button_of_{{item.product.id}} remove_some"
+                                        data-product_id="{{ item.product.id }}">
+                                        <span><i class="fa-solid fa-circle-minus"></i></span>
+                                    </button>
+                                </div>
+                                <input
+                                    class="form-control quantity_value quantity_of_{{item.product.id}} input-group-single-{{item.product.id}}"
+                                    type="number" name="order_quantity" value="{{item.quantity}}" min="1" max="49"
+                                    data-product_id="{{ item.product.id }}">
+                                <div class="add-products">
+                                    <button class="plus_button_of_{{item.product.id}} add_more"
+                                        data-product_id="{{ item.product.id }}">
+                                        <span><i class="fa-solid fa-circle-plus"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="row py-3 align-items-center">
                         <div class="col-6 text-center">
@@ -63,4 +83,9 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'shopping_bag/js/shopping_bag_quantity_buttons.js' %}"></script>
 {% endblock %}

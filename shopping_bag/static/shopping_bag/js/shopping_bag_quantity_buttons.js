@@ -7,11 +7,12 @@ function disableButtons(productID) {
     $(`.plus_button_of_${productID}`).prop('disabled', disablePlusButton);
     
 }
- 
+
 var quantityOfProduct = $('.quantity_value');
 for(var j = 0; j < quantityOfProduct.length; j++) {
     var productID = $(quantityOfProduct[j]).data('product_id');
     disableButtons(productID);
+    console.log(productID);
 }
 
 $('.quantity_value').change(function() {
@@ -22,6 +23,7 @@ $('.quantity_value').change(function() {
 $('.add_more').click(function(event) {
     event.preventDefault();
     var productID = $(this).data('product_id');
+    console.log(productID);
     var productInput = $(this).closest('.input-group').find('.quantity_value')[0];
     var specificProductQuantity = parseInt($(productInput).val());
     
