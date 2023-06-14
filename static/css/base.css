@@ -209,6 +209,11 @@ footer a {
     height: 5rem;
 }
 
+/* checkout */
+.checkout_image {
+    height: 15rem;
+}
+
 /* media query for tablets */
 
 @media screen and (min-width:768px) {

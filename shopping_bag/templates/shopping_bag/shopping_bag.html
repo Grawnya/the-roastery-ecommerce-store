@@ -16,25 +16,33 @@
             {% if items_in_shopping_bag %}
             {% for item in items_in_shopping_bag %}
             <div class="row pb-2">
-                <div class="col-12 col-sm-6 mb-2" style="background-color: aqua; height: 5vh;">
-                    <!-- image -->
+                <div class="col-12 col-sm-6 mb-2 text-center">
+                    {% if item.product.image %}
+                    <img class="img-fluid checkout_image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                    {% else %}
+                    <img class="img-fluid checkout_image" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                    {% endif %}
                 </div>
                 <div class="col-12 col-sm-6 mb-2">
-                    <div class="row" style="background-color: black; height: 5vh;">
-                        <!-- info -->
+                    <div class="row">
+                        <h3 class="logo-font">{{ item.product.name }}</h3>
                     </div>
-                    <div class="row" style="background-color: purple; height: 5vh;">
-                        <!-- <p class="my-0">Price: ${{ item.product.price }}</p> -->
+                    <div class="row">
+                        <span>Size per Bag: 100g</span>
                     </div>
-                    <div class="row" style="background-color: yellow; height: 5vh;">
-                        <!-- change quantity -->
+                    <div class="row">
+                        <span>Price per Bag: ${{ item.product.bag_100g_USD }}</span>
+                        <!--quantity <span>Order Cost: ${{ item.product.bag_100g_USD }}</span> -->
                     </div>
-                    <div class="row" style="background-color: red; height: 5vh;">
-                        <div class="col-6">
-                            <i class="fa-solid fa-trash"></i>
+                    <div class="row">
+                        <!-- quantity -->
+                    </div>
+                    <div class="row py-3 align-items-center">
+                        <div class="col-6 text-center">
+                            <button class="btn btn-danger">Delete <i class="fa-solid fa-trash"></i></button>
                         </div>
-                        <div class="col-6">
-                            <button>Update</button>
+                        <div class="col-6 text-center">
+                            <button class="btn btn-success">Update</button>
                         </div>
                     </div>
                 </div>
@@ -44,10 +52,10 @@
                     <hr>
                 </div>
             </div>
-            <div class="row">
-                Bag Total: $
-            </div>
             {% endfor %}
+            <div class="row">
+                <h4><strong>Item Total: ${{ final_value|floatformat:2 }}</strong></h4>
+            </div>
             {% else %}
             <p class="lead mb-5">Your bag is empty.</p>
             <p class="text-muted"><a href="{% url 'products' %}">Keep Shopping</a></p>
