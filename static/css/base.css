@@ -214,6 +214,10 @@ footer a {
     height: 15rem;
 }
 
+.checkout-button {
+    width: 10rem;
+}
+
 /* media query for tablets */
 
 @media screen and (min-width:768px) {

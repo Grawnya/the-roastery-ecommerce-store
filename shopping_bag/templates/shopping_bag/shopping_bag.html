@@ -74,7 +74,10 @@
             </div>
             {% endfor %}
             <div class="row">
-                <h4><strong>Item Total: ${{ final_value|floatformat:2 }}</strong></h4>
+                <h4 class="text-end"><strong>Total: ${{ final_value|floatformat:2 }}</strong></h4>
+            </div>
+            <div class="row justify-content-end mt-2">
+                <button class="text-centre btn btn-warning checkout-button">Go to Checkout</button>
             </div>
             {% else %}
             <p class="lead mb-5">Your bag is empty.</p>
