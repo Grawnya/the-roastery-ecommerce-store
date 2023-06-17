@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponse
 from products.models import *
 
 def shopping_bag_items(request):
@@ -41,3 +41,19 @@ def update_item(request, item_id):
 
     request.session['shopping_bag'] = shopping_bag
     return redirect(reverse('shopping_bag_items'))
+
+def delete_item(request, item_id):
+    """Delete the product from the shopping bag"""
+
+    try:
+        shopping_bag_item = get_object_or_404(Product, pk=item_id)
+        shopping_bag = request.session.get('shopping_bag', {})
+        shopping_bag.pop(item_id)
+            # successly removed
+
+        request.session['shopping_bag'] = shopping_bag
+        return HttpResponse(status=200)
+    
+    except:
+        # message error, please return later
+        return HttpResponse(status=500)

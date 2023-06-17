@@ -56,8 +56,7 @@
                             </div>
                         </form>
                         <a class="btn btn-success update-item">Update</a>
-                        <button class="btn btn-danger delete-item">Delete <i class="fa-solid fa-trash"></i></button>
-                        <div class="col-6 text-center">
+                        <a class="btn btn-danger delete-item" id="remove_item_{{ item.product.id }}">Delete <i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>
@@ -86,4 +85,17 @@
 {{ block.super }}
 <script src="{% static 'shopping_bag/js/update_item.js' %}"></script>
 <script src="{% static 'shopping_bag/js/shopping_bag_quantity_buttons.js' %}"></script>
+
+<script type="text/javascript">
+    $('.delete-item').click(function(event) {
+    var csrfToken = "{{ csrf_token }}";
+    var productID = $(this).attr('id').split('remove_item_')[1];
+    var page_url = `/shopping_bag/delete_item/${productID}/`;
+    var data = {'csrfmiddlewaretoken': csrfToken};
+
+    $.post(page_url, data).done(function() {
+         location.reload();
+     });
+})
+</script>
 {% endblock %}
