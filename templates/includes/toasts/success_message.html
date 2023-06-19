@@ -1,0 +1,41 @@
+<div class="toast toast-message rounded-0" data-autohide="false">
+    <div class="arrow-up"></div>
+    <div class="toast-header bg-warning-subtle">
+        <strong class="mr-auto">Success!</strong>
+        <button type="button" class="ml-2 mb-1 btn-close text-warning" data-dismiss="toast" aria-label="Close"
+            aria-hidden="true"></button>
+    </div>
+    <div class="toast-body bg-light">
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                <hr class="mt-1 mb-3">
+            </div>
+        </div>
+        <p class="bg-white text-black py-1">{{ item_count }} Items in your Bag!</p>
+        <div class="toast-structure">
+            {% for item in items_in_shopping_bag %}
+            <div class="row">
+                <div class="col-4 my-1">
+                    {% if item.product.image %}
+                    <img class="w-80" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                    {% else %}
+                    <img class="w-80" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                    {% endif %}
+                </div>
+                <div class="col-8">
+                    <p><strong>{{ item.product.name }}</strong></p>
+                    <p class="text-muted">Quantity: {{ item.quantity }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'shopping_bag_items' %}" class="btn btn-warning rounded-0">
+                    <span>Checkout <i class="fa-solid fa-truck-fast"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

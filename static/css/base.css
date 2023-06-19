@@ -218,6 +218,24 @@ footer a {
     width: 10rem;
 }
 
+/* toast */
+
+.toast-message {
+    overflow: visible;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
 /* media query for tablets */
 
 @media screen and (min-width:768px) {
@@ -228,6 +246,11 @@ footer a {
     #coffee-home-page-title, .btn-brown a {
         font-size: 2rem;
     }
+}
+
+.toast-structure {
+        height: 6rem;
+        overflow-y: auto;
 }
 
 /* media query for large screens*/
