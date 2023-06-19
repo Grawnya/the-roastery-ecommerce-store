@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponse
 from products.models import *
+from django.contrib import messages
 
 def shopping_bag_items(request):
     """view all items in the shopping bag """
@@ -19,7 +20,7 @@ def add_item(request, item_id):
         # updated amount from original value success message
     else:
         shopping_bag[item_id] = order_quantity
-        # added to bag success message
+        messages.success(request, f"{shopping_bag_item.name} added to shopping bag")
 
     request.session['shopping_bag'] = shopping_bag
     return redirect('products')

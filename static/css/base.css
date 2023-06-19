@@ -236,6 +236,18 @@ footer a {
     right: 36px;
 }
 
+.toast-structure {
+    height: 6rem;
+    overflow-y: auto;
+}
+
+.toast-container {
+position: fixed;
+z-index: 3;
+top: 4rem;
+right: 2rem;
+}
+
 /* media query for tablets */
 
 @media screen and (min-width:768px) {
@@ -246,18 +258,6 @@ footer a {
     #coffee-home-page-title, .btn-brown a {
         font-size: 2rem;
     }
-}
-
-.toast-structure {
-        height: 6rem;
-        overflow-y: auto;
-}
-
-.toast-container {
-    position: fixed;
-    z-index: 3;
-    top: 4rem;
-    right: 2rem;
 }
 
 /* media query for large screens*/
