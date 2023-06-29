@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '8000-grawnya-theroasteryecom-kgnd1cn50my.ws-eu100.gitpod.io']
+ALLOWED_HOSTS = ['localhost', '8000-grawnya-theroasteryecom-kgnd1cn50my.ws-eu101.gitpod.io']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'crispy_forms',
+    'crispy_bootstrap5',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -81,6 +82,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'shopping_bag.context_processor.current_shopping_bag_content',
+                'django.template.context_processors.media',
             ],
         },
     },
