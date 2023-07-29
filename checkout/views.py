@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from shopping_bag.context_processor import *
+from .models import *
+from .forms import *
 
 def checkout(request):
     if request.method == 'POST':
@@ -61,11 +63,11 @@ def checkout(request):
             except:
                 pass #UserProfile DoesNotExist
         else:
-            pass # form_checkout = OrderForm()
+            form_checkout = OrderForm()
 
     template = 'checkout/checkout_page.html'
     context = {
-        #'order_form': form_checkout,
+        'order_form': form_checkout,
         # payment intent client secret 'client_secret': intent.client_secret,
     }
 
