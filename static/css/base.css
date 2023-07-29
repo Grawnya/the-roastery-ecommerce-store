@@ -248,6 +248,12 @@ top: 4rem;
 right: 2rem;
 }
 
+/* collapse section */
+.custom-collapse {
+    background-color: var(--beige);
+    max-height: 1000vh; /* Set a maximum height relative to the viewport height */
+  }
+
 /* media query for tablets */
 
 @media screen and (min-width:768px) {

@@ -70,7 +70,8 @@
                 <h4 class="text-end"><strong>Total: ${{ final_value|floatformat:2 }}</strong></h4>
             </div>
             <div class="row justify-content-end mt-2">
-                <button class="text-centre btn btn-warning checkout-button">Go to Checkout</button>
+                <button class="text-centre btn btn-warning checkout-button">
+                    <a href="{% url 'checkout' %}">Go to Checkout</a></button>
             </div>
             {% else %}
             <p class="lead mb-5">Your bag is empty.</p>
