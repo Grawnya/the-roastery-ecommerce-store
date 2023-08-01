@@ -254,6 +254,26 @@ right: 2rem;
     max-height: 1000vh; /* Set a maximum height relative to the viewport height */
   }
 
+/* card section */
+.card-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  #card-element {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: var(--dull_brown);
+    margin-bottom: 10px;
+  }
+  
+  #card-errors {
+    color: red;
+    margin-bottom: 10px;
+  }
+
 /* media query for tablets */
 
 @media screen and (min-width:768px) {

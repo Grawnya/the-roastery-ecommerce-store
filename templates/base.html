@@ -27,6 +27,9 @@
     {% block extra_css %}
     {% endblock %}
 
+    <!-- stripe js  -->
+    <script src="https://js.stripe.com/v3/"></script>
+
     <title>The Roastery {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
@@ -171,8 +174,6 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 
-  <!-- stripe js  -->
-  <script src="https://js.stripe.com/v3/"></script>
   {% endblock %}
 
   {% block extra_js %}

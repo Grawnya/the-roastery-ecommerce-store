@@ -3,8 +3,12 @@ from shopping_bag.context_processor import *
 from .models import *
 from .forms import *
 
+import stripe
+import json
+
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         shopping_bag = request.session.get('shopping_bag', {})
@@ -57,7 +61,12 @@ def checkout(request):
 
         active_bag = current_shopping_bag_content(request)
         final_total = active_bag['final_value']
+        stripe.api_key = stripe_secret_key
         stripe_overall_total = round(final_total * 100)
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_overall_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
         
         if request.user.is_authenticated:
             try:
@@ -73,7 +82,7 @@ def checkout(request):
     template = 'checkout/checkout_page.html'
     context = {
         'order_form': form_checkout,
-        # payment intent client secret 'client_secret': intent.client_secret,
+        'client_secret': intent.client_secret,
         'stripe_public_key': stripe_public_key
     }
 
