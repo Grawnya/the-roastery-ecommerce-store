@@ -4,6 +4,8 @@ from .models import *
 from .forms import *
 
 def checkout(request):
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+
     if request.method == 'POST':
         shopping_bag = request.session.get('shopping_bag', {})
 
@@ -65,10 +67,14 @@ def checkout(request):
         else:
             form_checkout = OrderForm()
 
+    if not stripe_public_key:
+        pass #error message
+
     template = 'checkout/checkout_page.html'
     context = {
         'order_form': form_checkout,
         # payment intent client secret 'client_secret': intent.client_secret,
+        'stripe_public_key': stripe_public_key
     }
 
     return render(request, template, context)

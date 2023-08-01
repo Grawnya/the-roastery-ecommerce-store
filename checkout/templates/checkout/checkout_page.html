@@ -139,5 +139,6 @@
 {% endblock %}
 
 {% block extra_js %}
-<!-- stripe script -->
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {% endblock %}
