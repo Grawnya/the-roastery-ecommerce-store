@@ -61,7 +61,7 @@ class OrderItem(models.Model):
                                          editable=False)
 
     def save(self, *args, **kwargs):
-        self.item_total_price = self.product.bag_100g_USD * self.quantity
+        self.item_total_price = self.product_id.bag_100g_USD * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):

@@ -115,6 +115,4 @@ form.addEventListener('submit', function(ev) {
     }).fail(function () {
         location.reload();
     })
-    console.log('Testing card element initialization...');
-    console.log(document.getElementById('card-element'));
 });

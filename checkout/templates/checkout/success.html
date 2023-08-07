@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Thank You</h2>
+            <hr>
+            <p class="text-black">Your order is below. A confirmation email will be sent to
+                <strong>{{ order.email }}</strong>.</p>
+        </div>
+    </div>
+    {% for item in items_in_shopping_bag %}
+    <div class="row">
+        <div class="col-2 mb-1">
+            <a href="{% url 'specific_product' item.product.id %}">
+                {% if item.product.image %}
+                <img class="img-fluid checkout_image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                {% else %}
+                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                {% endif %}
+            </a>
+        </div>
+        <div class="col-6">
+            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+        </div>
+        <div class="col-3 text-right">
+            <p class="my-0 small text-muted">${{ item.product.bag_100g_USD }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
