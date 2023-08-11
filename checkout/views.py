@@ -31,20 +31,19 @@ def checkout(request):
         form_checkout = OrderForm(checkout_form)
 
         if form_checkout.is_valid():
+
             official_order = form_checkout.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             official_order.original_shopping_bag = json.dumps(shopping_bag)
             official_order.save()
-
-
 
             for item_identity, data in shopping_bag.items():
                 try:
                     specific_product = Product.objects.get(id=item_identity)
                     if isinstance(data, int):
                         order_item = OrderItem(
-                            order_id=official_order,
                             product_id=specific_product,
+                            order_id=official_order,
                             quantity=data,
                         )
                         order_item.save()
@@ -54,7 +53,7 @@ def checkout(request):
 
                     official_order.delete()
                     return redirect(reverse('shopping_bag_items'))
-            return redirect(reverse('success', args=[official_order.order_number]))
+            return redirect(reverse('success_purchase', args=[official_order.order_id]))
         else:
             pass # issue with form
     else:
@@ -92,11 +91,11 @@ def checkout(request):
 
     return render(request, template, context)
 
-def success_purchase(request, order_no):
+def success_purchase(request, order_id):
 
     # if user wants to save info
     save_info = request.session.get('save_info')
-    official_order = get_object_or_404(Order, order_id=order_no)
+    official_order = get_object_or_404(Order, order_id=order_id)
 
     if request.user.is_authenticated:
         #connect profile
@@ -114,7 +113,7 @@ def success_purchase(request, order_no):
     context = {
         'order': official_order,
     }
-
+        
     return render(request, template, context)
 
 @require_POST

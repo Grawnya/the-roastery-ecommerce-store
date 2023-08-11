@@ -40,7 +40,7 @@ class Order(models.Model):
         self.final_total = self.items_total + self.delivery_cost
         self.save()
 
-    def save_order(self, *args, **kwargs):
+    def save(self, *args, **kwargs):
         if not self.order_id:
             self.order_id = self._order_id_creation()
         super().save(*args, **kwargs)
@@ -65,4 +65,4 @@ class OrderItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU: {self.product.sku} for {self.order.order_id}'
+        return f'SKU: {self.product_id.sku} for {self.product_id.name}'

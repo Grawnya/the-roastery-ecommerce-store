@@ -12,24 +12,25 @@
                 <strong>{{ order.email }}</strong>.</p>
         </div>
     </div>
-    {% for item in items_in_shopping_bag %}
+    {% for item in order.items.all %}
     <div class="row">
         <div class="col-2 mb-1">
-            <a href="{% url 'specific_product' item.product.id %}">
-                {% if item.product.image %}
-                <img class="img-fluid checkout_image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+            <a href="{% url 'specific_product' item.product_id.id %}">
+                {% if item.product_id.image %}
+                <img class="img-fluid checkout_image" src="{{ item.product_id.image.url }}" alt="{{ item.product_id.name }}">
                 {% else %}
-                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product_id.name }}">
                 {% endif %}
             </a>
         </div>
         <div class="col-6">
-            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+            <p class="my-0"><strong>{{ item.product_id.name }}</strong></p>
             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
         </div>
         <div class="col-3 text-right">
-            <p class="my-0 small text-muted">${{ item.product.bag_100g_USD }}</p>
+            <p class="my-0 small text-muted">${{ item.product_id.bag_100g_USD }}</p>
         </div>
     </div>
     {% endfor %}
 </div>
+{% endblock %}
