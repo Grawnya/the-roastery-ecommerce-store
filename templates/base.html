@@ -83,7 +83,7 @@
     </header>
 
     {% if messages %}
-        <div class="toast-container">
+        <div class="toast-container" ref={toastRef}>
             {% for message in messages %}
                 {% with message.level as level %}
                     {% if level == 40 %}
@@ -183,9 +183,11 @@
   <!-- show toasts -->
   <script type="text/javascript">
     const toastOnPage = $('.toast');
+    if (toastOnPage.length > 0) {
     var toastElement = toastOnPage.get(0);
     var toast = new bootstrap.Toast(toastElement);
     toast.show();
+  }
   </script>
   {% endblock %}
 </body>
