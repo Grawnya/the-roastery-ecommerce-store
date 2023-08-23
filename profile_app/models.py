@@ -4,7 +4,42 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+roast_choices = (
+    ('light', 'Light'),
+    ('medium_light', 'Medium-Light'),
+    ('medium', 'Medium'),
+    ('medium_dark', 'Medium Dark'),
+    ('dark', 'Dark'),
+    )
 
+coffee_choices = (
+    ('hawaii', 'Hawaii'),
+    ('brazil', 'Brazil'),
+    ('ethiopia', 'Ethiopia'),
+    ('panama', 'Panama'),
+    ('indonesia', 'Indonesia'),
+    ('peru', 'Peru'),
+    ('costa_rica', 'Costa Rica'),
+    ('burundi', 'Burundi'),
+    ('colombia', 'Colombia'),
+    ('taiwan', 'Taiwan'),
+    ('mexico', 'Mexico'),
+    ('nepal', 'Nepal'),
+    ('kenya', 'Kenya'),
+    )
+
+class Favourites(models.Model):
+    website_user = models.OneToOneField(User, on_delete=models.CASCADE)
+    birthday = models.DateField()
+    coffee_type = models.CharField(max_length=50, choices=coffee_choices,
+                                 default='colombia',
+                                            null=True, blank=True)
+    roast = models.CharField(max_length=30, choices=roast_choices,
+                                 default='light',
+                                            null=True, blank=True)
+    
+    def __str__(self):
+        return f'I love {self.roast} roasted coffee from {self.coffee_type}!' 
 
 class WebsiteUser(models.Model):
     website_user = models.OneToOneField(User, on_delete=models.CASCADE)
