@@ -67,5 +67,4 @@ class WebsiteUser(models.Model):
 @receiver(post_save, sender=User)
 def deal_with_user_profile(sender, instance, created, **kwargs):
     if created:
-        WebsiteUser.objects.create(user=instance)
-    instance.userprofile.save()
+        WebsiteUser.objects.create(website_user=instance)

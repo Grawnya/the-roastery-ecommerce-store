@@ -9,7 +9,7 @@ from checkout.models import Order
 
 @login_required
 def profile(request):
-    profile = get_object_or_404(WebsiteUser, user=request.user)
+    profile = get_object_or_404(WebsiteUser, website_user=request.user)
 
     if request.method == 'POST':
         profile_form = WebsiteUserForm(request.POST, instance=profile)
