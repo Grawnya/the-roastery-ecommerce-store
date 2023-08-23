@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Profile</h2>
+            <hr>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+        aria-expanded="false" aria-controls="collapseExample">
+        Order History
+    </button>
+    <div class="collapse custom-collapse" id="collapseExample">
+
+    </div>
+    <div class="row pt-2">
+        <div class="col-10 offset-1">
+            <p class="text-muted">Fill out the Profile Form</p>
+            <form action="{% url 'profile' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                    {{ profile_form | crispy }}
+                </fieldset>
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Favourites</legend>
+                    {{ favourites_form | crispy }}
+                </fieldset>
+                <div class="submit-button text-right mt-5 mb-2">
+                    <button id="submit-button" type="submit" class="btn btn-black rounded-0">
+                        <span class="font-weight-bold">Update Profile</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

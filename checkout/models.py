@@ -2,13 +2,14 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from products.models import *
+from profile_app.models import *
 
 import uuid
 from django_countries.fields import CountryField
 
 class Order(models.Model):
     order_id = models.CharField(max_length=24, null=False, editable=False)
-    # profile_id = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
+    profile_id = models.ForeignKey(WebsiteUser, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
