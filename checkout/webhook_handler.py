@@ -44,6 +44,7 @@ class Stripe_Webhook_Handler:
                 shipping_details.address[field] = None
 
         # to prevent the creation of an order twice
+        print('check 1')
         order_exists = False
         creation_attempt = 1
         while creation_attempt <= 5:
@@ -70,11 +71,13 @@ class Stripe_Webhook_Handler:
                 time.sleep(1)
 
         if order_exists:
+            print('order exists')
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=(f'Webhook received - Order in system'),
                 status=200)
         else:
+            print('no order')
             order = None
             try:
                 order = Order.objects.create(
@@ -107,7 +110,6 @@ class Stripe_Webhook_Handler:
                     status=500)
 
         # send confirmation email
-
         return HttpResponse(
             content=(f'Order created in webhook'),
             status=200)
