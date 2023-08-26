@@ -42,7 +42,7 @@ class Favourites(models.Model):
         return f'I love {self.roast} roasted coffee from {self.coffee_type}!' 
 
 class WebsiteUser(models.Model):
-    website_user = models.OneToOneField(User, on_delete=models.CASCADE)
+    website_user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
     profile_full_name = models.CharField(max_length=50, null=False, blank=False)
     profile_email = models.EmailField(max_length=254, null=False, blank=False)
     profile_phone_number = models.CharField(max_length=30,
@@ -68,4 +68,4 @@ class WebsiteUser(models.Model):
 def deal_with_user_profile(sender, instance, created, **kwargs):
     if created:
         WebsiteUser.objects.create(website_user=instance)
-    instance.userprofile.save()
+    # instance.userprofile.save()

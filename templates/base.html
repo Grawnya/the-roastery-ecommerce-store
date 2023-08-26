@@ -61,14 +61,25 @@
                       <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
                     </ul>
                   </li>
+                  {% if request.user.is_authenticated %}
                   <li class="nav-item">
-                    <a href="#">Login</a>
+                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                   </li>
                   <li class="nav-item">
                     <button class="btn-coffee">
-                      <a class="nav-link" id="sign-up-link" href="#">Sign Up</a>
+                    <a class="nav-link" id="sign-up-link" href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                  </button>
+                </li>
+                  {% else %}
+                  <li class="nav-item">
+                    <a href="{% url 'account_login' %}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <button class="btn-coffee">
+                      <a class="nav-link" id="sign-up-link" href="{% url 'account_signup' %}">Sign Up</a>
                     </button>
                   </li>
+                  {% endif %}
                 </ul>
                 <form id="search-feature" class="d-flex" role="search" method="GET" action="{% url 'products' %}">
                     <input class="form-control me-2" type="search" placeholder="Search" name="search_bar" aria-label="Search">
