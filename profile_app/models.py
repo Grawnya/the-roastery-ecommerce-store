@@ -68,3 +68,4 @@ class WebsiteUser(models.Model):
 def deal_with_user_profile(sender, instance, created, **kwargs):
     if created:
         WebsiteUser.objects.create(website_user=instance)
+    instance.userprofile.save()

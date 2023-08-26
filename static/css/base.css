@@ -294,6 +294,28 @@ right: 2rem;
     height: 100%;
 }
 
+/* allauth forms */
+.allauth-form {
+    color: var(--beige);
+    margin-top: 2rem;
+}
+
+.allauth-form input {
+    border-color: var(--khaki);
+}
+
+.allauth-form-inner-content input[type='submit'] {
+    color: var(--coffee);
+    background-color: var(--beige);
+    border-radius: 0.3rem;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 /* media query for tablets */
 
 @media screen and (min-width:768px) {
