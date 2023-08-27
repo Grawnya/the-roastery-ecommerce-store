@@ -81,3 +81,44 @@ def create_new_product(request):
     }
 
     return render(request, template, context)
+
+@login_required
+def edit_product(request, product_id):
+
+    if not request.user.is_superuser:
+        pass #error message
+        return redirect(reverse('home'))
+
+    specific_product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        product_form = ProductForm(request.POST, request.FILES, instance=specific_product)
+        
+        if product_form.is_valid():
+            product_form.save()
+            #success message
+            return redirect(reverse('specific_product', args=[specific_product.id]))
+        else:
+           pass #error message
+    else:
+        product_form = ProductForm(instance=specific_product)
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': product_form,
+        'product': specific_product,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_id):
+
+    if not request.user.is_superuser:
+        pass #error message
+        return redirect(reverse('home'))
+
+    specific_product = get_object_or_404(Product, pk=product_id)
+    specific_product.delete()
+    # success message
+    return redirect(reverse('products'))

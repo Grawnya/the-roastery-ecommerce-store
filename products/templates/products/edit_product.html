@@ -7,21 +7,21 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Add a Product</h2>
+            <h2 class="logo-font mb-4">Edit an Existing Product</h2>
             <hr>
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-6">
-            <form method="POST" action="{% url 'new_product' %}" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_product' product.id %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="justify-content-end">
                     <a class="btn btn-outline-black" href="{% url 'products' %}">Cancel</a>
-                    <button class="btn btn-info" type="submit">Add Product</button>
+                    <button class="btn btn-info" type="submit">Update Product</button>
                 </div>
             </form>
-        </div>
+        </div>            
     </div>
 </div>
 {% endblock %}

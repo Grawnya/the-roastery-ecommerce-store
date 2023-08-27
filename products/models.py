@@ -1,11 +1,11 @@
 from django.db import models
 
 roast_choices = (
-    (1, 'Light'),
-    (2, 'Medium-Light'),
-    (3, 'Medium'),
-    (4, 'Medium-Dark'),
-    (5, 'Dark'),
+    ('Light', 'Light'),
+    ('Medium-Light', 'Medium-Light'),
+    ('Medium', 'Medium'),
+    ('Medium-Dark', 'Medium-Dark'),
+    ('Dark', 'Dark'),
     )
 
 location_choices = (
