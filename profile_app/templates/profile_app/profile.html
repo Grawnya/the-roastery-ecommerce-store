@@ -17,7 +17,31 @@
         Order History
     </button>
     <div class="collapse custom-collapse" id="collapseExample">
+        <div class="container">
+            <div class="row">
+                <div class="col">Order No.</div>
+                <div class="col">Order Date</div>
+                <div class="col">Items</div>
+                <div class="col">Total</div>
+            </div>
 
+            {% for order in orders %}
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'users_orders' order.order_id %}">
+                        {{ order.order_id }}
+                    </a>
+                </div>
+                <div class="col">{{ order.order_date }}</div>
+                <div class="col">
+                    {% for item in order.items.all %}
+                    {{ item.quantity }} x {{ item.product.name }}
+                    {% endfor %}
+                </div>
+                <div class="col">{{ order.final_total }}</div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
     <div class="row pt-2">
         <div class="col-10 offset-1">

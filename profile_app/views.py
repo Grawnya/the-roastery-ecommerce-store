@@ -41,3 +41,14 @@ def profile(request):
     }
 
     return render(request, template, context)
+
+def users_orders(request, order_id):
+    order = get_object_or_404(Order, order_id=order_id)
+
+    template = 'checkout/success.html'
+    context = {
+        'order': order,
+        'from_profile': True,
+    }
+
+    return render(request, template, context)
