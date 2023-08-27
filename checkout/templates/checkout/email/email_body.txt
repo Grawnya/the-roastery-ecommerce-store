@@ -1,0 +1,16 @@
+Hi!
+
+Thanks for ordering from The Roastery!
+
+{{ order.order_id }} will be shipped out to:
+
+{{ order.full_name }}
+{{ order.street_address1 }}
+{{ order.street_address2 }}
+{{ order.town_or_city }}
+{{ order.county }}
+{{ order.postcode }}
+{{ order.country }}
+
+within 5 working days and we will notify you this by email.
+

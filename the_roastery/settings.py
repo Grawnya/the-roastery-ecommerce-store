@@ -167,3 +167,7 @@ STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
 
 # allauth
 LOGIN_REDIRECT_URL = 'home'
+
+# email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # change from console to smtp when doing google
+DEFAULT_FROM_EMAIL = 'contact@theroastery.com'
