@@ -7,6 +7,11 @@
     <div class="row">
         <div class="col text-center">
             <h2 class="logo-font">Products</h2>
+            {% if user.is_superuser %}
+                <button type="button" class="btn btn-success">
+                    <a href="{% url 'new_product' %}" aria-label="Add Product">+ Add Product</a>
+                </button>
+            {% endif %}
             <!-- set up buttons based on roast and continent -->
             <button id="by_roast" class="btn btn-warning">Roast</button>
             <button id="by_location" class="btn btn-warning">Location</button>
@@ -19,22 +24,37 @@
                 <div class="col-12 col-md-6 my-auto">
                     <div class="filter-products-section">
                         <select id="filter-products" class="form-select form-select-sm rounded-0 border">
-                            <option value="sort_by" {% if filter_element == 'None_None' %}selected{% endif %}>Sort by...</option>
-                            <option value="bag_100g_USD_ascending" {% if filter_element == 'bag_100g_USD_ascending' %}selected{% endif %}>Price (low to high)</option>
-                            <option value="bag_100g_USD_descending" {% if filter_element == 'bag_100g_USD_descending' %}selected{% endif %}>Price (high to low)</option>
-                            <option value="rating_ascending" {% if filter_element == 'rating_ascending' %}selected{% endif %}>Rating (low to high)</option>
-                            <option value="rating_descending" {% if filter_element == 'rating_descending' %}selected{% endif %}>Rating (high to low)</option>
-                            <option value="roast_ascending" {% if filter_element == 'roast_ascending' %}selected{% endif %}>Roast (light to dark)</option>
-                            <option value="roast_descending" {% if filter_element == 'roast_descending' %}selected{% endif %}>Roast (dark to light)</option>
-                            <option value="name_ascending" {% if filter_element == 'name_ascending' %}selected{% endif %}>Name Ascending</option>
-                            <option value="name_descending" {% if filter_element == 'name_descending' %}selected{% endif %}>Name Descending</option>
+                            <option value="sort_by" {% if filter_element == 'None_None' %}selected{% endif %}>Sort by...
+                            </option>
+                            <option value="bag_100g_USD_ascending"
+                                {% if filter_element == 'bag_100g_USD_ascending' %}selected{% endif %}>Price (low to
+                                high)</option>
+                            <option value="bag_100g_USD_descending"
+                                {% if filter_element == 'bag_100g_USD_descending' %}selected{% endif %}>Price (high to
+                                low)</option>
+                            <option value="rating_ascending"
+                                {% if filter_element == 'rating_ascending' %}selected{% endif %}>Rating (low to high)
+                            </option>
+                            <option value="rating_descending"
+                                {% if filter_element == 'rating_descending' %}selected{% endif %}>Rating (high to low)
+                            </option>
+                            <option value="roast_ascending"
+                                {% if filter_element == 'roast_ascending' %}selected{% endif %}>Roast (light to dark)
+                            </option>
+                            <option value="roast_descending"
+                                {% if filter_element == 'roast_descending' %}selected{% endif %}>Roast (dark to light)
+                            </option>
+                            <option value="name_ascending"
+                                {% if filter_element == 'name_ascending' %}selected{% endif %}>Name Ascending</option>
+                            <option value="name_descending"
+                                {% if filter_element == 'name_descending' %}selected{% endif %}>Name Descending</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 order-sm-first">
                     <p class="text-muted mt-3 text-center text-sm-left">
                         {% if search_term or filter_element != 'None_None' %}
-                            <span><a href="{% url 'products' %}">Products</a> | </span>
+                        <span><a href="{% url 'products' %}">Products</a> | </span>
                         {% endif %}
                         {{ products|length }} Products{% if search_term %} match your search.{% endif %}
                     </p>
@@ -42,73 +62,75 @@
             </div>
             <div class="row">
                 {% for product in products %}
-                    <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="card mx-3 mb-3">
-                            {% if product.image %}
-                            <a href="{% url 'specific_product' product.id %}">
-                                <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </a>
-                            {% else %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                            </a>
-                            {% endif %}
-                            <div class="card-body pb-0">
-                                <p>{{ product.name }}</p>
-                            </div>
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="row">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.bag_100g_USD }}</p>
-                                        </div>
-                                        <div class="row">
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fa-regular fa-star"></i> {{ product.rating }} / 100</small>
-                                            {% else %}
-                                                <small class="text-muted">No Rating</small>
-                                            {% endif %}
-                                        </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card mx-3 mb-3">
+                        {% if product.image %}
+                        <a href="{% url 'specific_product' product.id %}">
+                            <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body pb-0">
+                            <p>{{ product.name }}</p>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <p class="lead mb-0 text-left font-weight-bold">${{ product.bag_100g_USD }}</p>
                                     </div>
-                                    <div class="col text-end">
-                                        <div class="row">
-                                            {% if product.roast %}
-                                                <small class="text-muted"><i class="fa-solid fa-mug-saucer"></i>
-                                                    {% if product.roast == '1' %}
-                                                    Light
-                                                    {% elif product.roast == '2' %}
-                                                    Medium-Light
-                                                    {% elif product.roast == '3' %}
-                                                    Medium
-                                                    {% elif product.roast == '4' %}
-                                                    Medium-Dark
-                                                    {% elif product.roast == '5' %}
-                                                    Dark
-                                                    {% endif %}
-                                                </small>
+                                    <div class="row">
+                                        {% if product.rating %}
+                                        <small class="text-muted"><i class="fa-regular fa-star"></i>
+                                            {{ product.rating }} / 100</small>
+                                        {% else %}
+                                        <small class="text-muted">No Rating</small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col text-end">
+                                    <div class="row">
+                                        {% if product.roast %}
+                                        <small class="text-muted"><i class="fa-solid fa-mug-saucer"></i>
+                                            {% if product.roast == '1' %}
+                                            Light
+                                            {% elif product.roast == '2' %}
+                                            Medium-Light
+                                            {% elif product.roast == '3' %}
+                                            Medium
+                                            {% elif product.roast == '4' %}
+                                            Medium-Dark
+                                            {% elif product.roast == '5' %}
+                                            Dark
                                             {% endif %}
-                                        </div>
-                                        <div class="row">
-                                            {% if product.origin %}
-                                                <small class="text-muted"><i class="fa-solid fa-location-pin"></i> {{ product.origin }}</small>
-                                            {% endif %}
-                                        </div>
+                                        </small>
+                                        {% endif %}
+                                    </div>
+                                    <div class="row">
+                                        {% if product.origin %}
+                                        <small class="text-muted"><i class="fa-solid fa-location-pin"></i>
+                                            {{ product.origin }}</small>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
     </div>
 
-{% endblock %}
+    {% endblock %}
 
-{% block extra_js %}
-{{ block.super }}
-<script src="{% static 'products/js/filter_refresh.js' %}"></script>
-<!-- <script type="text/javascript">
+    {% block extra_js %}
+    {{ block.super }}
+    <script src="{% static 'products/js/filter_refresh.js' %}"></script>
+    <!-- <script type="text/javascript">
     // Fix refresh
 $('#filter-products').click(function() {
     var formSelector = $(this);
@@ -133,5 +155,5 @@ $('#filter-products').click(function() {
         window.location.replace(openUrl);
     }
 }) -->
-</script>
-{% endblock %}
+    </script>
+    {% endblock %}

@@ -201,6 +201,11 @@ footer a {
 }
 
 /* products */
+.product-button a{
+    display: block;
+    padding: 0.25rem;
+}
+
 .card-img-top {
     height: 25rem;
 }
