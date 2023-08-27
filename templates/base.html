@@ -151,17 +151,26 @@
                       aria-label="To the Our Story Page">Our Story</a>
               </li>
               <li>
-                  <a href="#"
+                  <a href="{% url 'products' %}"
                       aria-label="To View All Products">All Products</a>
               </li>
+              {% if request.user.is_authenticated %}
               <li>
-                  <a href="#" aria-label="To go to the Login Page">Login</a>
+                <a href="{% url 'account_logout' %}" aria-label="Logout of Website">Logout</a>
               </li>
               <li>
-                  <a href="#" aria-label="To go to the Sign Up Page">Sign Up</a>
+                <a href="{% url 'profile' %}" aria-label="Fo to your Profile">Profile</a>
+              </li>  
+              {% else %}
+              <li>
+                  <a href="{% url 'account_login' %}" aria-label="To go to the Login Page">Login</a>
               </li>
               <li>
-                  <a href="#" aria-label="To View the Shopping Bag">Shopping Bag</a>
+                  <a href="#{% url 'account_signup' %}" aria-label="To go to the Sign Up Page">Sign Up</a>
+              </li>
+              {% endif %}
+              <li>
+                  <a href="{% url 'shopping_bag_items' %}" aria-label="To View the Shopping Bag">Shopping Bag</a>
               </li>
           </ul>
           </div>

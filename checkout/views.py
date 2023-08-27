@@ -73,9 +73,20 @@ def checkout(request):
         
         if request.user.is_authenticated:
             try:
-                pass #profile details
-            except:
-                pass #UserProfile DoesNotExist
+                profile = WebsiteUser.objects.get(website_user=request.user)
+                form_checkout = OrderForm(initial={
+                    'full_name': profile.profile_full_name,
+                    'email': profile.profile_email,
+                    'phone_number': profile.profile_phone_number,
+                    'street_address1': profile.profile_street_address1,
+                    'street_address2': profile.profile_street_address2,
+                    'town_or_city': profile.profile_town_or_city,
+                    'county': profile.profile_county,
+                    'postcode': profile.profile_postcode,
+                    'country': profile.profile_country,
+                })
+            except WebsiteUser.DoesNotExist:
+                form_checkout = OrderForm()
         else:
             form_checkout = OrderForm()
 
@@ -98,11 +109,24 @@ def success_purchase(request, order_id):
     official_order = get_object_or_404(Order, order_id=order_id)
 
     if request.user.is_authenticated:
-        #connect profile
+        profile = WebsiteUser.objects.get(website_user=request.user)
+        official_order.profile_id = profile
         official_order.save()
 
         if save_info:
-            pass # save the uinfo to profile
+            profile_data = {
+                'profile_phone_number': official_order.phone_number,
+                'profile_street_address1': official_order.street_address1,
+                'profile_street_address2': official_order.street_address2,
+                'profile_town_or_city': official_order.town_or_city,
+                'profile_county': official_order.county,
+                'profile_postcode': official_order.postcode,
+                'profile_country': official_order.country,
+            }
+
+            website_user_form = WebsiteUserForm(profile_data, instance=profile)
+            if website_user_form.is_valid():
+                website_user_form.save()
 
     # success message
 
