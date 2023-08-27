@@ -8,11 +8,21 @@ roast_choices = (
     (5, 'Dark'),
     )
 
+location_choices = (
+    ('Africa', 'Africa'),
+    ('South America', 'South America'),
+    ('Central America', 'Central America'),
+    ('North America', 'North America'),
+    ('Asia', 'Asia'),
+    ('Europe', 'Europe'),
+    ('Oceania', 'Oceania'),
+)
+
 class Product(models.Model):
     sku = models.BigIntegerField(unique=True)
     name = models.CharField(max_length=254)
     roast = models.CharField(max_length=254, null=False, choices=roast_choices)
-    location = models.CharField(max_length=254)
+    location = models.CharField(max_length=254, choices=location_choices)
     origin = models.CharField(max_length=254)
     bag_100g_USD = models.DecimalField(max_digits=4, decimal_places=2)
     rating = models.IntegerField(null=True, blank=True)
