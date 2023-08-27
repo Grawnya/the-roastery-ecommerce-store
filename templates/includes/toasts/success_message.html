@@ -13,6 +13,7 @@
             </div>
         </div>
 
+        {% if final_value and not on_profile_page %}
         <p class="bg-white text-black py-1">{{ item_count }} Items in your Bag!</p>
         <div class="toast-structure">
             {% for item in items_in_shopping_bag %}
@@ -38,5 +39,6 @@
                 </a>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>
