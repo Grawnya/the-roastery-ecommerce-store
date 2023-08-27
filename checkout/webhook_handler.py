@@ -43,8 +43,20 @@ class Stripe_Webhook_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
-        # to prevent the creation of an order twice
-        print('check 1')
+        user_profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            user_profile = WebsiteUser.objects.get(website_user__username=username)
+            if save_info:
+                user_profile.default_phone_number = shipping_details.phone
+                user_profile.default_street_address1 = shipping_details.address.line1
+                user_profile.default_street_address2 = shipping_details.address.line2
+                user_profile.default_town_or_city = shipping_details.address.city
+                user_profile.default_county = shipping_details.address.state
+                user_profile.default_postcode = shipping_details.address.postal_code
+                user_profile.default_country = shipping_details.address.country
+                user_profile.save()
+
         order_exists = False
         creation_attempt = 1
         while creation_attempt <= 5:
@@ -71,17 +83,16 @@ class Stripe_Webhook_Handler:
                 time.sleep(1)
 
         if order_exists:
-            print('order exists')
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=(f'Webhook received - Order in system'),
                 status=200)
         else:
-            print('no order')
             order = None
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
+                    profile_id=user_profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     street_address1=shipping_details.address.line1,
