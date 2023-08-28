@@ -4,5 +4,12 @@
 
 {% block content %}
     <h2>Edit Blog Entry</h2>
-    {% crispy form %}
+    <form method="POST" action="{% url 'edit_blog' blog.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <div class="justify-content-end">
+            <a class="btn btn-outline-black" href="{% url 'blog' %}">Cancel</a>
+            <button class="btn btn-info" type="submit">Edit Blog</button>
+        </div>
+    </form>
 {% endblock %}
