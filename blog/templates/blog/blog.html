@@ -3,26 +3,31 @@
 {% load static %}
 
 {% block content %}
-    <h2>Welcome to the Blog</h2>
+<h2>Welcome to the Blog</h2>
+<p>Welcome to a caffeinated haven where we celebrate the world's most beloved beverage — coffee! Join us on a delightful
+    journey as we traverse through bustling cities, tranquil plantations, and hidden corners of the globe, all while
+    savoring the diverse flavors and cultural nuances that coffee brings. From heartwarming encounters with baristas to
+    discovering exotic brews, our blog is a celebration of the joy, camaraderie, and adventure that coffee inspires. So
+    grab your favorite mug, and let's embark on an unforgettable coffee odyssey together!</p>
 
-    {% if user.is_superuser %}
-        <button type="button" class="btn btn-success">
-            <a href="{% url 'create_blog' %}" aria-label="New Blog">Create New Blog</a>
-        </button>
-    {% endif %}
+{% if user.is_superuser %}
+<button type="button" class="btn btn-success">
+    <a href="{% url 'create_blog' %}" aria-label="New Blog">Create New Blog</a>
+</button>
+{% endif %}
 
-    {% for blog in blogs %}
-        <div class="row">
-            <h3>
-                {{ blog.heading }} 
-                {% if user.is_superuser %}
-                <a href="{% url 'edit_blog' blog.id %}"> <i class="fa-solid fa-pen-to-square"></i> </a>
-                <a href="{% url 'delete_blog' blog.id %}"><i class="fa-solid fa-trash"></i> </a>
-                {% endif %}
-            </h3>
-            <p>{{ blog.blog_body }}</p>
-            
-        </div>
-    {% endfor %}
+{% for blog in blogs %}
+<div class="row">
+    <h3>
+        {{ blog.heading }}
+        {% if user.is_superuser %}
+        <a href="{% url 'edit_blog' blog.id %}"> <i class="fa-solid fa-pen-to-square"></i> </a>
+        <a href="{% url 'delete_blog' blog.id %}"><i class="fa-solid fa-trash"></i> </a>
+        {% endif %}
+    </h3>
+    <p>{{ blog.blog_body }}</p>
+    <hr>
+</div>
+{% endfor %}
 
 {% endblock %}
