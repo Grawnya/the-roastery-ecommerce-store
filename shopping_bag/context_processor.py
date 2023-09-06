@@ -21,13 +21,16 @@ def current_shopping_bag_content(request):
         items_in_shopping_bag.append({'item_id': item_id,
                                       'quantity': quantity,
                                       'product': product})
+    
+    total = final_value - delivery_cost
 
     context = {
         'items_in_shopping_bag': items_in_shopping_bag,
         'final_value': final_value,
         'item_count': item_count,
         'shopping_bag': shopping_bag,
-        'delivery_cost': delivery_cost
+        'delivery_cost': delivery_cost,
+        'total': total
     }
 
     return context

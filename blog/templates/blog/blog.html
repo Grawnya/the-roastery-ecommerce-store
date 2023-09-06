@@ -3,13 +3,13 @@
 {% load static %}
 
 {% block content %}
-<h2>Welcome to the Blog</h2>
-<p>Welcome to a caffeinated haven where we celebrate the world's most beloved beverage — coffee! Join us on a delightful
+<h2 class="dark-heading">Welcome to the Blog</h2>
+<p class="dark-body">Welcome to a caffeinated haven where we celebrate the world's most beloved beverage — coffee! Join us on a delightful
     journey as we traverse through bustling cities, tranquil plantations, and hidden corners of the globe, all while
     savoring the diverse flavors and cultural nuances that coffee brings. From heartwarming encounters with baristas to
     discovering exotic brews, our blog is a celebration of the joy, camaraderie, and adventure that coffee inspires. So
     grab your favorite mug, and let's embark on an unforgettable coffee odyssey together!</p>
-
+<hr class="separator">
 {% if user.is_superuser %}
 <button type="button" class="btn btn-success">
     <a href="{% url 'create_blog' %}" aria-label="New Blog">Create New Blog</a>

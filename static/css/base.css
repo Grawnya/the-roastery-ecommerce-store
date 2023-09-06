@@ -11,6 +11,27 @@ body {
     background-color: var(--light_grey);
 }
 
+.dark-heading {
+    color: var(--khaki);
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+}
+
+.dark-body {
+    color: var(--khaki);
+    margin: 0 auto;
+    max-width: 80%;
+    text-align: justify;
+}
+
+.separator {
+    border: none;
+    height: 0.5rem;
+    background-color: var(--khaki);
+    margin: 2rem 0 1rem;
+}
+
 /* navbar */
 
 #the-roastery-logo {
@@ -220,6 +241,10 @@ footer a {
 }
 
 .checkout-button {
+    width: 10rem;
+}
+
+.custom-width-input {
     width: 10rem;
 }
 

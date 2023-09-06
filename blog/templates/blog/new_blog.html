@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-    <h2>Create New Blog Entry</h2>
+    <h2 class="dark-heading">Create New Blog Entry</h2>
     <form method="POST" action="{% url 'create_blog'%}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form | crispy }}

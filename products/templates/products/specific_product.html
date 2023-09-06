@@ -6,7 +6,8 @@
 <div class="container-fluid px-0">
     <div class="row">
         <div class="col text-center">
-            <h2 class="logo-font">{{ product.name }}</h2>
+            <h2 class="logo-font dark-heading">{{ product.name }}</h2>
+            <hr class="separator">
         </div>
         <small class="text-muted"><a href="{% url 'products' %}">Return to All Products</a></small>
     </div>
@@ -21,8 +22,10 @@
                     {% endif %}
                 </div>
                 <div class="col-12 col-sm-6">
-                    <div class="row">
-                        {{ product.review }}
+                    <div class="row mb-3">
+                        <div class="dark-body">
+                            {{ product.review }}
+                        </div>
                     </div>
                     <div class="row">
                         <h3 class="logo-font">Characteristics</h3>
@@ -65,22 +68,24 @@
                     </div>
                     <form action="{% url 'add_item' product.id %}" method="POST">
                         {% csrf_token %}
-                        <div class="row input-group">
-                            <div class="remove-products mx-auto">
-                                <button class="minus_button_of_{{product.id}} remove_some"
+                        <div class="row input-group py-3">
+                            <div class="d-flex align-items-center">
+                                <div class="remove-products mx-auto">
+                                    <button class="minus_button_of_{{product.id}} remove_some"
+                                        data-product_id="{{ product.id }}">
+                                        <span><i class="fa-solid fa-circle-minus"></i></span>
+                                    </button>
+                                </div>
+                                <input
+                                    class="form-control quantity_value rounded-0 quantity_of_{{product.id}} input-group-single-{{product.id}}"
+                                    type="number" name="order_quantity" value="1" min="1" max="49"
                                     data-product_id="{{ product.id }}">
-                                    <span><i class="fa-solid fa-circle-minus"></i></span>
-                                </button>
-                            </div>
-                            <input
-                                class="form-control quantity_value quantity_of_{{product.id}} input-group-single-{{product.id}}"
-                                type="number" name="order_quantity" value="1" min="1" max="49"
-                                data-product_id="{{ product.id }}">
-                            <div class="add-products">
-                                <button class="plus_button_of_{{product.id}} add_more"
-                                    data-product_id="{{ product.id }}">
-                                    <span><i class="fa-solid fa-circle-plus"></i></span>
-                                </button>
+                                <div class="add-products">
+                                    <button class="plus_button_of_{{product.id}} add_more"
+                                        data-product_id="{{ product.id }}">
+                                        <span><i class="fa-solid fa-circle-plus"></i></span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
