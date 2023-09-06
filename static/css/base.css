@@ -244,8 +244,8 @@ footer a {
     width: 10rem;
 }
 
-.custom-width-input {
-    width: 10rem;
+.custom-width-form input, .custom-width-form select {
+    width: 100%;
 }
 
 /* toast */
