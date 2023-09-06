@@ -16,18 +16,23 @@
 </button>
 {% endif %}
 
-{% for blog in blogs %}
-<div class="row">
-    <h3>
-        {{ blog.heading }}
-        {% if user.is_superuser %}
-        <a href="{% url 'edit_blog' blog.id %}"> <i class="fa-solid fa-pen-to-square"></i> </a>
-        <a href="{% url 'delete_blog' blog.id %}"><i class="fa-solid fa-trash"></i> </a>
-        {% endif %}
-    </h3>
-    <p>{{ blog.blog_body }}</p>
-    <hr>
+<div class="container mt-5">
+    {% for blog in blogs %}
+    <div class="row">
+            <article class="pb-5">
+                <h3 class="mb-4 blog-heading">
+                    {{ blog.heading }}
+                    {% if user.is_superuser %}
+                    <a href="{% url 'edit_blog' blog.id %}"> <i class="fa-solid fa-pen-to-square"></i> </a>
+                    <a href="{% url 'delete_blog' blog.id %}"><i class="fa-solid fa-trash"></i> </a>
+                    {% endif %}
+                </h3>
+                <p class="blog-body">
+                    {{ blog.blog_body }}
+                </p>
+            </article>
+        <hr>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
-
 {% endblock %}
