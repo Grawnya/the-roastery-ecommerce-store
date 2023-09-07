@@ -4,16 +4,26 @@
 
 {% block content %}
 <div id="main-content">
-    <div class="container home-page-container">
-        <svg class="fancy-rectangle">
-            <rect/>
-        </svg>
-        <div id="coffee-home-page">
-            <p id="coffee-home-page-title">
-                Fresh Coffee Picked From Across the World. 
-                <button class="btn btn-brown"><a href="">Order Here</a></button>
-            </p>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="media/coffee-home.jpg" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="media/green-coffee.jpg" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="media/orange-coffee.jpg" class="d-block w-100" alt="Image 3">
+            </div>
         </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
     </div>
 </div>
 <div class="page-sections">

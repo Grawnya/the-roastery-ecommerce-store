@@ -129,11 +129,15 @@ body {
 
 /* main content */
 
-#main-content {
-    background-image: url('/../media/coffee-home.jpg');
-    background-size: cover;
-    height: 70vh;
-    margin: 3rem;
+#myCarousel {
+    max-height: 70vh;
+    overflow: hidden;
+}
+
+.carousel-inner img {
+    max-height: 70vh;
+    height: auto;
+    object-fit: cover;
 }
 
 .home-page-container {
