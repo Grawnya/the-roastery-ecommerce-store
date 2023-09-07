@@ -4,6 +4,7 @@
     --dull_brown: #836d58;
     --beige: #d0d3cc;
     --light_grey: #d8d6d7;
+    --orange: #ed9112;
 }
 
 body {
@@ -46,6 +47,10 @@ body {
 .navbar {
     background-color: var(--khaki);
     
+}
+
+.navbar-nav a:hover {
+    color: var(--orange);
 }
 
 .nav-item a {
@@ -102,11 +107,11 @@ body {
 }
 
 .btn-coffee a:hover {
-    color: var(--beige);
+    color: var(--khaki);
 }
 
 .btn-coffee:hover {
-    background-color: var(--khaki);
+    background-color: var(--orange);
     color: var(--beige);
 }
 
@@ -119,7 +124,7 @@ body {
 }
 
 .btn-shopping:hover {
-    color: var(--dull_brown);
+    color: var(--orange);
 }
 
 /* main content */
@@ -214,7 +219,7 @@ footer a {
 }
 
 .socials i:hover, .section-links li a:hover {
-    color: var(--dull_brown);
+    color: var(--orange);
 }
 
 .row {
