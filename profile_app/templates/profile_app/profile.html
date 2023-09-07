@@ -35,7 +35,9 @@
                 <div class="col">{{ order.order_date }}</div>
                 <div class="col">
                     {% for item in order.items.all %}
-                    {{ item.quantity }} x {{ item.product.name }}
+                    <div class="row">
+                        {{ item.quantity }} x {{ item.product_id.name }}
+                    </div>
                     {% endfor %}
                 </div>
                 <div class="col">{{ order.final_total }}</div>

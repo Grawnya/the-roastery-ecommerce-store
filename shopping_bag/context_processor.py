@@ -15,14 +15,12 @@ def current_shopping_bag_content(request):
     for item_id, quantity in shopping_bag.items():
         product = get_object_or_404(Product, pk=item_id)
         final_value_without_delivery += quantity * product.bag_100g_USD
-        final_value = final_value_without_delivery + delivery_cost  
         item_count += quantity
         
         items_in_shopping_bag.append({'item_id': item_id,
                                       'quantity': quantity,
                                       'product': product})
-    
-    total = final_value - delivery_cost
+    final_value = final_value_without_delivery + delivery_cost  
 
     context = {
         'items_in_shopping_bag': items_in_shopping_bag,
@@ -30,7 +28,7 @@ def current_shopping_bag_content(request):
         'item_count': item_count,
         'shopping_bag': shopping_bag,
         'delivery_cost': delivery_cost,
-        'total': total
+        'total': final_value_without_delivery
     }
 
     return context

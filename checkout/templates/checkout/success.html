@@ -5,15 +5,14 @@
 <div class="container mb-2">
     <div class="row">
         <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Thank You</h2>
-            <hr>
-            <p class="text-black">Your order is below. A confirmation email will be sent to
+            <h2 class="logo-font mb-4 dark-heading">Thank You</h2>
+            <hr class="separator">
+            <p class="text-black dark-body mb-5">Your order is below. A confirmation email will be sent to
                 <strong>{{ order.email }}</strong>.</p>
         </div>
     </div>
     {% for item in order.items.all %}
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-2 mb-1">
             <a href="{% url 'specific_product' item.product_id.id %}">
                 {% if item.product_id.image %}
@@ -24,11 +23,11 @@
             </a>
         </div>
         <div class="col-6">
-            <p class="my-0"><strong>{{ item.product_id.name }}</strong></p>
-            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+            <p class="my-0 mx-2"><strong>{{ item.product_id.name }}</strong></p>
+            <p class="my-0 small text-muted mx-2">Qty: {{ item.quantity }}</p>
         </div>
         <div class="col-3 text-right">
-            <p class="my-0 small text-muted">${{ item.product_id.bag_100g_USD }}</p>
+            <p class="my-0 small text-muted">${{ item.product_id.bag_100g_USD }} per bag</p>
         </div>
     </div>
     {% endfor %}

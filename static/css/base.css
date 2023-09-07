@@ -286,21 +286,21 @@ right: 2rem;
 
 /* card section */
 .card-section {
-    border: 1px solid #ccc;
+    border: 1px solid var(--khaki);
     padding: 20px;
     max-width: 400px;
     margin: 0 auto;
   }
   
   #card-element {
-    border: 1px solid #ccc;
+    border: 1px solid var(--khaki);
     padding: 10px;
-    background-color: var(--dull_brown);
+    background-color: white;
     margin-bottom: 10px;
   }
   
   #card-errors {
-    color: red;
+    color: var(--coffee);
     margin-bottom: 10px;
   }
 
@@ -325,6 +325,10 @@ right: 2rem;
 }
 
 /* allauth forms */
+.form-check-input {
+    width:1rem !important;
+}
+
 .allauth-form {
     color: var(--beige);
     margin-top: 2rem;

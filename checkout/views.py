@@ -36,7 +36,7 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             official_order.original_shopping_bag = json.dumps(shopping_bag)
             official_order.save()
-
+            
             for item_identity, data in shopping_bag.items():
                 try:
                     specific_product = Product.objects.get(id=item_identity)
@@ -47,12 +47,19 @@ def checkout(request):
                             quantity=data,
                         )
                         order_item.save()
+                        official_order.final_total += specific_product.bag_100g_USD * data
                     
+
                 except Product.DoesNotExist:
                     #error message
 
                     official_order.delete()
                     return redirect(reverse('shopping_bag_items'))
+            
+            official_order.final_total += settings.WORLDWIDE_DELIVERY_COST
+            official_order.save()
+
+            print(official_order.final_total)
             return redirect(reverse('success_purchase', args=[official_order.order_id]))
         else:
             pass # issue with form
@@ -112,7 +119,6 @@ def success_purchase(request, order_id):
         profile = WebsiteUser.objects.get(website_user=request.user)
         official_order.profile_id = profile
         official_order.save()
-
         if save_info:
             profile_data = {
                 'profile_phone_number': official_order.phone_number,
