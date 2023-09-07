@@ -37,7 +37,7 @@ class FavouritesForm(forms.ModelForm):
             model = Favourites
             fields = ('birthday', 'coffee_type', 'roast')
             labels = {
-               'birthday': 'birthday',
+               'birthday': 'Birthday',
                'coffee_type': 'Coffee Location',
                'roast': 'Roast Type'
             }

@@ -59,7 +59,6 @@ def checkout(request):
             official_order.final_total += settings.WORLDWIDE_DELIVERY_COST
             official_order.save()
 
-            print(official_order.final_total)
             return redirect(reverse('success_purchase', args=[official_order.order_id]))
         else:
             pass # issue with form
