@@ -11,9 +11,11 @@
     grab your favorite mug, and let's embark on an unforgettable coffee odyssey together!</p>
 <hr class="separator">
 {% if user.is_superuser %}
-<button type="button" class="btn btn-success">
-    <a href="{% url 'create_blog' %}" aria-label="New Blog">Create New Blog</a>
-</button>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-coffee-dark align-items-center">
+        <a href="{% url 'create_blog' %}" aria-label="New Blog">Create New Blog</a>
+    </button>
+</div>
 {% endif %}
 
 <div class="container mt-5">

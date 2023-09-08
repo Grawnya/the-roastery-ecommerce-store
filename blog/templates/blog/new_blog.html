@@ -4,12 +4,14 @@
 
 {% block content %}
     <h2 class="dark-heading">Create New Blog Entry</h2>
-    <form method="POST" action="{% url 'create_blog'%}" enctype="multipart/form-data">
+    <div class="container">
+    <form method="POST" action="{% url 'create_blog'%}" enctype="multipart/form-data" class="col-md-8 offset-2">
         {% csrf_token %}
         {{ form | crispy }}
-        <div class="justify-content-end">
-            <a class="btn btn-outline-black" href="{% url 'blog' %}">Cancel</a>
-            <button class="btn btn-info" type="submit">Create Blog</button>
+        <div class="justify-content-end pb-3">
+            <a class="btn btn-danger" href="{% url 'blog' %}">Cancel</a>
+            <button class="btn btn-coffee-dark" type="submit">Create Blog</button>
         </div>
     </form>
+</div>
 {% endblock %}

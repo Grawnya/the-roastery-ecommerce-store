@@ -9,7 +9,11 @@
             <h2 class="logo-font dark-heading">{{ product.name }}</h2>
             <hr class="separator">
         </div>
-        <small class="text-muted"><a href="{% url 'products' %}">Return to All Products</a></small>
+        <small class="text-muted px-2 py-1">
+            <button class="btn btn-coffee">
+                <a href="{% url 'products' %}">Return to All Products</a>
+            </button>
+        </small>
     </div>
     <div class="row">
         <div class="col-10 offset-1 mb-5">
@@ -89,11 +93,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <button type="submit" value="Add to Bag">Add to Bag</button>
+                            <button class="btn btn-coffee-dark" type="submit" value="Add to Bag">Add to Bag</button>
                         </div>
                     </form>
-                    <div class="row">
-                        <button>Keep Shopping</button>
+                    <div class="row pt-1">
+                        <button class="btn btn-coffee">Keep Shopping</button>
                     </div>
                 </div>
             </div>

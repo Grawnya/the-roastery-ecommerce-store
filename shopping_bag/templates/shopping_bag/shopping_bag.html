@@ -59,8 +59,7 @@
                             </div>
                         </form>
                         <a class="btn btn-success update-item">Update</a>
-                        <a class="btn btn-danger delete-item" id="remove_item_{{ item.product.id }}">Delete <i
-                                class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-danger delete-item" id="remove_item_{{ item.product.id }}">Delete</a>
                     </div>
                 </div>
             </div>
@@ -77,12 +76,15 @@
                 <h4 class="text-end"><strong>Total: ${{ final_value|floatformat:2 }}</strong></h4>
             </div>
             <div class="row justify-content-end mt-2">
-                <button class="text-centre btn btn-warning checkout-button">
-                    <a href="{% url 'checkout' %}">Go to Checkout</a></button>
+                <div class="col-auto">
+                <button class="text-centre btn btn-coffee-dark">
+                    <a href="{% url 'checkout' %}">Go to Checkout</a>
+                </button>
+            </div>
             </div>
             {% else %}
             <p class="lead mb-5 dark-body">Your bag is empty.</p>
-            <p class="text-muted"><a href="{% url 'products' %}">Keep Shopping</a></p>
+            <p class="text-muted mb-5"><a class="btn btn-danger" href="{% url 'products' %}">Keep Shopping</a></p>
             {% endif %}
         </div>
     </div>

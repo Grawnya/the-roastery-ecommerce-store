@@ -100,6 +100,7 @@ body {
     height: 3rem;
     padding: 0 1rem;
     border: 2px solid var(--khaki);
+    align-items: center;
 }
 
 .btn-coffee a {
@@ -114,6 +115,30 @@ body {
 .btn-coffee:hover {
     background-color: var(--orange);
     color: var(--beige);
+}
+
+.btn-coffee-dark {
+    background-color: var(--coffee);
+    border-radius: 0.5rem;
+    height: 3rem;
+    padding: 0 1rem;
+    border: 2px solid var(--coffee);
+    color: var(--beige);
+    align-items: center;
+}
+
+.btn-coffee-dark a {
+    color: var(--beige);
+    font-size: 1.25rem;
+}
+
+.btn-coffee-dark a:hover {
+    color: var(--orange);
+}
+
+.btn-coffee-dark:hover {
+    background-color: var(--khaki);
+    color: var(--orange);
 }
 
 .btn-shopping {
@@ -291,6 +316,13 @@ footer a {
 .product-button a{
     display: block;
     padding: 0.25rem;
+}
+
+.filter-div {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 0.74rem;
 }
 
 .card-img-top {

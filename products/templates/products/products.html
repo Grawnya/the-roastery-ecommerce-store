@@ -12,20 +12,20 @@
                 <a href="{% url 'new_product' %}" aria-label="Add Product">+ Add Product</a>
             </button>
             {% endif %}
-            <!-- set up buttons based on roast and continent -->
-            <h4 class="dark-heading">Filter by:</h2>
-                <button id="by_roast" class="btn btn-coffee">
-                    <a href="{% url 'products' %}?sort=roast&direction=asc" aria-label="Organise by Roast">Roast</a>
-                </button>
-                <button id="by_location" class="btn btn-coffee">
-                    <a href="{% url 'products' %}?sort=location&direction=asc"
-                        aria-label="Organise by Continent">Continent</a>
-                </button>
-                <button id="by_price" class="btn btn-coffee">
-                    <a href="{% url 'products' %}?sort=bag_100g_USD&direction=asc"
-                        aria-label="Organise by Price">Price</a>
-                </button>
-                <hr class="separator">
+            <div class="filter-div">
+            <h4 class="dark-heading">Filter by:</h4>
+            <button id="by_roast" class="btn btn-coffee">
+                <a href="{% url 'products' %}?sort=roast&direction=asc" aria-label="Organise by Roast">Roast</a>
+            </button>
+            <button id="by_location" class="btn btn-coffee">
+                <a href="{% url 'products' %}?sort=location&direction=asc"
+                    aria-label="Organise by Continent">Continent</a>
+            </button>
+            <button id="by_price" class="btn btn-coffee">
+                <a href="{% url 'products' %}?sort=bag_100g_USD&direction=asc" aria-label="Organise by Price">Price</a>
+            </button>
+        </div>
+            <hr class="separator">
         </div>
     </div>
     <div class="row">
