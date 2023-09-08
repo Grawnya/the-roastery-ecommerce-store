@@ -99,6 +99,7 @@ body {
     border-radius: 0.5rem;
     height: 3rem;
     padding: 0 1rem;
+    border: 2px solid var(--khaki);
 }
 
 .btn-coffee a {
