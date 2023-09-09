@@ -6,8 +6,10 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def view_blog(request):
     blogs = Blog.objects.all()
+    timeline = OurStory.objects.all()
     context = {
-        'blogs': blogs
+        'blogs': blogs,
+        'timeline': timeline
     }
     return render(request, 'blog/blog.html', context)
 

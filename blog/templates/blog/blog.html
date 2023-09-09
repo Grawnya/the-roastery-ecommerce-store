@@ -17,7 +17,24 @@
     </button>
 </div>
 {% endif %}
-
+<div class="container mt-5">
+    <div class="container d-none d-lg-block">
+    <h3 class="mb-4 blog-heading">Our Story</h3>
+    <div class="row">
+    {% for event in timeline %}
+    <div class="col">
+        <div class="row our-story-row px-2">
+            <h4>{{event.event}}</h4>
+        </div>
+        <hr>
+        <div class="row px-2">
+            <h3>{{event.date_occurred}}</h3>
+        </div>
+    </div>
+    {% endfor %}
+    <hr class="separator">
+</div>
+</div>
 <div class="container mt-5">
     {% for blog in blogs %}
     <div class="row">

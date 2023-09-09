@@ -450,6 +450,10 @@ right: 2rem;
 
 /* blog section */
 
+.our-story-row {
+    height: 5rem;
+}
+
 .blog-heading {
     text-align: center;
     font-weight: bold;
