@@ -27,7 +27,7 @@ def all_products(request):
             if 'roast' in search:
                 search = search.replace('roast', '')
             if not search:
-                #error message
+                messages.error(request, 'An error with the search bar. Please try again later.')
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=search) | Q(review__icontains=search) | Q(roast__icontains=search)
@@ -59,7 +59,7 @@ def specific_product(request, product_id):
 def create_new_product(request):
 
     if not request.user.is_superuser:
-        pass #error message
+        messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -67,10 +67,10 @@ def create_new_product(request):
 
         if new_product_form.is_valid():
             new_product = new_product_form.save()
-            #success
+            messages.success(request, 'New product added.')
             return redirect(reverse('specific_product', args=[new_product.id]))
         else:
-            pass #can't find error
+            messages.error(request, 'An error occurred. Please try again later.')
     else:
         new_product_form = ProductForm()
 
@@ -86,7 +86,7 @@ def create_new_product(request):
 def edit_product(request, product_id):
 
     if not request.user.is_superuser:
-        pass #error message
+        messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('home'))
 
     specific_product = get_object_or_404(Product, pk=product_id)
@@ -95,10 +95,10 @@ def edit_product(request, product_id):
         
         if product_form.is_valid():
             product_form.save()
-            #success message
+            messages.success(request, 'Product has been successfully updated.')
             return redirect(reverse('specific_product', args=[specific_product.id]))
         else:
-           pass #error message
+           messages.error(request, 'An error occurred. Please try again later.')
     else:
         product_form = ProductForm(instance=specific_product)
 
@@ -115,10 +115,10 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
 
     if not request.user.is_superuser:
-        pass #error message
+        messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('home'))
 
     specific_product = get_object_or_404(Product, pk=product_id)
     specific_product.delete()
-    # success message
+    messages.success(request, 'Product has been deleted.')
     return redirect(reverse('products'))
