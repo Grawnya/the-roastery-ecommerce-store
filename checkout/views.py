@@ -5,6 +5,7 @@ from .forms import *
 from products.models import *
 from django.views.decorators.http import require_POST
 from django.conf import settings
+from django.contrib import messages
 
 import stripe
 import json
@@ -51,7 +52,7 @@ def checkout(request):
                     
 
                 except Product.DoesNotExist:
-                    #error message
+                    messages.error(request, 'Product does not exist.')
 
                     official_order.delete()
                     return redirect(reverse('shopping_bag_items'))
@@ -61,11 +62,11 @@ def checkout(request):
 
             return redirect(reverse('success_purchase', args=[official_order.order_id]))
         else:
-            pass # issue with form
+            messages.error(request, 'An error occurred with the form. Please try again later.')
     else:
         shopping_bag = request.session.get('shopping_bag', {})
         if not shopping_bag:
-            # message nothing in bag
+            messages.error(request, 'Nothing is in the shopping bag.')
             return redirect(reverse('products'))
 
         active_bag = current_shopping_bag_content(request)
@@ -97,7 +98,7 @@ def checkout(request):
             form_checkout = OrderForm()
 
     if not stripe_public_key:
-        pass #error message
+        messages.error(request, 'An error occurred with the stripe public key. Please contact the page admin.')
 
     template = 'checkout/checkout_page.html'
     context = {
@@ -110,7 +111,6 @@ def checkout(request):
 
 def success_purchase(request, order_id):
 
-    # if user wants to save info
     save_info = request.session.get('save_info')
     official_order = get_object_or_404(Order, order_id=order_id)
 
@@ -133,7 +133,7 @@ def success_purchase(request, order_id):
             if website_user_form.is_valid():
                 website_user_form.save()
 
-    # success message
+    messages.success(request, 'Successful purchase!.')
 
     if 'shopping_bag' in request.session:
         del request.session['shopping_bag']
@@ -157,5 +157,5 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        #error message
+        messages.error(request, e)
         return HttpResponse(content=e, status=400)
