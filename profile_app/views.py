@@ -15,18 +15,15 @@ def profile(request):
         profile_form = WebsiteUserForm(request.POST, instance=profile)
         if profile_form.is_valid():
             profile_form.save()
-            # success
+            messages.error(request, 'Profile details have been saved.')
         else:
-            pass
-        # error message
+            messages.error(request, 'An error occurred. Please try again later.')
 
         favourites_form = FavouritesForm(request.POST, instance=profile)
         if favourites_form.is_valid():
             favourites_form.save()
-            # success
         else:
-            pass
-        # error message
+            messages.error(request, 'An error occurred. Please try again later.')
     else:
         profile_form = WebsiteUserForm(instance=profile)
         favourites_form = FavouritesForm(instance=profile)
