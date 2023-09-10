@@ -33,7 +33,7 @@ def update_item(request, item_id):
 
     shopping_bag = request.session.get('shopping_bag', {})
 
-    if order_quantity > 1:
+    if order_quantity > 0:
         shopping_bag[item_id] = order_quantity
         messages.success(request, 'Shopping bag has been updated.')
     else:
