@@ -13,19 +13,12 @@
             </div>
         </div>
 
-        {% if final_value and not on_profile_page %}
-        <p class="bg-white text-black py-1">{{ item_count }} Items in your Bag!</p>
+        {% if final_value and not on_profile_page and items_in_shopping_bag %}
+        <p class="bg-white text-black py-1">{{ item_count }} in Shopping Bag</p>
         <div class="toast-structure">
             {% for item in items_in_shopping_bag %}
             <div class="row">
-                <div class="col-4 my-1">
-                    {% if item.product.image %}
-                    <img class="w-80" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                    {% else %}
-                    <img class="w-80" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                    {% endif %}
-                </div>
-                <div class="col-8">
+                <div class="col-12">
                     <p><strong>{{ item.product.name }}</strong></p>
                     <p class="text-muted">Quantity: {{ item.quantity }}</p>
                 </div>
