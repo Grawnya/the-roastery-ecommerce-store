@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% endblock %}
+
+{% block inner_content %}
+<h1 class="dark-heading">Error 500</h1>
+
+<p class="dark-body mb-5">An error has occurred. Try again later.</p>
+<a href="{% url 'home' %}">
+  <button class="mb-5 btn btn-coffee">Home</button>
+</a>
+
+{% endblock %}

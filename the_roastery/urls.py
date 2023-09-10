@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import handler400, handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,3 +29,6 @@ urlpatterns = [
     path('profile/', include('profile_app.urls')),
     path('blog/', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'home.views.error_404'
+handler500 = 'home.views.error_500'
