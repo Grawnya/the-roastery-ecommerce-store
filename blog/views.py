@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 def view_blog(request):
@@ -17,13 +18,14 @@ def view_blog(request):
 def create_blog(request):
 
     if not request.user.is_superuser:
-        pass #error message
+        messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('blog'))
 
     if request.method == 'POST':
         blog_form = BlogForm(request.POST)
         if blog_form.is_valid():
             blog_form.save()
+            messages.success(request, 'Blog post created successfully.')
             return redirect('blog')
     else:
         blog_form = BlogForm()
@@ -37,7 +39,7 @@ def create_blog(request):
 def edit_blog(request, blog_id):
 
     if not request.user.is_superuser:
-        pass #error message
+        messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('blog'))
 
     edit_blog = get_object_or_404(Blog, id=blog_id)
@@ -45,6 +47,7 @@ def edit_blog(request, blog_id):
         blog_form = BlogForm(request.POST, instance=edit_blog)
         if blog_form.is_valid():
             blog_form.save()
+            messages.success(request, 'Blog post edited successfully.')
             return redirect('blog')
     else:
         blog_form = BlogForm(instance=edit_blog)
@@ -59,10 +62,11 @@ def edit_blog(request, blog_id):
 def delete_blog(request, blog_id):
 
     if not request.user.is_superuser:
-        pass #error message
+        messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('blog'))
 
     delete_blog = get_object_or_404(Blog, id=blog_id)
     delete_blog.delete()
+    messages.success(request, 'Blog post deleted successfully.')
     return redirect(reverse('blog'))
     
