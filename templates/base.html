@@ -240,6 +240,13 @@
     var toastElement = toastOnPage.get(0);
     var toast = new bootstrap.Toast(toastElement);
     toast.show();
+
+    var closeToast = toastElement.querySelector('.btn-close');
+        if (closeToast) {
+            closeToast.addEventListener('click', function () {
+                toast.hide();
+            });
+        }
   }
   </script>
   {% endblock %}
