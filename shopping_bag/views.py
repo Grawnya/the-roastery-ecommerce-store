@@ -17,7 +17,7 @@ def add_item(request, item_id):
    
     if item_id in list(shopping_bag.keys()):
         shopping_bag[item_id] += order_quantity
-        # updated amount from original value success message
+        messages.success(request, 'Shopping bag has been updated.')
     else:
         shopping_bag[item_id] = order_quantity
         messages.success(request, f"{shopping_bag_item.name} added to shopping bag")
@@ -35,10 +35,10 @@ def update_item(request, item_id):
 
     if order_quantity > 1:
         shopping_bag[item_id] = order_quantity
-        # successly updated
+        messages.success(request, 'Shopping bag has been updated.')
     else:
         shopping_bag.pop(item_id)
-        # successly removed
+        messages.success(request, 'Shopping bag has been updated.')
 
     request.session['shopping_bag'] = shopping_bag
     return redirect(reverse('shopping_bag_items'))
@@ -50,11 +50,11 @@ def delete_item(request, item_id):
         shopping_bag_item = get_object_or_404(Product, pk=item_id)
         shopping_bag = request.session.get('shopping_bag', {})
         shopping_bag.pop(item_id)
-            # successly removed
+        messages.success(request, 'Shopping bag has been updated.')
 
         request.session['shopping_bag'] = shopping_bag
         return HttpResponse(status=200)
     
     except:
-        # message error, please return later
+        messages.error(request, 'An error occurred. Please try again later.')
         return HttpResponse(status=500)
