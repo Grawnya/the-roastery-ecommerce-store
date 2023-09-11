@@ -33,10 +33,11 @@ class Stripe_Webhook_Handler:
         """
         handle the succssful payment intent events
         """
+
         payment_intent = event.data.object
         pid = payment_intent.id
-        shopping_bag = payment_intent.metadata.bag
-        info = payment_intent.metadata.save_info
+        shopping_bag = payment_intent.metadata.shopping_bag
+        save_info = payment_intent.metadata.save_info
 
         stripe_charge = stripe.Charge.retrieve(
             payment_intent.latest_charge
@@ -51,7 +52,7 @@ class Stripe_Webhook_Handler:
                 shipping_details.address[field] = None
 
         user_profile = None
-        username = intent.metadata.username
+        username = payment_intent.metadata.username
         if username != 'AnonymousUser':
             user_profile = WebsiteUser.objects.get(website_user__username=username)
             if save_info:
@@ -114,7 +115,7 @@ class Stripe_Webhook_Handler:
                 for item_identity, data in json.loads(shopping_bag).items():
                     specific_product = Product.objects.get(id=item_identity)
                     if isinstance(data, int):
-                        order_item = OrderLineItem(
+                        order_item = OrderItem(
                             product_id=specific_product,
                             order_id=order,
                             quantity=data,
@@ -127,7 +128,7 @@ class Stripe_Webhook_Handler:
                     content=f'Error with Order. Try again Later.',
                     status=500)
 
-        self._send_email(order)
+        # self._send_email(order)
         return HttpResponse(
             content=(f'Order created in webhook'),
             status=200)
