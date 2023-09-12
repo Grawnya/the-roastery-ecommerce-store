@@ -32,12 +32,12 @@ def checkout(request):
         form_checkout = OrderForm(checkout_form)
 
         if form_checkout.is_valid():
-
             official_order = form_checkout.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             official_order.original_shopping_bag = json.dumps(shopping_bag)
             official_order.save()
             
+            final_value_bag = 0 
             for item_identity, data in shopping_bag.items():
                 try:
                     specific_product = Product.objects.get(id=item_identity)
@@ -47,9 +47,8 @@ def checkout(request):
                             order_id=official_order,
                             quantity=data,
                         )
-                        order_item.save()
-                        official_order.final_total += specific_product.bag_100g_USD * data
-                    
+                        final_value_bag += specific_product.bag_100g_USD * data
+                        order_item.save()  
 
                 except Product.DoesNotExist:
                     messages.error(request, 'Product does not exist.')
@@ -57,7 +56,7 @@ def checkout(request):
                     official_order.delete()
                     return redirect(reverse('shopping_bag_items'))
             
-            official_order.final_total += settings.WORLDWIDE_DELIVERY_COST
+            official_order.final_total = settings.WORLDWIDE_DELIVERY_COST + final_value_bag
             official_order.save()
 
             return redirect(reverse('success_purchase', args=[official_order.order_id]))

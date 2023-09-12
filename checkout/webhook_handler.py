@@ -22,13 +22,6 @@ class Stripe_Webhook_Handler:
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
-    def _send_email(self, order):
-        customer_email = order.email
-        subject = render_to_string('checkout/email/email_subject.txt', {'order': order})
-        body = render_to_string('checkout/email/email_body.txt', {'order': order})
-
-        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [customer_email])
-
     def handle_payment_intent_succeeded(self, event):
         """
         handle the succssful payment intent events
@@ -45,7 +38,7 @@ class Stripe_Webhook_Handler:
 
         billing_details = stripe_charge.billing_details
         shipping_details = payment_intent.shipping
-        overall_total = round(stripe_charge.amount / 100, 2)
+        overall_total = stripe_charge.amount / 100
 
         for field, value in shipping_details.address.items():
             if value == "":
@@ -81,7 +74,6 @@ class Stripe_Webhook_Handler:
                     country__iexact=shipping_details.address.country,
                     final_total=overall_total,
                     original_shopping_bag=shopping_bag,
-                    stripe_pid=pid,
                 )
                 order_exists = True
                 break
@@ -91,7 +83,6 @@ class Stripe_Webhook_Handler:
                 time.sleep(1)
 
         if order_exists:
-            self._send_email(order)
             return HttpResponse(
                 content=(f'Webhook received - Order in system'),
                 status=200)
@@ -128,7 +119,6 @@ class Stripe_Webhook_Handler:
                     content=f'Error with Order. Try again Later.',
                     status=500)
 
-        # self._send_email(order)
         return HttpResponse(
             content=(f'Order created in webhook'),
             status=200)

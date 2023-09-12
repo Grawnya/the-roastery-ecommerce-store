@@ -1,5 +1,4 @@
-from django.shortcuts import render
-
+from django.shortcuts import render 
 
 def index(request):
     '''
@@ -9,8 +8,8 @@ def index(request):
 
 def error_404(request, exception):
     '''404 page'''
-    return render(request, 'home/404.html')
+    return render(request, '404.html')
 
 def error_500(request):
     '''500 page'''
-    return render(request, 'home/500.html', data)
+    return render(request, '500.html', data)
