@@ -2,9 +2,9 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 from django.conf import settings
 
-def current_shopping_bag_content(request):
-    """ shopping bag contents in the current open session """
 
+def current_shopping_bag_content(request):
+    """Shopping bag contents in the current open session."""
     items_in_shopping_bag = []
     final_value = 0
     final_value_without_delivery = 0
@@ -16,11 +16,11 @@ def current_shopping_bag_content(request):
         product = get_object_or_404(Product, pk=item_id)
         final_value_without_delivery += quantity * product.bag_100g_USD
         item_count += quantity
-        
+
         items_in_shopping_bag.append({'item_id': item_id,
                                       'quantity': quantity,
                                       'product': product})
-    final_value = final_value_without_delivery + delivery_cost  
+    final_value = final_value_without_delivery + delivery_cost
 
     context = {
         'items_in_shopping_bag': items_in_shopping_bag,
