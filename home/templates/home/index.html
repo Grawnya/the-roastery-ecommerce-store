@@ -7,7 +7,7 @@
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="media/coffee-home.jpg" class="d-block w-100" alt="Coffee Beans">
+                <img src="{% media 'coffee-home.jpg' %}" class="d-block w-100" alt="Coffee Beans">
                 <a href="{% url 'products' %}">
                     <div class="coffee-center-block">
                         <h2 class="fw-bold">Products</h2>
@@ -16,7 +16,7 @@
                 </a>
             </div>
             <div class="carousel-item">
-                <img src="media/green-coffee.jpg" class="d-block w-100" alt="Coffee Farm">
+                <img src="{% media 'green-coffee.jpg' %}" class="d-block w-100" alt="Coffee Farm">
                 <a href="{% url 'blog' %}">
                     <div class="coffee-center-block">
                         <h2 class="fw-bold">Our Story</h2>
@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="carousel-item">
-                <img src="media/orange-coffee.jpg" class="d-block w-100" alt="Image 3">
+                <img src="{% media 'orange-coffee.jpg' %}" class="d-block w-100" alt="Coffee Growing">
                 {% if request.user.is_authenticated %}
                 <a href="{% url 'profile' %}">
                     <div class="coffee-center-block">
@@ -58,7 +58,7 @@
         <div class="col-12 col-md-6 grid-item">
             <a href="{% url 'blog' %}">
                 <div class="home-page-mini-section" id="our-story-section">
-                    <img src="media/beige-coffee.jpg" alt="Coffee from Machine">
+                    <img src="{% media 'beige-coffee.jpg' %}" alt="Coffee from Machine">
                     <h3>Our Story</h3>
                     <div id="overlay-orange" class="overlay"></div>
                 </div>
@@ -67,7 +67,7 @@
         <div class="col-12 col-md-6 grid-item">
             <a href="{% url 'products' %}?sort=location&direction=asc">
                 <div class="home-page-mini-section" id="by-country-section">
-                    <img src="media/brown-coffee.jpeg" alt="World Map">
+                    <img src="{% media 'brown-coffee.jpeg' %}" alt="World Map">
                     <h3>By Continent</h3>
                     <div id="overlay-green" class="overlay"></div>
                 </div>
@@ -78,7 +78,7 @@
         <div class="col-12 col-md-6 grid-item">
             <a href="{% url 'products' %}?sort=roast&direction=asc">
                 <div class="home-page-mini-section" id="by-roast-section">
-                    <img src="media/kona_bourbon_pointu_laurina.png" alt="Coffee Cup">
+                    <img src="{% media 'kona_bourbon_pointu_laurina.png' %}" alt="Coffee Cup">
                     <h3>By Roast</h3>
                     <div id="overlay-blue" class="overlay"></div>
                 </div>
@@ -87,7 +87,7 @@
         <div class="col-12 col-md-6 grid-item">
             <a href="{% url 'products' %}">
                 <div class="home-page-mini-section" id="all-products-section">
-                    <img src="media/costa_rica_tarrazu.png" alt="Costa Rice Coffee Farm">
+                    <img src="{% media 'costa_rica_tarrazu.png' %}" alt="Costa Rice Coffee Farm">
                     <h3>All Products</h3>
                     <div id="overlay-brown" class="overlay"></div>
                 </div>
