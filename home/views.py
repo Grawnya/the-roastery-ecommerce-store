@@ -13,4 +13,7 @@ def error_404(request, exception):
 
 def error_500(request):
     """Show 500 page."""
-    return render(request, '500.html', data)
+    context = {
+        'error_message': 'An internal server error occurred.',
+    }
+    return render(request, '500.html', context)
