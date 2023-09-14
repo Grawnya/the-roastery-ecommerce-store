@@ -28,22 +28,29 @@ coffee_choices = (
     ('kenya', 'Kenya'),
     )
 
+
 class Favourites(models.Model):
+    """User's Favourites model."""
+
     website_user = models.OneToOneField(User, on_delete=models.CASCADE)
     birthday = models.DateField()
     coffee_type = models.CharField(max_length=50, choices=coffee_choices,
-                                 default='colombia',
-                                            null=True, blank=True)
+                                   default='colombia', null=True, blank=True)
     roast = models.CharField(max_length=30, choices=roast_choices,
-                                 default='light',
-                                            null=True, blank=True)
-    
+                             default='light', null=True, blank=True)
+
     def __str__(self):
-        return f'I love {self.roast} roasted coffee from {self.coffee_type}!' 
+        """Representation of Favourites Model."""
+        return f'I love {self.roast} roasted coffee from {self.coffee_type}!'
+
 
 class WebsiteUser(models.Model):
-    website_user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
-    profile_full_name = models.CharField(max_length=50, null=False, blank=False)
+    """WebsiteUser's details."""
+
+    website_user = models.OneToOneField(User, on_delete=models.CASCADE,
+                                        related_name='userprofile')
+    profile_full_name = models.CharField(max_length=50, null=False,
+                                         blank=False)
     profile_email = models.EmailField(max_length=254, null=False, blank=False)
     profile_phone_number = models.CharField(max_length=30,
                                             null=True, blank=True)
@@ -61,11 +68,12 @@ class WebsiteUser(models.Model):
                                    null=True, blank=True)
 
     def __str__(self):
+        """Representation of WebsiteUser Model."""
         return self.website_user.username
 
 
 @receiver(post_save, sender=User)
 def deal_with_user_profile(sender, instance, created, **kwargs):
+    """Dealing with a user profile."""
     if created:
         WebsiteUser.objects.create(website_user=instance)
-    # instance.userprofile.save()

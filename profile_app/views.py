@@ -9,6 +9,7 @@ from checkout.models import Order
 
 @login_required
 def profile(request):
+    """Create/update a profile."""
     profile = get_object_or_404(WebsiteUser, website_user=request.user)
 
     if request.method == 'POST':
@@ -17,13 +18,15 @@ def profile(request):
             profile_form.save()
             messages.error(request, 'Profile details have been saved.')
         else:
-            messages.error(request, 'An error occurred. Please try again later.')
+            messages.error(request, 'An error occurred.'
+                           ' Please try again later.')
 
         favourites_form = FavouritesForm(request.POST, instance=profile)
         if favourites_form.is_valid():
             favourites_form.save()
         else:
-            messages.error(request, 'An error occurred. Please try again later.')
+            messages.error(request, 'An error occurred.'
+                           ' Please try again later.')
     else:
         profile_form = WebsiteUserForm(instance=profile)
         favourites_form = FavouritesForm(instance=profile)
@@ -39,7 +42,9 @@ def profile(request):
 
     return render(request, template, context)
 
+
 def users_orders(request, order_id):
+    """See user's orders on profile page."""
     order = get_object_or_404(Order, order_id=order_id)
 
     template = 'checkout/success.html'

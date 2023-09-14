@@ -3,11 +3,16 @@ from .models import *
 
 
 class WebsiteUserForm(forms.ModelForm):
+    """Form for the WebsiteUser model."""
+
     class Meta:
+        """Format of the WebsiteUserForm."""
+
         model = WebsiteUser
         exclude = ('website_user',)
 
     def __init__(self, *args, **kwargs):
+        """Create instance of WebsiteUserForm."""
         super().__init__(*args, **kwargs)
         placeholders = {
             'profile_full_name': 'Full Name',
@@ -31,16 +36,20 @@ class WebsiteUserForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
 
+
 class FavouritesForm(forms.ModelForm):
-    
+    """Form for the Favourites model."""
+
     class Meta:
-            model = Favourites
-            fields = ('birthday', 'coffee_type', 'roast')
-            labels = {
-               'birthday': 'Birthday',
-               'coffee_type': 'Coffee Location',
-               'roast': 'Roast Type'
-            }
-            widgets = {
-            'birthday': forms.DateInput(attrs={'type': 'date'}),
-            }
+        """Format of the FavouriteForm."""
+
+        model = Favourites
+        fields = ('birthday', 'coffee_type', 'roast')
+        labels = {
+            'birthday': 'Birthday',
+            'coffee_type': 'Coffee Location',
+            'roast': 'Roast Type'
+        }
+        widgets = {
+                   'birthday': forms.DateInput(attrs={'type': 'date'}),
+        }
