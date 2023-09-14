@@ -13,18 +13,19 @@
             </button>
             {% endif %}
             <div class="filter-div">
-            <h4 class="dark-heading">Filter by:</h4>
-            <button id="by_roast" class="btn btn-coffee">
-                <a href="{% url 'products' %}?sort=roast&direction=asc" aria-label="Organise by Roast">Roast</a>
-            </button>
-            <button id="by_location" class="btn btn-coffee">
-                <a href="{% url 'products' %}?sort=location&direction=asc"
-                    aria-label="Organise by Continent">Continent</a>
-            </button>
-            <button id="by_price" class="btn btn-coffee">
-                <a href="{% url 'products' %}?sort=bag_100g_USD&direction=asc" aria-label="Organise by Price">Price</a>
-            </button>
-        </div>
+                <h4 class="dark-heading">Filter by:</h4>
+                <button id="by_roast" class="btn btn-coffee">
+                    <a href="{% url 'products' %}?sort=roast&direction=asc" aria-label="Organise by Roast">Roast</a>
+                </button>
+                <button id="by_location" class="btn btn-coffee">
+                    <a href="{% url 'products' %}?sort=location&direction=asc"
+                        aria-label="Organise by Continent">Continent</a>
+                </button>
+                <button id="by_price" class="btn btn-coffee">
+                    <a href="{% url 'products' %}?sort=bag_100g_USD&direction=asc"
+                        aria-label="Organise by Price">Price</a>
+                </button>
+            </div>
             <hr class="separator">
         </div>
     </div>

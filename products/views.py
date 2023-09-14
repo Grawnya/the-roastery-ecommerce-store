@@ -5,8 +5,9 @@ from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+
 def all_products(request):
-    
+    """Show all products."""
     products = Product.objects.all()
     sort = None
     direction = None
@@ -27,10 +28,11 @@ def all_products(request):
             if 'roast' in search:
                 search = search.replace('roast', '')
             if not search:
-                messages.error(request, 'An error with the search bar. Please try again later.')
+                messages.error(request, 'An error with the search bar.'
+                               ' Please try again later.')
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=search) | Q(review__icontains=search) | Q(roast__icontains=search)
+            queries = Q(name__icontains=search) | Q(review__icontains=search) | Q(roast__icontains=search) # noqa
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -45,7 +47,7 @@ def all_products(request):
 
 
 def specific_product(request, product_id):
-
+    """Show a specific product's page."""
     specific_product = get_object_or_404(Product, pk=product_id)
 
     context = {
@@ -57,7 +59,7 @@ def specific_product(request, product_id):
 
 @login_required
 def create_new_product(request):
-
+    """Create a new product."""
     if not request.user.is_superuser:
         messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('home'))
@@ -68,37 +70,44 @@ def create_new_product(request):
         if new_product_form.is_valid():
             new_product = new_product_form.save()
             messages.success(request, 'New product added.')
-            return redirect(reverse('specific_product', args=[new_product.id]))
+            return redirect(reverse('specific_product',
+                            args=[new_product.id]))
         else:
-            messages.error(request, 'An error occurred. Please try again later.')
+            messages.error(request, 'An error occurred.'
+                           ' Please try again later.')
     else:
         new_product_form = ProductForm()
 
     template = 'products/new_product.html'
-    
+
     context = {
         'form': new_product_form,
     }
 
     return render(request, template, context)
 
+
 @login_required
 def edit_product(request, product_id):
-
+    """Edit a specific product."""
     if not request.user.is_superuser:
         messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('home'))
 
     specific_product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
-        product_form = ProductForm(request.POST, request.FILES, instance=specific_product)
-        
+        product_form = ProductForm(request.POST, request.FILES,
+                                   instance=specific_product)
+
         if product_form.is_valid():
             product_form.save()
-            messages.success(request, 'Product has been successfully updated.')
-            return redirect(reverse('specific_product', args=[specific_product.id]))
+            messages.success(request,
+                             'Product has been successfully updated.')
+            return redirect(reverse('specific_product',
+                            args=[specific_product.id]))
         else:
-           messages.error(request, 'An error occurred. Please try again later.')
+            messages.error(request, 'An error occurred.'
+                           ' Please try again later.')
     else:
         product_form = ProductForm(instance=specific_product)
 
@@ -113,7 +122,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-
+    """Delete a specific product."""
     if not request.user.is_superuser:
         messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('home'))
