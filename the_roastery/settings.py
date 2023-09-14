@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '8000-grawnya-theroasteryecom-00q25krzmmw.ws-eu104.gitpod.io']
+ALLOWED_HOSTS = ['localhost', '8000-grawnya-theroasteryecom-00q25krzmmw.ws-eu104.gitpod.io', 'the_roastery.herokuapp.com']
 
 # Application definition
 
@@ -52,6 +52,9 @@ INSTALLED_APPS = [
     'profile_app',
     'blog',
 ]
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
@@ -111,11 +114,15 @@ WSGI_APPLICATION = 'the_roastery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 
@@ -177,5 +184,5 @@ STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
 LOGIN_REDIRECT_URL = 'home'
 
 # email
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # change from console to smtp when doing google
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'contact@theroastery.com'
