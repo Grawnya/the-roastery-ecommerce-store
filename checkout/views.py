@@ -10,7 +10,9 @@ from django.contrib import messages
 import stripe
 import json
 
+
 def checkout(request):
+    """Checkout by making order and paying for it."""
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -36,8 +38,8 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             official_order.original_shopping_bag = json.dumps(shopping_bag)
             official_order.save()
-            
-            final_value_bag = 0 
+
+            final_value_bag = 0
             for item_identity, data in shopping_bag.items():
                 try:
                     specific_product = Product.objects.get(id=item_identity)
@@ -48,20 +50,22 @@ def checkout(request):
                             quantity=data,
                         )
                         final_value_bag += specific_product.bag_100g_USD * data
-                        order_item.save()  
+                        order_item.save()
 
                 except Product.DoesNotExist:
                     messages.error(request, 'Product does not exist.')
 
                     official_order.delete()
                     return redirect(reverse('shopping_bag_items'))
-            
+
             official_order.final_total = settings.WORLDWIDE_DELIVERY_COST + final_value_bag
             official_order.save()
 
-            return redirect(reverse('success_purchase', args=[official_order.order_id]))
+            return redirect(reverse('success_purchase',
+                            args=[official_order.order_id]))
         else:
-            messages.error(request, 'An error occurred with the form. Please try again later.')
+            messages.error(request, 'An error occurred with the form.'
+                           ' Please try again later.')
     else:
         shopping_bag = request.session.get('shopping_bag', {})
         if not shopping_bag:
@@ -76,7 +80,7 @@ def checkout(request):
             amount=stripe_overall_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        
+
         if request.user.is_authenticated:
             try:
                 profile = WebsiteUser.objects.get(website_user=request.user)
@@ -97,7 +101,8 @@ def checkout(request):
             form_checkout = OrderForm()
 
     if not stripe_public_key:
-        messages.error(request, 'An error occurred with the stripe public key. Please contact the page admin.')
+        messages.error(request, 'An error occurred with the stripe public key.'
+                       ' Please contact the page admin.')
 
     template = 'checkout/checkout_page.html'
     context = {
@@ -108,8 +113,9 @@ def checkout(request):
 
     return render(request, template, context)
 
-def success_purchase(request, order_id):
 
+def success_purchase(request, order_id):
+    """Tell the user that the purchase was successful."""
     save_info = request.session.get('save_info')
     official_order = get_object_or_404(Order, order_id=order_id)
 
@@ -128,7 +134,8 @@ def success_purchase(request, order_id):
                 'profile_country': official_order.country,
             }
 
-            website_user_form = WebsiteUserForm(profile_data, instance=profile)
+            website_user_form = WebsiteUserForm(profile_data,
+                                                instance=profile)
             if website_user_form.is_valid():
                 website_user_form.save()
 
@@ -141,11 +148,13 @@ def success_purchase(request, order_id):
     context = {
         'order': official_order,
     }
-        
+
     return render(request, template, context)
+
 
 @require_POST
 def cache_checkout_data(request):
+    """Cache Checkout data."""
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY

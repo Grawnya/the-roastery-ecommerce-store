@@ -3,14 +3,19 @@ from .models import *
 
 
 class OrderForm(forms.ModelForm):
+    """Order Form."""
+
     class Meta:
+        """Meta Details of the Order Form."""
+
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',
-                  'town_or_city', 'postcode', 'county', 
+                  'town_or_city', 'postcode', 'county',
                   'country',)
 
     def __init__(self, *args, **kwargs):
+        """Initialize a new instance of OrderForm."""
         super().__init__(*args, **kwargs)
         placeholders = {
             'full_name': 'Full Name',

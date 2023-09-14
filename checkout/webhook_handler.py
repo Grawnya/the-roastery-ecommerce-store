@@ -9,24 +9,22 @@ import time
 from products.models import *
 from .models import *
 
+
 class Stripe_Webhook_Handler:
+    """Handle Stripe webhook."""
 
     def __init__(self, request):
+        """Initialize a new instance of Stripe Webhook handler class."""
         self.request = request
 
     def handle_event(self, event):
-        """
-        Handle a generic webhook event
-        """
+        """Handle a generic webhook event."""
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
     def handle_payment_intent_succeeded(self, event):
-        """
-        handle the succssful payment intent events
-        """
-
+        """Handle the succssful payment intent events."""
         payment_intent = event.data.object
         pid = payment_intent.id
         shopping_bag = payment_intent.metadata.shopping_bag
@@ -124,9 +122,7 @@ class Stripe_Webhook_Handler:
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):
-        """
-        payment_intent.payment_failed handling
-        """
+        """Handle payment_intent.payment_failed."""
         return HttpResponse(
             content=f'Payment Failed: {event["type"]}',
             status=200)

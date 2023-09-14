@@ -8,11 +8,11 @@ from checkout.webhook_handler import *
 import stripe
 # Modified from: https://stripe.com/docs/payments/handling-payment-events
 
+
 @require_POST
 @csrf_exempt
 def webhook(request):
-    """Stripe webhook listen"""
-
+    """Stripe webhook listen."""
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
