@@ -4,8 +4,9 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-# Create your views here.
+
 def view_blog(request):
+    """View all blogs."""
     blogs = Blog.objects.all()
     timeline = OurStory.objects.all()
     context = {
@@ -14,9 +15,10 @@ def view_blog(request):
     }
     return render(request, 'blog/blog.html', context)
 
+
 @login_required
 def create_blog(request):
-
+    """Create a new blog."""
     if not request.user.is_superuser:
         messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('blog'))
@@ -35,9 +37,10 @@ def create_blog(request):
     }
     return render(request, 'blog/new_blog.html', context)
 
+
 @login_required
 def edit_blog(request, blog_id):
-
+    """Edit a blog using it's ID."""
     if not request.user.is_superuser:
         messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('blog'))
@@ -58,9 +61,10 @@ def edit_blog(request, blog_id):
     }
     return render(request, 'blog/edit_blog.html', context)
 
+
 @login_required
 def delete_blog(request, blog_id):
-
+    """Delete a blog using it's ID."""
     if not request.user.is_superuser:
         messages.error(request, 'An error occurred. Please try again later.')
         return redirect(reverse('blog'))
@@ -69,4 +73,3 @@ def delete_blog(request, blog_id):
     delete_blog.delete()
     messages.success(request, 'Blog post deleted successfully.')
     return redirect(reverse('blog'))
-    
