@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://the-roastery-1abb0b0a677e.herokuapp.com/sitemap.xml
