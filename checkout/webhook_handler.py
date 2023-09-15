@@ -99,7 +99,6 @@ class Stripe_Webhook_Handler:
                     postcode=shipping_details.address.postal_code,
                     country=shipping_details.address.country,
                     original_shopping_bag=shopping_bag,
-                    stripe_pid=pid,
                 )
                 for item_identity, data in json.loads(shopping_bag).items():
                     specific_product = Product.objects.get(id=item_identity)
