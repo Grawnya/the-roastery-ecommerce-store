@@ -2,14 +2,13 @@
 
 {% load i18n %}
 
-{% block head_title %}{% endblock %}
-
-{% block inner_content %}
+{% block content %}
 <h1 class="dark-heading">Error 404</h1>
-
-<p class="dark-body mb-5">Please go back to the home page.</p>
-<a href="{% url 'home' %}">
-  <button class="mb-5 btn btn-coffee">Home</button>
-</a>
+<div class="container">
+  <p class="dark-body mb-5">Please go back to the home page.</p>
+  <a href="{% url 'home' %}">
+    <button class="mb-5 btn btn-coffee">Home</button>
+  </a>
+</div>
 
 {% endblock %}
