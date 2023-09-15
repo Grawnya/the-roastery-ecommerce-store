@@ -8,9 +8,9 @@ def index(request):
 
 def error_404(request, exception):
     """Show 404 page."""
-    return render(request, '404.html')
+    return render(request, 'home/404.html')
 
 
 def error_500(request):
     """Show 500 page."""
-    return render(request, '500.html')
+    return render(request, 'home/500.html')
