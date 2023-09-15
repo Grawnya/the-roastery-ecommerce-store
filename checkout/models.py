@@ -11,7 +11,7 @@ from django_countries.fields import CountryField
 class Order(models.Model):
     """Order Model to save an order."""
 
-    order_id = models.CharField(max_length=24, null=False, editable=False)
+    order_id = models.CharField(max_length=300, null=False, editable=False)
     profile_id = models.ForeignKey(WebsiteUser, on_delete=models.SET_NULL,
                                    null=True, blank=True,
                                    related_name='orders')
