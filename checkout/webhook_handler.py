@@ -99,6 +99,7 @@ class Stripe_Webhook_Handler:
                     postcode=shipping_details.address.postal_code,
                     country=shipping_details.address.country,
                     original_shopping_bag=shopping_bag,
+                    stripe_pid=pid,
                 )
                 for item_identity, data in json.loads(shopping_bag).items():
                     specific_product = Product.objects.get(id=item_identity)
@@ -109,11 +110,11 @@ class Stripe_Webhook_Handler:
                             quantity=data,
                         )
                         order_item.save()
-            except:
+            except Exception as e:
                 if order:
                     order.delete()
                 return HttpResponse(
-                    content=f'Error with Order. Try again Later.',
+                    content=f'Error with Order. Try again Later. {e}',
                     status=500)
 
         return HttpResponse(
