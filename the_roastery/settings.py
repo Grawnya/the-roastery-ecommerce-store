@@ -28,7 +28,7 @@ USE_AWS = True
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '8000-grawnya-theroasteryecom-00q25krzmmw.ws-eu104.gitpod.io', 'the-roastery-1abb0b0a677e.herokuapp.com']
 
@@ -117,16 +117,16 @@ WSGI_APPLICATION = 'the_roastery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
+
+DATABASES = {
+   'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
 
 
 # Password validation
