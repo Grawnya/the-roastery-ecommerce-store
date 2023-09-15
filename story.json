@@ -1,0 +1,56 @@
+[
+{
+  "model": "blog.ourstory",
+  "pk": 1,
+  "fields": {
+    "event_id": "",
+    "date_occurred": "September 2020",
+    "event": "Website Launched"
+  }
+},
+{
+  "model": "blog.ourstory",
+  "pk": 2,
+  "fields": {
+    "event_id": "",
+    "date_occurred": "December 2020",
+    "event": "Holiday Blend Release"
+  }
+},
+{
+  "model": "blog.ourstory",
+  "pk": 3,
+  "fields": {
+    "event_id": "",
+    "date_occurred": "October 2021",
+    "event": "Expanded to 5 Countries"
+  }
+},
+{
+  "model": "blog.ourstory",
+  "pk": 4,
+  "fields": {
+    "event_id": "",
+    "date_occurred": "February 2022",
+    "event": "Valentine's Day Coffee Deals"
+  }
+},
+{
+  "model": "blog.ourstory",
+  "pk": 5,
+  "fields": {
+    "event_id": "",
+    "date_occurred": "July 2022",
+    "event": "Reached 1 Million Website Visitors"
+  }
+},
+{
+  "model": "blog.ourstory",
+  "pk": 6,
+  "fields": {
+    "event_id": "",
+    "date_occurred": "April 2024",
+    "event": "Exclusive Coffee Subscription Launch"
+  }
+}
+]
