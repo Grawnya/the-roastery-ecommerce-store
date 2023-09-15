@@ -82,7 +82,7 @@ class Stripe_Webhook_Handler:
 
         if order_exists:
             return HttpResponse(
-                content=(f'Webhook received - Order in system'),
+                content=(f'Webhook received - Order in system {order.final_total}'),
                 status=200)
         else:
             order = None
@@ -98,6 +98,7 @@ class Stripe_Webhook_Handler:
                     county=shipping_details.address.state,
                     postcode=shipping_details.address.postal_code,
                     country=shipping_details.address.country,
+                    final_total=overall_total,
                     original_shopping_bag=shopping_bag,
                     stripe_pid=pid,
                 )
@@ -118,7 +119,7 @@ class Stripe_Webhook_Handler:
                     status=500)
 
         return HttpResponse(
-            content=(f'Order created in webhook'),
+            content=(f'Order created in webhook {order.final_total}'),
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):
