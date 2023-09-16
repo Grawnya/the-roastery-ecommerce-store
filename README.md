@@ -145,3 +145,20 @@ Elements to add to the site in the future:
 * Use profile data to create a data model which can influence the best types of coffee to advertise, promote and sell.
 \
 &nbsp;
+
+## Structure
+Having a well-worked out project structure ensures that creating the project would occur in a more logical manner and the sprint steps can be closely followed. Therefore, the content was broken into applications to account for the various tasks and into database tables to organise how the data obtained from the user will be stored.
+\
+&nbsp;
+
+### Project Applications
+For this project, 6 applications were created:
+* blog – To provide the user with interesting coffee centric content and allows the website owner to share interesting information and offers with the user.
+* checkout – To purchase the items in the shopping bag and place an order successfully.
+* home – To provide details regarding the coffee ecommerce store and encourages users to go to other parts of the website. A solely static app with no models.
+* products – To view the available products on the ecommerce store and to allow the website owner to add, edit or delete existing products. 
+* profile_app – To let the user put in personal details for a faster checkout if the checkout form is prepopulated and to provide useful information for the website user re demographic, favourite coffee etc.
+* shopping_bag – To place products inside and therefore can ready a user’s final order.
+
+\
+&nbsp;
