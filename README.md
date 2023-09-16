@@ -41,6 +41,11 @@ The project is very relevant as online shopping is becoming increasingly popular
 	    * [Icons](#icons "Icons")
         * [Colours](#colours "Colours")
 	    * [Responsive Screens](#responsive-screens "Responsive Screens")
+* [Marketing](#marketing "Marketing")
+	* [Marketing Plan](#marketing-plan "Marketing Plan")
+	* [Facebook](#facebook "Facebook")
+	* [Search Engine Optimisation](#search-engine-optimisation "Search Engine Optimisation")
+
 
 \
 &nbsp;
@@ -331,3 +336,32 @@ The website will be built for a small mobile screen of width 320px and then will
 \
 &nbsp;
 
+# Marketing
+
+## Marketing Plan
+A marketing plan was created in order to strategise how the business will run and grow. This can be broke down into the following Business Model and Marketing Strategy document, which is separated into sections titled:
+
+* Target Audience: Coffee Enthusiasts
+* Business Model
+* Marketing Strategy
+
+[Business Model and Marketing Strategy](documentation/Business_Model_and_Marketing_Strategies.pdf)
+\
+&nbsp;
+
+## Facebook
+In order to map out how the aesthetic for the ecommerce store would look like on social media, a wireframe of how “The Roastery” would look like Facebook was created. It incorporates bright and enticing images while maintaining the colour schematic.
+
+![Facebook Schematic](documentation/fb_page.png)
+\
+&nbsp;
+
+## Search Engine Optimisation
+Search Engine Optimisation or SEO techniques were adopted to try to create more organic traffic and growth via popular Search Engines such as Google. Search Engine Keyword Research was conducted to determine suitable keywords to include in the website’s meta tags. This included searching related words or sentences related to the website and finding popular yet more targeted words that would encourage people to click on the ecommerce store.
+
+![SEO Search](documentation/coffee_beans_online_seo.png)
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
