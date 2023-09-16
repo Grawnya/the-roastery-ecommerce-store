@@ -761,6 +761,8 @@ The [User Stories](#user-stories "User Stories") and page elements are manual te
 | Incorrect toast functionality issue | By checking length/number of toasts | - | [incorrect Toast Functionality](documentation/toast_length_bug.png) |
 | Closing the toasts | Added suitable JS | - | [Closing toasts issue](documentation/close_toast_bug.png) |
 | Double order being created | Remove pid value being compared to any existing order | [Last item in queryset for debugging](https://stackoverflow.com/questions/2191010/get-last-record-in-a-queryset) | [Double order](documentation/double_order_bug.png) |
+
+
 \
 &nbsp;
 
