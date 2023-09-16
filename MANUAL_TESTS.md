@@ -135,6 +135,37 @@ Manual testing associated to this ticket and the checkout page included:
 
 ## Epic 4: Profile Functionality
 ### Related User Stories
+[13](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/13) - As a user I can register or log in so that I can manage my orders.
+
+The criteria for [13](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/13) is met by using the `allauth` templates from Django and editing them to match the layout of the rest of the webpage. The user can easily register or login by selecting the suitable option in the navbar. If the user has successfully logged in/is authenticated, then they can view their previous order details. All links and buttons have been tested to ensure that they successfully go to the correct webpages.
+
+> ![Sign in Page](documentation/sign-in.png)
+\
+&nbsp;
+
+[14](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/14) - As a user I can see if I am logged in so that I can easily log out or log in.
+
+The criteria for [14](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/14) is met when the user has logged in, which is confirmed by a message at the top of the screen to say they have logged in. The navbar is then altered to include a logout button. The login and logout button are on the top right hand side corner of the page in large screens and is bigger than the rest of the navbar items to attract the user. The buttons also change to a yellow background with black text when the user hovers over them to attract them to click on the button. This was extensively tested and verified that the footer links also updated. 
+
+> ![Success Message](documentation/success-message.png)
+\
+&nbsp;
+
+[15](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/15) - As a user I can edit my user details when logged in so that I can ensure that my details are up-to-date and can be used for shipping and billing.
+
+To meet the criteria for [15](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/15), when the user has logged in, a “Profile” navbar item appears next to the “logout” button. If the user has never created a profile, a blank form appears, but if they have previously filled it in and only want to update the details. The form values will be populated with the last saved values from the user. 
+
+This has been manually tested to ensure that the user can also import those values seamlessly into the checkout form. Alternatively, if they have not filled out the profile app before purchase, a checkbox asking the user if they want to save their information is included in the form. 
+
+> ![Profile](documentation/profile-details.png)
+\
+&nbsp;
+
+[16](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/16) - As a user I can enter my email to sign up the coffee company's newsletter to keep up-to-date with any news.
+
+To meet the criteria for [16](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/16), a Mailchimp newsletter has been added at the end of the footer. This encourages the user to sign up to “The Roastery’s” email updates. Manual testing shows that there is a message that states if you have been updated and if you were already signed up, you get a message underneath the text box to say that your Mailchimp profile has been updated.
+\
+&nbsp;
 
 
 
