@@ -61,6 +61,12 @@ The project is very relevant as online shopping is becoming increasingly popular
     	* [Django Template Pages](#django-template-pages "Django Template Pages")       
     	* [Messages](#messages "Messages")       
     	* [Error Pages](#error-pages "Error Pages")       
+* [Technologies Used](#technologies-used "Technologies Used")       
+	* [Languages](#languages "Languages")       
+	* [Tools](#tools "Tools")       
+	* [Styling](#styling "Styling")       
+	* [Validation](#validation "Validation")       
+	* [Databases](#databases "Databases")
 
 
 \
@@ -559,3 +565,50 @@ They are seen when the user has successfully created an order at the top of the 
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+# Technologies Used
+
+## Languages
+* [HTML](https://en.wikipedia.org/wiki/HTML "HTML") - To create the Django templates for the associated views and models in the project applications.
+* [CSS](https://en.wikipedia.org/wiki/CSS "CSS") - To style the website.
+* [jQuery](https://jquery.com/ "jQuery") - To conduct some of the form and stripe checkout logic.
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Python") – Is the primary language of Django and used to create all forms, models and views.
+\
+&nbsp;
+
+## Tools
+* [Django](https://www.djangoproject.com/ "Django") – The framework used in this project to incorporate databases with a website.
+* [Gitpod](https://www.gitpod.io/ "Gitpod") – Used as the development environment.
+* [GitHub](https://github.com/ "GitHub") – The project’s Version Control Management System.
+* [Heroku](https://www.heroku.com/ "Heroku") – To deploy the webpage.
+* [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") – For the creation of associated wireframes.
+* [Stripe](https://stripe.com/en-ch "Heroku") - To conduct all the card payment logic.
+* [AWS](https://eu-central-1.console.aws.amazon.com/console/home?region=eu-central-1# "AWS") – To store and gather all static and media files.
+\
+&nbsp;
+
+## Styling
+* [Bootstrap](https://getbootstrap.com/ "Bootstrap") – To provide extra styling and out-of-the-box elements e.g. carousel.
+* [Font Awesome](https://fontawesome.com/ "Font Awesome") – For the social media icons and carousel icons.
+\
+&nbsp;
+
+## Validation
+* [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML") – To validate all the HTML files, including the templates from Django itself, due to editing them.
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS") – To validate the “base.css” page.
+* [Python Syntax Checker PEP8](https://www.codewof.co.nz/style/python3/ "Python Syntax Checker PEP8") – To validate all the Python files, making sure they align with PEP8.
+* [Web AIM](https://webaim.org/resources/contrastchecker/ "Web AIM") – To analyse the colour contrast properties between colours.
+* [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en "Lighthouse") – To check the website’s performance and accessibility, making sure the best practices are used.
+\
+&nbsp;
+
+## Databases
+* [SQLite](https://sqlite.org/index.html "SQLite") - The default database on Django.
+* [ElephantSQL](https://www.elephantsql.com/ "ElephantSQL") – The final database used for the deployed project.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
