@@ -776,7 +776,7 @@ No unresolved bugs were left in the project.
 
 # Deployment
 
-During the process of coding up the website, the code was deployed on GitHub to allow for continuous manual testing and code validation. The following steps were conducted to deploy the website on GitHub:
+During the process of coding up the website, the code was deployed on Heroku to allow for continuous manual testing and code validation. The following steps were conducted to deploy the website on Heroku:
 
 ## Create Application
 1. Create a Heroku account if you don’t have one and login.
