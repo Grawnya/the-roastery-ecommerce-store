@@ -52,11 +52,11 @@ The project is very relevant as online shopping is becoming increasingly popular
     	* [Information Carousel](#information-carousel "Information Carousel")       
         * [Menu Sections](#menu-sections "Menu Sections")       
     	* [Footer](#footer "Footer")       
+    	* [Blog Page](#blog-page "Blog Page")       
+    	* [Products Page](#products-page "Products Page")       
+    	* [Create and Edit Product Page](#create-and-edit-product-page "Create and Edit Product Page")       
     	
-    	* [How to Book Tickets Section](#how-to-book-tickets-section "How to Book Tickets Section")       
-    	* [Tickets Sold Page](#tickets-sold-page "Tickets Sold Page")       
     	* [Profile](#profile "Profile")       
-    	* [My Tickets Page](#my-tickets-page "My Tickets Page")       
     	* [New Ticket Page](#new-ticket-page "New Ticket Page")       
     	* [Edit Ticket Page](#edit-ticket-page "Edit Ticket Page")       
     	* [Delete Ticket Page](#delete-ticket-page "Delete Ticket Page")       
@@ -444,5 +444,48 @@ It's simple, yet clean design, means that it is easy to navigate, with icons bei
 ![Footer on Mobile Screen](documentation/footer.png)
 
 Note that there is a Mailchimp Section at the bottom of the footer to encourage the user to sign up for the website’s newsletter. This aligns with the marketing strategy, as it attracts and aims to retain customers.
+\
+&nbsp;
+
+### Blog Page
+The blog page is used to support the ecommerce website by tempting people in via the content. Blogs based on relevant coffee holidays, creating the ideal cup of coffee and coffee trends can be found.
+
+![Blog on Tablet](documentation/blog_tablet.png)
+
+At the top of the website, a user can also see a “Our Story” or timeline section on large screens. This provides a more intimidate look-in for the user, who can follow the journey of the coffee ecommerce store.
+
+![Our Story section](documentation/blog-desktop.png)
+
+If the website admin is logged in, they also have the ability to add a blog which can be seen at the top of the page. This allows for the quick creation of content, especially if it is an immediate reaction to a trend or an event that has happened.
+
+![Create a blog](documentation/create-blog.png)
+
+Alternatively the admin can edit and delete a blog. For example when deleting a blog, the user has to click on the bin icon next to it. If editing a blog, the edit button is selected which redirects the admin to the edit blog form and allows the admin to update the blog for some reason e.g., information is now obsolete.
+
+
+![Edit blog](documentation/edit-blog.png)
+\
+&nbsp;
+### Products Page
+The essence of an ecommerce store relies on the sale of products on the website. “The Roastery” boasts a large range of international coffees, with varying roasts and prices for every interested party. The “All Products” section is easily reached. The page is reactive and shows 3 products in one row on a large screen and goes all the way down to 1 product per row on mobile screens.
+
+![Products](documentation/products.png)
+
+The filter buttons enable the user to filter/group coffee by price, location and roast, which allows for easier organisation.
+\
+&nbsp;
+
+### Create and Edit Product Page
+Similar to the blog, an admin has the ability to add, edit or delete a product. This is evident by an “+ Add Product” button at the top of the page.
+
+![Add Product](documentation/add-products-mobile.png)
+
+The admin can also edit and delete by selecting the relevant icons underneath the image and next to the descriptive details associated with each coffee.
+
+![Delete Product](documentation/delete-product.png)
+
+The edit product functionality appears in a separate form and allows the admin to upload an image as well for a new product.
+
+![Edit Product](documentation/edit-product.png)
 \
 &nbsp;
