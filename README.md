@@ -4,9 +4,43 @@
 
 Welcome to the coding repository dedicated to the "The Roastery"'s Ecommerce Store; A website which not only provides details about a made up coffee ecommerce website, but also allows users to buy coffee from the website.
 
-The project is very relevant as online shopping is becoming increasingly popular, therefore, people are keen to buy everything they used aily including the coffee for their coffee machines or french presses. The flexibility of the website ensures that its design can be utilised for any ecommerce store that requires the user to purchase the products with a card in advance of receiving them.
+The project is very relevant as online shopping is becoming increasingly popular, therefore, people are keen to buy everything they used daily including the coffee for their coffee machines or french presses. The flexibility of the website ensures that its design can be utilised for any ecommerce store that requires the user to purchase the products with a card in advance of receiving them.
+
+[Visit the Website Here](https://the-roastery-1abb0b0a677e.herokuapp.com/)
+
+[Visit the Project's GitHub Repository Here]( https://github.com/Grawnya/the-roastery-ecommerce-store)
+
+![Responsive Image](documentation/responsive_image.png)
 
 # Table of Contents
+
+* [UX](#ux "UX")
+	* [Strategy](#strategy "Strategy")
+    	* [Purpose](#purpose "purpose")
+   		* [User Stories](#user-stories "User Stories")
+   	        * [For This Sprint](#for-this-sprint "For This Sprint")
+   	        * [For Future Sprints](#for-future-sprints "For Future Sprints")    
+	* [Scope](#scope "Scope")
+		* [Sprint 1](#sprint-1 "Sprint 1")
+		* [Sprint 2](#sprint-2 "Sprint 2")
+    	* [Future Sprints](#future-sprints "Future Sprints")
+	* [Structure](#structure "Structure")
+    	* [Project Applications](#project-applications "Project Applications")
+    	* [Project Database](#project-database "Project Database")
+		    * [Blog Model](#blog-model "Blog Model")
+		    * [Order Model](#order-model "Order Model")
+		    * [OrderItem Model](#orderitem-model "OrderItem Model")
+		    * [Product Model](#product-model "Product Model")
+		    * [Favourites Model](#favourites-model "Favourites Model")
+		    * [WebsiteUser Model](#websiteUser-model "WebsiteUser Model")
+		    * [OurStory Model](#ourstory-model "OurStory Model")
+	* [Skeleton](#skeleton "Skeleton")
+		* [Wireframes](#wireframes "Wireframes")
+	* [Surface](#surface "Surface")
+        * [Font](#font "Font")
+	    * [Icons](#icons "Icons")
+        * [Colours](#colours "Colours")
+	    * [Responsive Screens](#responsive-screens "Responsive Screens")
 
 \
 &nbsp;
@@ -24,10 +58,26 @@ Therefore, the UX aspect of the project can be broken down into 5 Planes:
 &nbsp;
 
 ## Strategy
+In order to ensure the project aligns with these planes, it is vital to keep the target audience at the forefront at all times.
+
+The target audience consists of:
+* Age: 25-45 years old
+* Location: Built up cities
+* Income Level: Middle - high income i.e. have extra monthly disposable income.
+* Occupation: Working professionals, students, and coffee industry workers
+* Lifestyle: Coffee fanatics who value good quality coffee and actively seek out different coffee roasts, blends, and flavours.
+* Interests: They would be more interest in high quality coffee than the average person on the street. The savour coffee rather than drink it quickly on the go as a form of energy, therefore, appreciating coffee culture, fair trade practices and sustainable practices. They are therefore willing to pay a bit more for a cup of coffee. They follow coffee blogs and social media accounts – particularly Instagram.
+
+As a result, users will expect:
+* A website with easy navigation and a logical progression to its flow.
+* Plenty of information with regards to various coffees from around the world.
+* The ability to order the coffee via an easy checkout process.
+
 \
 &nbsp;
 
 ### Purpose
+The purpose of this website is to promote a coffee ecommerce store with the help of a fun blog and allow users to buy coffee from around the world.
 \
 &nbsp;
 
