@@ -269,3 +269,19 @@ It can be broken down as follows:
 \
 &nbsp;
 
+## Skeleton
+The skeleton provides a broad initial idea that is further refined and built on. It enables the creation of a plan that aligns with the requirements of the [user stories](#user-stories "User Stories") and the [sprints](#scope "Sprints"). Therefore, wireframes can be created to act as a design aid and provide the website skeleton.
+\
+&nbsp;
+
+### Wirefames
+[Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") was used to create the conception for the website appearance and flow. I initially created a mobile version in-line with my mobile-first approach and then followed with a medium and large screen version. The key is to make sure that the website is responsive on various screens.
+
+Basic wireframes can be found below (Note that these vary slightly from the final website design):
+
+#### [Home Page](documentation/home-page.png "Home Page")
+#### [Products Page](documentation/products-page.png "Products Page")
+#### [Blog Page](documentation/blog-page.png "Blog Page")
+\
+&nbsp;
+
