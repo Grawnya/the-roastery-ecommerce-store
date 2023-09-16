@@ -67,6 +67,16 @@ The project is very relevant as online shopping is becoming increasingly popular
 	* [Styling](#styling "Styling")       
 	* [Validation](#validation "Validation")       
 	* [Databases](#databases "Databases")
+* [Testing](#testing "Testing")
+	* [Code Validation](#code-validation "Code Validation")
+		* [W3C HTML Validator](#w3c-html-validator "W3C HTML Validator")
+			* [First Attempt of Home Page](#first-attempt-of-home-page "First Attempt of Home Page")
+			* [Final Attempt of Home Page](#final-attempt-of-home-page "Final Attempt of Home Page")
+		* [W3C CSS Validator](#w3c-css-validator "W3C CSS Validator")
+			* [First Attempt of CSS Files](#first-attempt-of-css-files "First Attempt of CSS Files")
+		* [Python Syntax Checker PEP8 Validation](#python-syntax-checker-pep8-validation "Python Syntax Checker PEP8 Validation")
+			* [First Attempt of Python Files](#first-attempt-of-python-files "First Attempt of Python Files")
+			* [Final Attempt of Python Files](#final-attempt-of-python-files "Final Attempt of Python Files")
 
 
 \
@@ -612,3 +622,45 @@ They are seen when the user has successfully created an order at the top of the 
 \
 &nbsp;
 
+# Testing
+
+## Code Validation 
+### W3C HTML Validator
+I validated my HTML at various stages of the website creation using the [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML"). The various attempts for the [Website](#landing-page "Landing Page") can be seen below.
+\
+&nbsp;
+
+#### First Attempt of Home Page
+The primary issue that arose in the first attempt was the fact that `<button>` tags provided only styling for the `<a>` tag and therefore, were useless.
+
+> ![First W3C HTML Validator Test Result of Home Page](documentation/html-validator.png)
+\
+&nbsp;
+
+#### Final Attempt of Home Page
+No issues arose.
+\
+&nbsp;
+
+### W3C CSS Validator 
+I validated my CSS upon completion with [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CCC"). The attempt for the [Website](#landing-page "Home Page") can be seen below.
+
+#### First Attempt of CSS Files
+No issues arose on any of the personalised CSS files. 
+
+![W3C CSS Validator Test Result](documentation/validated-css.png)
+\
+&nbsp;
+
+### Python Syntax Checker PEP8 Validation
+The [Python Syntax Checker PEP8](https://www.codewof.co.nz/style/python3/ "Python Syntax Checker PEP8") was used to check all the Django Python files – scanning for any syntax or declaration errors. Below contains the returned results of the scripts.
+
+#### First Attempt of Python Files
+Many warning and errors were obtained in the first run through the PEP8 linter. They mainly consisted of lines that were too long, over-indentation or under-indentation of items and then too many or too few blank lines. Docstrings were also all updated to align with styling requirements. These were all easy to rectify quite quickly. 
+
+#### Final Attempt of Python Files
+No issues arose in any of the files as seen in below.
+
+![Python Syntax Checker PEP8](documentation/pep8-lint.png)
+\
+&nbsp;

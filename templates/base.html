@@ -85,14 +85,18 @@
               <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-coffee" id="sign-up-link" href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              <button class="btn-coffee">
+                <a class="nav-link" id="sign-up-link" href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              </button>
             </li>
             {% else %}
             <li class="nav-item">
               <a href="{% url 'account_login' %}">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-coffee" id="sign-up-link" href="{% url 'account_signup' %}">Sign Up</a>
+              <button class="btn-coffee">
+                <a class="nav-link" id="sign-up-link" href="{% url 'account_signup' %}">Sign Up</a>
+              </button>
             </li>
             {% endif %}
           </ul>
