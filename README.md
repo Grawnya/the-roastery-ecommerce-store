@@ -85,6 +85,12 @@ The project is very relevant as online shopping is becoming increasingly popular
 * [Bugs](#bugs "Bugs")
 	* [Resolved](#resolved "Resolved")
 	* [Unresolved](#unresolved "Unresolved")
+* [Deployment](#deployment "Deployment")
+	* [Create Application](#create-application "Create Application")
+	* [ElephantSQL](#elephantsql "ElephantSQL")
+	* [Amazon Web Services](#amazon-web-services "Amazon Web Services")
+	* [Final Repo Preparations](#final-repo-preparations "Final Repo Preparations")
+	* [Heroku Deploy](#heroku-deploy "Heroku Deploy")
 
 
 \
@@ -758,6 +764,68 @@ The [User Stories](#user-stories "User Stories") and page elements are manual te
 
 ## Unresolved
 No unresolved bugs were left in the project.
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Deployment
+
+During the process of coding up the website, the code was deployed on GitHub to allow for continuous manual testing and code validation. The following steps were conducted to deploy the website on GitHub:
+
+## Create Application
+1. Create a Heroku account if you don’t have one and login.
+2. Create a new application, by selecting the “new” button on the top right of the dashboard and click “Create new app”.
+3. Choose a unique name for the application and select the region you live in, followed by "Create App".
+
+## ElephantSQL
+4. Go to [elephantsql.com](https://www.elephantsql.com/), login with GitHub and create a new instance.
+5. Copy the URL once the project instance has been created. This value can also be saved with as environment variable used to equal the `DATABASES` variable in `settings.py`.
+6. Install the `dj-database-url` package version 0.5.0 by using `pip3 install dj_database_url==0.5.0` to format the URL into one that Django can use, subsequently updating the `requirements.txt`.
+
+## Amazon Web Services
+7. Create an S3 Bucket:
+	* Log in to [AWS Management Console](https://eu-central-1.console.aws.amazon.com/console/home?region=eu-central-1).
+	* Search for and select S3.
+	* Click "Create Bucket" with the app name from Heroku.
+	* Choose the nearest region.
+	* Uncheck "Block all public access" and set "Object Ownership" to "ACLs enabled".
+	* Enable static website hosting and configure index.html and error.html.
+	* Configure CORS and Bucket Policy for public access.
+	* Set ACL to allow access for everyone.
+8. Create AWS Groups, Policies, and Users:
+	* Use Identity and Access Management (IAM) to manage access.
+	* Create a user group and a policy for S3 Full Access.
+	* Edit the policy JSON to allow access to the specific bucket.
+	* Attach the policy to the user group.
+	* Create an IAM user, add it to the group, and create access keys.
+9. Connecting Django to S3:
+	* Install boto3 and django-storages.
+	* Add 'storages' to INSTALLED_APPS in settings.py.
+	* Configure AWS info in settings.py without access keys.
+	* Retrieve AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY_ID from the CSV. Set USE_AWS to True.
+	* Define the bucket location under AWS_S3_CUSTOM_DOMAIN.
+	* Create custom_storages.py to connect images to the bucket.
+	* Define storage classes for media and static files, using settings.py variables.
+	* Specify storage locations using STATIC_URL and MEDIA_URL.
+
+## Final Repo Preparations
+10. Make sure to make any migrations in the project, by typing `python3 manage.py makemigrations` followed by `python3 manage.py migrate` into the terminal.
+11. Ensure a `Procfile`, which contains `web: gunicorn [project_name].wsgi:application` is added to the project.
+
+## Heroku Deploy
+12. Go back to Heroku and when the Project’s page opens up, go to the "settings" tab and scroll down to the “Config Vars” section. 
+13. Add all relevant following key-value pairs in the “Config Vars” section. Examples include: 
+	* Key = PORT : Value = 8000
+	* Key = SECRET_KEY : Value = Django Secret Key value obtained from `settings.py`
+	* Key = DATABASE_URL : Value = ElephantSQL URL from point 5.
+As well as all the relevant stripe and AWS values.
+14. Go to the “Deploy” tab next and scroll down to the GitHub deployment method.
+15. Search for the suitable repository and then connect to it by selecting the “Connect” button.
+16. Scroll down to the bottom of the “Deploy” Page and select the type of deployment you want to conduct. If you opt to “Automatically Deploy”, it will deploy every time you push new code to your repository. Otherwise, you will have to manually deploy, by selecting the button at the bottom of the page.
+17. The application is now deployed!
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
