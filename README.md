@@ -32,7 +32,7 @@ The project is very relevant as online shopping is becoming increasingly popular
 		    * [OrderItem Model](#orderitem-model "OrderItem Model")
 		    * [Product Model](#product-model "Product Model")
 		    * [Favourites Model](#favourites-model "Favourites Model")
-		    * [WebsiteUser Model](#websiteUser-model "WebsiteUser Model")
+		    * [WebsiteUser Model](#websiteuser-model "WebsiteUser Model")
 		    * [OurStory Model](#ourstory-model "OurStory Model")
 	* [Skeleton](#skeleton "Skeleton")
 		* [Wireframes](#wireframes "Wireframes")
@@ -55,12 +55,9 @@ The project is very relevant as online shopping is becoming increasingly popular
     	* [Blog Page](#blog-page "Blog Page")       
     	* [Products Page](#products-page "Products Page")       
     	* [Create and Edit Product Page](#create-and-edit-product-page "Create and Edit Product Page")       
-    	
-    	* [Profile](#profile "Profile")       
-    	* [New Ticket Page](#new-ticket-page "New Ticket Page")       
-    	* [Edit Ticket Page](#edit-ticket-page "Edit Ticket Page")       
-    	* [Delete Ticket Page](#delete-ticket-page "Delete Ticket Page")       
-    	* [Flag Animation](#flag-animation "Flag Animation")       
+    	* [Shopping Bag Page](#shopping-bag-page "Shopping Bag Page")       
+    	* [Checkout Page](#checkout-page "Checkout Page")       
+    	* [Profile](#profile "Profile")        
     	* [Django Template Pages](#django-template-pages "Django Template Pages")       
     	* [Messages](#messages "Messages")       
     	* [Error Pages](#error-pages "Error Pages")       
@@ -487,5 +484,58 @@ The admin can also edit and delete by selecting the relevant icons underneath th
 The edit product functionality appears in a separate form and allows the admin to upload an image as well for a new product.
 
 ![Edit Product](documentation/edit-product.png)
+\
+&nbsp;
+
+### Profile
+The Profile page allows users to provide specific details about themselves which help influence data-driven decisions made by the race organisers. The user can fill in fields: First Name, Last Name, Email, Favourite Team and Nationality. This helps to create a data entry regarding the user into the [WebsiteUser Model](#websiteuser-model "WebsiteUser Model") table. This acts as an identifier as to who bought the coffee.
+
+![Profile Details](documentation/profile-details.png)
+
+The user can also see all of their orders – meeting the project requirement of returning feedback to the user re their purchase. Either via a message or order info in their profile. 
+
+![Order History](documentation/order-history.png)
+
+If the user has already created a profile, by opening the profile page, it will preload the information and enable the user to edit their previously entered details.
+\
+&nbsp;
+
+### Shopping Bag Page
+The shopping bag page captures all the contents that the user places within it. This is done by using a django context processor.
+Here the user has the ability to view their shopping bag contexts, how much it costs and has the option to either update the quantity or completely remove the item from their shopping bag.
+
+![Shopping Bag](documentation/shopping-bag.png)
+
+\
+&nbsp;
+
+### Checkout Page
+In order to officially create the order and conduct the payment intent, the checkout page/app deals with this. The user can see a summary of their order at the top of the page so they can verify all information.
+
+![Checkout Order History](documentation/checkout-order.png)
+
+If the user is not logged in, they will have to fill in a form like the one below to provide all necessary details to ship the product. If the user is logged in, they have the option to see the filled in details to the profile or alternatively if they have their profile filled in, it will automatically import the user's details.
+
+![Checkout Form](documentation/checkout-form.png)
+
+In order to complete the entire order, the user must successfully fill in the card payment section. Connected to the Stripe dashboard, the user needs to fill in required info, to save the order as well to their account.
+
+![Card Payment](documentation/card-payment.png)
+
+While the payment is being processed, an overlay appears over the page to prevent the user from editing any details or tampering with the order.
+
+![Overlay](documentation/overlay.png)
+
+If the payment is not successful, the user will receive an error message. Otherwise, the user will be redirected to a success page. Here the user can go back to the home page or if they are logged in they can also go to the profile page.
+
+![Successful Checkout](documentation/checkout-success.png)
+
+\
+&nbsp;
+
+### Django Template Pages
+This project utilises `allauth` to allow users to register, login, logout etc. on the website and provides excellent out-of-the-box functionality. This creates basic templates to conduct these tasks, but in order to align them with the style of the rest of the website, they had to adopt the project’s base file and were spaced to ensure the user experience was good.
+
+![Sign In Page on Large Screen](documentation/sign-in.png)
 \
 &nbsp;
