@@ -82,6 +82,7 @@ The purpose of this website is to promote a coffee ecommerce store with the help
 &nbsp;
 
 ### User Stories
+#### For This Sprint
 | id  |  Content | Label |
 | ------ | ------ | ------ |
 | [1](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/1) | As a user, I can navigate through the website easily so that I can get more information about the coffees available to buy. | Must Have |
@@ -94,7 +95,6 @@ The purpose of this website is to promote a coffee ecommerce store with the help
 | [8](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/8) | As a user, I can filter all the coffees by the different categories so that I can view what I prefer. | Should Have |
 | [9](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/9) | As a user, I can find all the product details so that I can decide whether I want to add it to my shopping bag. | Must Have |
 | [10](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/10) | As a user, I want to preview my order so that I can make a final selection before I purchase it. | Must Have |
-| [11](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/11) | As a user, I want to receive an order confirmation via email so that I know that my order went through. | Must Have |
 | [12](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/12) | As a user, I can purchase the items in my shopping bag by card so that I can successfully buy them. | Must Have |
 | [13](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/13) |As a user, I can register or log in so that I can manage my orders. | Must Have |
 | [14](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/14) | As a user, I can see if I am logged in so that I can easily log out or log in. | Must Have |
@@ -105,5 +105,43 @@ The purpose of this website is to promote a coffee ecommerce store with the help
 | [19](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/19) | As a site owner/admin, I can promote my facebook page so that I can try to increase traffic to my store. | Should Have |
 | [20](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/20) | As a site owner/admin, I can implement Search Engine Optimisation tactics so that I can try to increase traffic to my store. | Should Have |
 
+\
+&nbsp;
+
+#### For Future Sprints
+| id  |  Content | Label |
+| ------ | ------ | ------ |
+| [11](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/11) | As a user, I want to receive an order confirmation via email so that I know that my order went through. | Should Have |
+
+\
+&nbsp;
+
+## Scope
+In order to ensure that the current sprint (i.e. the elements required for the current project submission) are completed, the focus was as follows:
+\
+&nbsp;
+
+### Sprint 1
+This sprint focuses on the “Must Haves” and the marking criteria:
+* A homepage with basic details on the ecommerce website and the coffee available to buy.
+* Navbar enabling the user to easily navigate through the website.
+* The ability of the user to login and create a profile.
+* Applications that allow the user to put coffee into their shopping basket and place that order.
+\
+&nbsp;
+
+### Sprint 2
+This sprint builds on Sprint 1:
+* Integrate the Stripe API with the website to successfully make the order.
+* Allow the user to get confirmation of order in the profile page and via a notification.
+* Creating a blog page to allow the user to view relevant and engaging content.
+* Adding extra details to the blog page such as allowing the user to select their favourite roast.
+\
+&nbsp;
+
+### Future Sprints
+Elements to add to the site in the future:
+* Incorporate additional email confirmation.
+* Use profile data to create a data model which can influence the best types of coffee to advertise, promote and sell.
 \
 &nbsp;
