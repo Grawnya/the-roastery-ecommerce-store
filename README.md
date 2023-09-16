@@ -45,6 +45,25 @@ The project is very relevant as online shopping is becoming increasingly popular
 	* [Marketing Plan](#marketing-plan "Marketing Plan")
 	* [Facebook](#facebook "Facebook")
 	* [Search Engine Optimisation](#search-engine-optimisation "Search Engine Optimisation")
+* [Features](#features "Features")
+	* [Existing Features](#existing-features "Existing Features")
+		* [Landing Page](#landing-page "Landing Page")       
+        * [Navigation Bar](#navigation-bar "Navigation Bar")       
+    	* [Information Carousel](#information-carousel "Information Carousel")       
+        * [Menu Sections](#menu-sections "Menu Sections")       
+    	* [Footer](#footer "Footer")       
+    	
+    	* [How to Book Tickets Section](#how-to-book-tickets-section "How to Book Tickets Section")       
+    	* [Tickets Sold Page](#tickets-sold-page "Tickets Sold Page")       
+    	* [Profile](#profile "Profile")       
+    	* [My Tickets Page](#my-tickets-page "My Tickets Page")       
+    	* [New Ticket Page](#new-ticket-page "New Ticket Page")       
+    	* [Edit Ticket Page](#edit-ticket-page "Edit Ticket Page")       
+    	* [Delete Ticket Page](#delete-ticket-page "Delete Ticket Page")       
+    	* [Flag Animation](#flag-animation "Flag Animation")       
+    	* [Django Template Pages](#django-template-pages "Django Template Pages")       
+    	* [Messages](#messages "Messages")       
+    	* [Error Pages](#error-pages "Error Pages")       
 
 
 \
@@ -363,5 +382,67 @@ Search Engine Optimisation or SEO techniques were adopted to try to create more 
 \
 &nbsp;
 [Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Features
+
+## Existing Features
+### Landing Page
+The landing page is the first introduction to the website that the user generally has. It needs to set the tone and make it very obvious what the ecommerce site is selling; in this case coffee. The large “the roastery” on the top left corner along with the first carousel slide of coffee beans makes it clear that the website is coffee-based, with the “Blog” and “All Products” menu items suggesting the coffee blog is integrated into a website which sells coffee.. 
+
+A labelled navigation bar with various headings provides the user with details regarding how to use the website effectively.
+
+A carousel with coffee-themed slides attracts the user to various parts of the website, prompting the user to create a profile, look at the blog or see the range of available products.
+
+
+![Landing Page](documentation/home.png)
+\
+&nbsp;
+
+### Navigation Bar
+The navbar or navigation bar is responsive menu, which links to different apps or sections on the website.
+
+![Navigation Bar for Large Screens](documentation/navbar.png)
+
+The navigation bar is khaki in colour with a light font to make it easier to read. It also collapses into a hamburger button for smaller screens and has a hover state of the font turning orange.
+
+![Navigation Bar for Small Screens](documentation/navbar-mobile.png)
+\
+&nbsp;
+
+### Information Carousel
+The information carousel is used at the top of the home page to attract users to its contents. The slides contain coffee based images and have white blocks in the middle with relevant info to move the user around the website. The design is responsive and each slides contents can be seen on various screen sizes.
+
+![Information Carousel on Large Screens](documentation/info-carousel-desktop.png)
+
+The slides are broken down as follows:
+* Slide 1: Products page redirect so the user can see the full available range on the ecommerce website.
+* Slide 2: Redirects to the blog which includes the “Our Story” page.
+* Slide 3: Encourages the user to sign up and if they are already logged in, they can visit their profile via this slide.
+
+![Information Carousel on Small Screens](documentation/info-carousel-mobile.png)
+\
+&nbsp;
+
+### Menu Sections
+Below the carousel, is an interactive menu section which allows users to go to other sections of the website.
+
+![Menu Section](documentation/menu-section-desktop.png)
+
+It is an alternative way to redirect the user as it is visually appealing, reinforcing the coffee theme. The menu sections also have individual styling, with a hover case which creates a vail over the selected section.
+
+![Menu Section on Mobile](documentation/menu-section-mobile.png)
+\
+&nbsp;
+
+### Footer
+The footer works in tandem with the navigation bar menu as it enables the user to visit various pages on the website. It also consists of related social media links which act as method of connecting the user with the race organisers and allows users to contact the race organisers via a direct message.
+
+It's simple, yet clean design, means that it is easy to navigate, with icons being used for social media channels being self-explanatory. The layout also remains the same for all screen sizes due to its simplicity.
+
+![Footer on Mobile Screen](documentation/footer.png)
+
+Note that there is a Mailchimp Section at the bottom of the footer to encourage the user to sign up for the website’s newsletter. This aligns with the marketing strategy, as it attracts and aims to retain customers.
 \
 &nbsp;
