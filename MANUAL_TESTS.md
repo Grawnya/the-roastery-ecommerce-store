@@ -167,7 +167,57 @@ To meet the criteria for [16](https://github.com/Grawnya/the-roastery-ecommerce-
 \
 &nbsp;
 
-
-
 ## Epic 5: Admin Functionality
 ### Related User Stories
+[17](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/17) - As a site owner/admin I can log in so that I can access the website's backend.
+
+It is imperative to also think about the website from the admin/site owner’s point of view. Django enables the user to easily add admins/superuser and allows them to view data from the models that has been imported from forms. 
+
+The criteria for [17](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/17) is met, by adding `/admin` to the homepage link, which redirects the user to the admin page. If the user has not logged in on the website, they are prompted to login here.
+
+> ![Admin Login](documentation/admin-panel.png)
+
+Manually testing has verified that if a non-admin user tries to follow the `/admin` link, they will automatically be logged out and prompted to put in valid credentials.
+
+Alternatively, if the user has already logged in and have valid admin credentials, they are automatically redirected to the admin dashboard, which shows all models created, sites, social media accounts etc. along with any recent actions, allowing the user to access the website’s backend.
+
+> ![Admin Dashboard](documentation/admin-models.png)
+\
+&nbsp;
+
+[18](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/18) - As a site owner/admin I can add, edit and delete items from the store so that I can ensure that the website is up-to-date.
+
+The criteria for [18](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/18) was met in several ways. For instance, by clicking into the “Products” database on the admin dashboard, this redirects the user to the specific database with every entry. If the admin wants to delete a product, they can select it and in the “action” dropdown menu above the table, they can select “Delete selected products”.
+
+If the admin confirms that they want to delete it, they are redirected to the “Products” database, where they receive a message to confirm the deletion and the ticket can no longer be seen.
+
+Alternatively, the user can just go to the website’s “Products” page and there is a button which can be selected to create a new product. If they fill out the form successfully, a success message is obtained to confirm the product creation.
+
+If the user wants to just edit or delete a product, they should select the relevant icon.
+
+> ![Icons](documentation/delete-product.png)
+
+Manually testing was extensive to ensure that no regular user had these abilities or could access the backend to edit the products. The relevant decorators were included in the code to ensure only admins/superusers had these privileges.
+\
+&nbsp;
+
+[19](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/19) - As a site owner/admin I can promote my Facebook page so that I can try to increase traffic to my store.
+
+To meet the criteria for [19](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/19), a wireframe was created with balsamiq to mimic how the Facebook page for “The Roastery” would look like.
+
+> ![Facebook](documentation/fb_page.png)
+
+Links for Facebook were included in the social media icons in the footer to ensure that the page was relatively easy to reach from any page on the website.
+\
+&nbsp;
+
+[20](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/20) - As a site owner/admin I can implement Search Engine Optimisation tactics so that I can try to increase traffic to my stored.
+
+The criteria for [20](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/20) was extensively met and tested, by incorporating various elements. An SEO keyword investigation was conducted to select the optimal keyword to place inside the `<meta>` tags.
+
+A `robots.txt` and `sitemap.xml` file were included to ensure that SEO best practices were followed.
+\
+&nbsp;
+[Go Back to README.md](https://github.com/Grawnya/the-roastery-ecommerce-store)
+\
+&nbsp;
