@@ -285,3 +285,49 @@ Basic wireframes can be found below (Note that these vary slightly from the fina
 \
 &nbsp;
 
+## Surface
+The surface plane refers more to the aesthetics and the interface itself. It’s important to select the right colour, font and icons for your website to ensure it is as appealing as possible.
+\
+&nbsp;
+
+### Font
+To deviate from the standard fonts, [Google Fonts](https://fonts.google.com/ "Google Fonts") was used to obtain a font style, which would be reminiscent of a “hipster” yet slightly sophisticated coffee ecommerce website.
+* [Roboto Slab]( https://fonts.google.com/specimen/Roboto+Slab?preview.text=the%20roastery&preview.text_type=custom&query=rob) fulfilled the criteria for the logo as the primary font, due to its readability and flair.
+* [Quicksand]( https://fonts.google.com/specimen/Quicksand?query=quicksand) is used as the secondary font due to its clean style that matches the colour scheme well.
+\
+&nbsp;
+
+### Icons
+In order to obtain some icons for the website, [Font Awesome](https://fontawesome.com/ "Font Awesome") will be utilised. Icons were used to prompt the website owner to edit or delete items.
+\
+&nbsp;
+
+### Colours
+To select the colour palette for the project, I was inspired by a [Pinterest Post](https://www.pinterest.com/pin/69946600455034413/) that I came across with mellow coffee colours and complimenting shades. When checking the contrast of the colours on [Web AIM](https://webaim.org/resources/contrastchecker/ "Web AIM"), the khaki with the orange passed, as well as the coffee and beige match up. Therefore the following colours were selected for the project where:
+
+*  #354129 (also known as --khaki) is used for the background of the navbar, as well as the font for many aspects of the website.
+*  #8b593e (also known as --coffee) is used for various buttons.
+*  #d0d3cc (also known as --beige) is used for the font of the navbar of the website and for a couple of buttons.
+*  #d8d6d7 (also known as --light-grey) is used for the background of the website.
+*  #ed9112 (also known as --orange) is used often for buttons in their hover state and hover state font on the home page.
+
+![Colours](documentation/colours.png)
+\
+&nbsp;
+
+### Responsive Screens
+The website will be built for a small mobile screen of width 320px and then will also meet the requirements for a medium/tablet, large and extra-large screen, as shown in the table below.
+
+| Screen Size   | Breakpoint |
+| -----------   | ---------- |
+| small/mobile  |    320px   |
+| medium/tablet |    768px   |
+| large         |   992px    |
+| extra-large   |   1400+px  |
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
