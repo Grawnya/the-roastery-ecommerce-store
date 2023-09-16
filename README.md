@@ -539,3 +539,23 @@ This project utilises `allauth` to allow users to register, login, logout etc. o
 ![Sign In Page on Large Screen](documentation/sign-in.png)
 \
 &nbsp;
+
+### Messages
+Django handles messages by default using `'django.contrib.messages'` and you can create them within the suitable views.py, displaying them in the associated html file.
+
+They are seen when the user has successfully created an order at the top of the page. For shopping bag related success messages e.g. adding something to the bag, the success message lists the bag’s contents.
+
+![Success Message](documentation/success-message.png)
+\
+&nbsp;
+
+### Error Pages
+404 and 500 error pages have been created as they are the most common errors that users will come across that the messages cannot account for.
+
+![404 Page](documentation/error404.png)
+\
+&nbsp;
+
+[Back to Top](#table-of-contents)
+\
+&nbsp;
