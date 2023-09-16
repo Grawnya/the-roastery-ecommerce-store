@@ -82,6 +82,9 @@ The project is very relevant as online shopping is becoming increasingly popular
 		* [Web Aim Contrast Checker](#web-aim-contrast-checker "Web Aim Contrast Checker")
 		* [Browser Compatibility](#browser-compatibility "Browser Compatibility")
 		* [Manual Testing](#manual-testing "Manual Testing")
+* [Bugs](#bugs "Bugs")
+	* [Resolved](#resolved "Resolved")
+	* [Unresolved](#unresolved "Unresolved")
 
 
 \
@@ -735,3 +738,28 @@ The [User Stories](#user-stories "User Stories") and page elements are manual te
 &nbsp;
 [Back to Top](#table-of-contents)
 
+# Bugs
+
+## Resolved
+| Bug  |  Fix | Useful Source | Associated Image |
+| ------ | ------ | ------ | ------ |
+| Dropdown menu item would change to black after menu pops down | When going through page inspection found --bs-navbar-hover-color and changed that to beige| - | [Menu background bug](documentation/dropdown_menu_bug.png) |
+| Extra margin whitespace | update row bootstrap class setting gutter to 0   " --bs-gutter-x: 0;" | - | [Extra page margin bug](documentation/extra_margin_bug.png) |
+| If word “roast” in search, it would not show roasts | replace function used in products "views.py" | - | - |
+| Product searching issue | Was using the wrong keywords - model table vars | - | [Filter bug](documentation/filter_bug.png) |
+| Getting internal service error when wanting to delete product | Figured out was including quantity when it wasn't asked for or required by function, so deleting the line let the function run | - | [Delete product bug](documentation/delete_product_bug.png) |
+| Toasts not appearing | Used Bootstrap 5.3 to get them to appear| [Bootstrap 5.3 Documentation]( https://getbootstrap.com/docs/5.3/components/toasts/#methods) | [Toasts not appearing](documentation/toast_bug.png) |
+| Issue with checkout success functionality | Was using a self-made `save_order` function when I should have overridden the default save function to generate the order number | - | [Checkout success bug](documentation/checkout_success_bug.png) |
+| Incorrect toast functionality issue | By checking length/number of toasts | - | [incorrect Toast Functionality](documentation/toast_length_bug.png) |
+| Closing the toasts | Added suitable JS | - | [Closing toasts issue](documentation/close_toast_bug.png) |
+| Double order being created | Remove pid value being compared to any existing order | [Last item in queryset for debugging](https://stackoverflow.com/questions/2191010/get-last-record-in-a-queryset) | [Double order](documentation/double_order_bug.png) |
+\
+&nbsp;
+
+## Unresolved
+No unresolved bugs were left in the project.
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
