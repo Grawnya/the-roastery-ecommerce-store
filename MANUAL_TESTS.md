@@ -103,8 +103,35 @@ Manual testing here also included:
 
 ## Epic 3: Ordering Functionality
 ### Related User Stories
+[10](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/10) - As a user I want to preview my order so that I can make a final selection before I purchase it.
 
+The criteria for [10](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/10) is achieved by creating an ordering “waiting room”. Essentially the Shopping Bag app acts as a place where the user can consider their order and when they are ready to commit to it, they can progress onto the Checkout app.
 
+Extensive manual testing occurred here:
+* All buttons were verified on the page ensuring that they work.
+* The logic for the increasing and decreasing the item amount was extensively checked to ensure there was a min and max order limit for that part and that would activate an error if too many of a part were ordered. The “-“ and “+” buttons were checked to ensure that they increment the order and that it is successfully added to the context processor shopping bag.
+* The update and delete buttons were checked to ensure that they either deleted the item from the shopping bag or updated the desired amount.
+* Checking if the accurate items were conducted from the shopping to the checkout app, was thoroughly investigated.
+
+> ![Shopping Bag](documentation/shopping-bag.png)
+\
+&nbsp;
+
+[12](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/12) - As a user I can purchase the items in my shopping bag by card so that I can successfully buy them.
+
+[12](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/12) was the most thoroughly tested user case in the whole project. The criteria is successfully met as there was a card section at the bottom of the checkout page that successfully creates an order if all order and card details are correct. The stripe API was used to ensure that this happened.
+
+Manual testing associated to this ticket and the checkout page included:
+* Making sure that the order was accurate by reading the values from the closed down extendable section at the top of the page.
+* Different scenarios for logged in and non-logged-in users were looked at with regards to filling in the checkout form. If a user had filled in a profile, it was vital that it automatically would read into the shipping details section.
+* If the user put in an acceptable card, it was teste that they should be redirected to the checkout success page.
+* The logic was written and extensively tested that if the purchase was successful, that an order was created and if the order could not be created by the script’s logic, that the successful payment intent function could create the order.
+* In order to prevent the user from editing their order once a card payment was made, an overlay was generated to prevent the suer from clicking or disturbing anything on the website.
+* If the purchase was successful, it was shown that a success message was generated with the order and that the user also can view their order in their profile.
+
+> ![Overlay](documentation/overlay.png)
+\
+&nbsp;
 
 ## Epic 4: Profile Functionality
 ### Related User Stories
