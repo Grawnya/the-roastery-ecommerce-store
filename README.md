@@ -81,7 +81,7 @@ The project is very relevant as online shopping is becoming increasingly popular
 		* [Responsiveness](#responsiveness "Responsiveness")
 		* [Web Aim Contrast Checker](#web-aim-contrast-checker "Web Aim Contrast Checker")
 		* [Browser Compatibility](#browser-compatibility "Browser Compatibility")
-
+		* [Manual Testing](#manual-testing "Manual Testing")
 
 
 \
@@ -653,7 +653,7 @@ I validated my CSS upon completion with [W3C CSS Validation Service](https://jig
 #### First Attempt of CSS Files
 No issues arose on any of the personalised CSS files. 
 
-![W3C CSS Validator Test Result](documentation/validated-css.png)
+> ![W3C CSS Validator Test Result](documentation/validated-css.png)
 \
 &nbsp;
 
@@ -666,7 +666,7 @@ Many warning and errors were obtained in the first run through the PEP8 linter. 
 #### Final Attempt of Python Files
 No issues arose in any of the files as seen in below.
 
-![Python Syntax Checker PEP8](documentation/pep8-lint.png)
+> ![Python Syntax Checker PEP8](documentation/pep8-lint.png)
 \
 &nbsp;
 

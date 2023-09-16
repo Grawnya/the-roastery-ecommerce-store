@@ -1,0 +1,89 @@
+# Manual Tests
+
+[Go Back to README.md](https://github.com/Grawnya/the-roastery-ecommerce-store)
+
+The manual testing aligns with the user stories created to ensure all the functionality to meet their criteria works. The manual testing was broken down into the followign epics
+
+> ![Epics](documentation/epics.png)
+
+## Epic 1: Core Website Functionality
+### Related User Stories
+[1](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/1) - As a user I can navigate through the website easily so that I can get more information about the coffees available to buy.
+\
+&nbsp;
+[3](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/3) - As a user I can find the coffee company's social media accounts so that I can keep up-to-date with any news.
+\
+&nbsp;
+
+These 2 User Stories’ criteria are met on the [Home Page](#landing-page "Home Page") and the [Products Page](#products-page "Products Page"). The home page consists of various sections to ensure that the user is informed at all times:
+
+* The criteria of [1](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/1) is met on the home page directly by scrolling down or by clicking on the link on the information carousel, which redirects the user to the [Products Page](#products-page "Products Page"). The [Products Page](#products-page "Products Page") enables the user to scroll through the available coffees. If the user clicks on a specific coffee, they can view more details, including a detailed review/description.
+* The [footer](#footer "Footer"), which meets the criteria of [3]( https://github.com/Grawnya/the-roastery-ecommerce-store/issues/3), as it can be easily reached on the home page directly by scrolling down the page.
+
+The website is generally well laid out and uses a suitable colour scheme to easily read all its content. It also utilises links to the various pages on the site via a navbar, footer and buttons to provide a logical flow that is easy to understand, meeting the criteria of [1](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/1).
+
+> ![Home Page](documentation/home.png)
+\
+&nbsp;
+
+The criteria for [3](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/3) was met by placing social media links in the footer, where the user can select the icons for the various social media sites to connect with “The Roastery”. These symbols are the universal method to reach the coffee shop’s accounts from their own website. 
+
+> ![Social Media Icons in Footer](documentation/footer.png)
+\
+&nbsp;
+
+[6](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/6) - As a user I can access the website on mobile, tablet or larger screens so that I can view the information regardless of the device.
+
+The criteria of [6](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/6) was tested by using a mobile first design approach and constantly testing the responsiveness of the website. Checks on various devices and browsers ensures that the criteria was met.
+\
+&nbsp;
+
+[2](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/2) - As a user I can get information regarding the coffee company's story and the coffee they sell so that I can decide whether I want to purchase from them or not.
+
+The criteria of [2](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/2) is met on the home page directly by scrolling down or by clicking on the link on the information carousel, which redirects the user to the [Blog Page](#blog-page "Blog Page"). The [Blog Page](#blog-page "Blog Page") enables the user to go to the “Our Story” section and view the story of the ecommerce store.
+
+> ![Our Story](documentation/blog-desktop.png)
+\
+&nbsp;
+
+
+[4](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/4) - As a user I can easily use the navbar to navigate the website so that I can find all relevant content.
+
+The criteria for [4](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/4) was met by placing a navbar at the top of the website. It contains all important links and ensures navigation is easy. This was manually tested by going through each link. On smaller screens, the navbar collapses into a hamburger button.
+
+> ![Navbar](documentation/navbar.png)
+\
+&nbsp;
+
+[5](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/5) - As a user I can easily reach the home page in case I get an error so that I am not stuck on an error page and have to select the back button.
+
+The criteria for [5](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/5) was met by creating 404 and 500 error pages that would provide the user with some information as to what went wrong. These were manually tested by checking all the button links were successful when causing the errors to occur. The navbar located at the top of the error pages also allows for easy navigation back to the homepage.
+
+> ![404 Page](documentation/error404.png)
+\
+&nbsp;
+
+Manual testing here also included: 
+* Verifying that the items in this section stacked on top of each other for smaller screens so the information was still easy to obtain. 
+* Ensuring that all links worked and redirected the user to the suitable page.
+* Making sure that the Mailchimp newsletter section worked.
+\
+&nbsp;
+
+## Epic 2: Product Functionality
+### Related User Stories
+
+
+
+## Epic 3: Ordering Functionality
+### Related User Stories
+
+
+
+## Epic 4: Profile Functionality
+### Related User Stories
+
+
+
+## Epic 5: Admin Functionality
+### Related User Stories
