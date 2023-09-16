@@ -162,3 +162,110 @@ For this project, 6 applications were created:
 
 \
 &nbsp;
+
+### Project Database
+7 tables/models can be found in total throughout the project, which enable the user to create the profile required, successfully order coffee and read coffee based content. The website owner can also readily add, edit and delete content within the website. The schematic below provides the relationship between all of the tables within the project.
+
+![Database Tables](documentation/database_schematic.png)
+\
+&nbsp;
+
+#### Blog Model
+The Blog model is used by the website owner to create, edit and delete relevant blog content for the website. These blogs provide either relevant information regarding “The Roastery” ecommerce store or fun and interesting coffee centric posts, which encourage the user to buy coffee.
+
+It can be broken down as follows:
+* `heading` - Heading of the blog post.
+* `blog_body` - Body of the blog post.
+* `created` - Date of when the blog was created.
+\
+&nbsp;
+
+#### Order Model
+The Order model is used to record the order made by a website user. It incorporates all relevant info about the user and what they have specifically ordered.
+
+It can be broken down as follows:
+* `order_id` - Unique order ID that is created when the order is made.
+* `profile_id` - A Foreignkey to link the order to a profile if it exists.
+* `full_name` - Full name of user.
+* `email` - User's email.
+* `phone_number` - User's phone number.
+* `street_address1` - User's first address detail.
+* `street_address2` - User's second address detail.
+* `town_or_city` - User's town or city they live in.
+* `county` - User’s county location.
+* `postcode` - User's postcode.
+* `country` - User's country location.
+* `order_date` - Date that the order was made.
+* `items_total` - Order product value.
+* `delivery_cost` - Order delivery cost.
+* `final_total` - Final total of the entire order i.e. `items_total` + `delivery_cost`.
+* `original_shopping_bag` - User's first shopping bag to ensure that a duplicate.
+* `stripe_pid` - Stripe payment intent.
+\
+&nbsp;
+
+#### OrderItem Model
+The OrderItem model looks at the specific items within the order and uses them to log how much they add to the overall order.
+
+It can be broken down as follows:
+* `product_id` - Product foreign key.
+* `order_id` - Order foreign key.
+* `quantity` - The number the user has ordered.
+* `item_total_price` - Total price that the user has to pay for that item.
+\
+&nbsp;
+
+#### Product Model
+The Product model provides information for available product on the ecommerce store and is used to influence the product filter on the website.
+
+It can be broken down as follows:
+* `sku` - Unique number to represent the product.
+* `name` - Name of product.
+* `roast` - Roast type.
+* `location` - Continent where the coffee is found.
+* `origin` - Country of origin.
+* `bag_100g_USD` - Coffee cost in USD per 100g bag. 
+* `rating` - Coffee rating out of 100.
+* `review` - Description of the coffee.
+* `image` - Image of the coffee.
+\
+&nbsp;
+
+#### Favourites Model
+The Favourites model allows the user to put extra info about themselves into the profile page which can later be used to influence the marketing strategy with targeted ads.
+
+It can be broken down as follows:
+* `website_user` - WebsiteUser foreign key.
+* `birthday` - User’s birthday.
+* `coffee_type` - User’s favourite coffee origin.
+* `roast` - User's favourite roast.
+\
+&nbsp;
+
+#### WebsiteUser Model
+The WebsiteUser model is used to obtain more information from the user than just their username, email and password. It provides relevant information with regards to the person who made the coffee purchase and can be used to influence business decisions.
+
+It can be broken down as follows:
+* `website_user` - Unique username that user has chosen when registering.
+* `profile_full_name` - First name of user.
+* `profile_email` - User's email that they didn't use to login.
+* `profile_phone_number` - User's phone number.
+* `profile_street_address1` - User's first line of their street address.
+* `profile_street_address2` - User's second line of their street address.
+* `profile_town_or_city` - User's town or city.
+* `profile_county` - User’s county.
+* `profile_postcode` - User's postcode.
+* `profile_country` - User's country.
+\
+&nbsp;
+
+#### OurStory Model
+The OurStory model is used to show the timeline of “The Roastery” and can be edited by the superuser/website’s admin.
+
+It can be broken down as follows:
+* `event_id` - Unique event ID.
+* `date_occurred` - When the event occurred.
+* `event` - Event name.
+\
+&nbsp;
+
