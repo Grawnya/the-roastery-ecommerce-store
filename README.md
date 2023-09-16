@@ -77,6 +77,11 @@ The project is very relevant as online shopping is becoming increasingly popular
 		* [Python Syntax Checker PEP8 Validation](#python-syntax-checker-pep8-validation "Python Syntax Checker PEP8 Validation")
 			* [First Attempt of Python Files](#first-attempt-of-python-files "First Attempt of Python Files")
 			* [Final Attempt of Python Files](#final-attempt-of-python-files "Final Attempt of Python Files")
+		* [Lighthouse](#lighthouse "Lighthouse")
+		* [Responsiveness](#responsiveness "Responsiveness")
+		* [Web Aim Contrast Checker](#web-aim-contrast-checker "Web Aim Contrast Checker")
+		* [Browser Compatibility](#browser-compatibility "Browser Compatibility")
+
 
 
 \
@@ -662,5 +667,58 @@ Many warning and errors were obtained in the first run through the PEP8 linter. 
 No issues arose in any of the files as seen in below.
 
 ![Python Syntax Checker PEP8](documentation/pep8-lint.png)
+\
+&nbsp;
+
+## Lighthouse 
+In order to verify the suitability of the webpage, [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en "Lighthouse"), a tool found in Chrome Developer Tools was used to check a broad variety. This includes:
+
+* Performance – Based on how fast the website loads and contributes to the overall UX.
+* Accessibility – Based on how easy it is to use the website regardless if people might use a screen reader, etc.
+* Best Practices – Based on the best practices used in industry.
+* SEO Performance – Based on how useful the meta tags and labels are throughout the website. 
+
+These provided insight to build and enhance the quality of the website.
+\
+&nbsp;
+
+## Responsiveness 
+The responsiveness of the design was manually checked using the Chrome Developer Tools for various screens. The manual testing itself will be discussed [here](#manual-testing “Manual Testing”).
+
+This included:
+* iPhone SE
+* Pixel 5
+* Samsung Galaxy S20 Ultra
+* iPad Air and Mini
+* Galaxy Fold
+* Nest Hub and Hub Max
+
+I also opted to use the responsiveness option and checked the screens at the following width sizes:
+* 320px
+* 768px
+* 992px
+* 1400px
+
+No issues arose, due to the responsive design of the website with rem and % values.
+\
+&nbsp;
+
+## Web Aim Contrast Checker
+The [Web AIM](https://webaim.org/resources/contrastchecker/ "Web AIM") was used, as described in the [Colours](#colours "Colours") section.
+
+For the khaki and beige, the contrast check between them passed, as it exceeded the contrast ratio criteria of 4.5, as seen below:
+
+> ![Web Aim Contrast Result for Khaki and Beige](documentation/contrast-check-khaki.png)
+\
+&nbsp;
+
+## Browser Compatibility
+The website was tested on a variety of browsers to ensure that it was fully functional. 
+
+On desktop, Google Chrome, Mozilla Firefox and Microsoft Edge were utilised. 
+
+On mobile, Google Chrome was utilised.
+
+The responsiveness and the appearance remained relatively the same across the various devices and browsers.
 \
 &nbsp;
