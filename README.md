@@ -91,8 +91,10 @@ The project is very relevant as online shopping is becoming increasingly popular
 	* [Amazon Web Services](#amazon-web-services "Amazon Web Services")
 	* [Final Repo Preparations](#final-repo-preparations "Final Repo Preparations")
 	* [Heroku Deploy](#heroku-deploy "Heroku Deploy")
-
-
+* [Credits](#credits "Credits")
+	* [For Code Help and Advice](#for-code-help-and-advice "For Code Help and Advice")
+	* [Helpful Resources](#helpful-resources "Helpful Resources")
+	* [For Content and Code](#for-content-and-code "For Content and Code")
 \
 &nbsp;
 
@@ -825,6 +827,54 @@ As well as all the relevant stripe and AWS values.
 15. Search for the suitable repository and then connect to it by selecting the “Connect” button.
 16. Scroll down to the bottom of the “Deploy” Page and select the type of deployment you want to conduct. If you opt to “Automatically Deploy”, it will deploy every time you push new code to your repository. Otherwise, you will have to manually deploy, by selecting the button at the bottom of the page.
 17. The application is now deployed!
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Credits
+
+## For Code Help and Advice
+* [Harry Dhillon](https://github.com/Harry-Leepz)
+\
+&nbsp;
+
+## Helpful Resources
+* [Navbar Inspiration](https://getbootstrap.com/docs/5.3/components/navbar/#supported-content)
+* [`AUTHENTICATION_BACKENDS` Info](https://django-allauth.readthedocs.io/en/latest/installation.html)
+* [Stripe JS Docs](https://stripe.com/docs/js/including)
+* [Sitemap XML Creation](https://www.xml-sitemaps.com/)
+\
+&nbsp;
+
+## For Content and Code
+* [Snippets Taken From Kaggle Database]( https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset?resource=download)
+* [`.arrow-up` style](https://css-tricks.com/snippets/css/css-triangle/)
+* [Overlay from Boutique Ado](https://github.com/Grawnya/boutique-ado)
+* [Ethiopia Shakiso Mormora Image](https://www.joebyschmo.com/product/ethiopia-guji-mormora-farm-washed/)
+* [Kenya Nyeri Othaya Gatugi Red Cherry coffee](https://thecaptainscoffee.com/products/kenya-nyeri-othaya-ichamama-red-cherry-ab?variant=40250150813785)
+* [Panama Auromar Geisha Natural](https://www.coffeedetective.com/auromar-geisha-coffee.html)
+* [100% Kona Bourbon Pointu Laurina](https://portfoliocoffee.ca/blogs/coffee-news-coffee-blog/guide-to-laurina-coffee-facts-taste-details-and-more)
+* [Indonesia Emerald Mandheling](https://coffeearks.com/get-to-know-the-mandheling-coffee-and-why-it-is-special/)
+* [Peru Natural Jose Herrera Lot 21](https://www.groundworkcoffee.com/products/limited-reserve-organic-peru-jose-herrera)
+* [Lekali Coffee](https://www.coffeemagazine.co.za/blog/1/5139/specialty-coffee-in-nepal-a-hidden-treasure-in-the-himalayas)
+* [Costa Rica Tarrazu](https://jameskaiser.com/store/prints/costa-rica/mountains/tarrazu-coffee-plantation/)
+* [Burundi Gaharo Hill Long Miles Coffee Project Natural](https://onyxcoffeelab.com/products/burundi-long-miles-gaharo-hill)
+* [Kona Extra Fancy](https://www.honolulucoffee.com/products/kona-extra-fancy-coffee)
+* [YCFCU Banko Gotiti Coop G1](https://shopee.tw/Ethiopia-YCFCU-Banko-Gotiti-Coop-G1-%E8%80%B6%E7%8F%88%E9%9B%AA%E5%95%A1-%E6%97%A5%E6%9B%AC-%E6%9E%9C%E4%B8%81%E4%B8%81%E5%90%88%E4%BD%9C%E7%A4%BE-G1-%E5%8D%8A%E7%A3%85%E7%B5%84%E5%90%88-i.27185473.1304488356)
+* [Indonesia Sumatra Gayo Espresso](https://shop.roesterei-dinkelsbuehl.de/produkt/indonesia-sumatra-gayo-espresso/)
+* [Ethiopia Natural Gedeb Violent Andromeda](https://vestacoffee.com/products/gedeb-natural-ethiopia?variant=41723917631638)
+* [Colombia Finca El Paraiso Double Anaerobic Geisha]( https://www.omniacoffeeroasters.com/products/colombia-finca-el-paraiso-geisha)
+* [Trident Carmo de Minas](https://tridentcoffee.com/products/trident-organic-brazil-carmo-de-minas-k-cups)
+* [Taiwan Natural Alishan Ching-Ye](https://en.pinkoi.com/product/6mupVQih)
+* [Mexico Altura Natural Water Process Decaf](https://www.webstaurantstore.com/arrosto-mexican-mountain-water-decaf-single-origin-whole-bean-coffee-2-lb/110ARMXCNDEC.html)
+* [coffee-home image](https://www.wallpaperflare.com/toasted-coffee-beans-seeds-coffee-beans-wallpaper-mwteb)
+* [orange-coffee image](https://www.peakpx.com/414222/red-and-green-coffee-beans)
+* [green-coffee image](https://commons.wikimedia.org/wiki/File:Coffee_Plantation.jpg)
+* [beige-coffee image](https://pix4free.org/photo/202/Coffee-machine-pouring-a-coffee.html)
+* [brown-coffee image](https://www.nicepng.com/ourpic/u2w7u2a9t4r5i1a9_mapamundi-vector-png-high-resolution-world-map-vector/)
 
 \
 &nbsp;
