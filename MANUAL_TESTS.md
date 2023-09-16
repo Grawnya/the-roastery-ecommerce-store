@@ -72,8 +72,34 @@ Manual testing here also included:
 
 ## Epic 2: Product Functionality
 ### Related User Stories
+[7](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/7) - As a user I can view all coffee products that are available to purchase.
 
+This user story links in quite strongly with [1](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/1) where the user wants to discover a [Products Page](#products-page "Products Page") to discover all the available coffees. All the different methods to reach this page are manually tested that they do not create an error.
+\
+&nbsp;
 
+[8](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/8) - As a user I can filter all the coffees by the different categories so that I can view what I prefer.
+
+The criteria was met for [8](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/8) by including a filtering option on the [Products Page](#products-page "Products Page"). Originally it was a drop down option, but a bug in the associated jQuery was not resolved and therefore, it was deemed more feasible to create buttons. These buttons group the coffee by continent location and roast, as well as ordering the whole list by price (cheapest to most expensive). The manual tests ensured that the filtering functionality worked successfully.
+\
+&nbsp;
+
+[9](https://github.com/Grawnya/the-roastery-ecommerce-store/issues/9) - As a user I can find all the product details so that I can decide whether I want to add it to my shopping bag.
+
+If a user click on the specific product on the products page, they are redirected to a detailed page for that specific product, Characteristics such as roast type, review and rating can all be found on the page. These were read from a table and cannot be edited unless a super user or administrator edits the values. The image is also enlarged to make it easier to look at the details within the image.
+
+> ![Specific Product](documentation/specific-product.png)
+
+\
+&nbsp;
+
+Manual testing here also included: 
+* Verifying that the items in the products all maintained their detail for various screen sizes. 
+* If a user puts in a url for a unique product, but it doesn’t exist, they are redirected to an error page.
+* If no image is included in a specific product, a sample base image is used.
+* If a user searches for a specific product, it appears and the user can also search for a specific roast type.
+\
+&nbsp;
 
 ## Epic 3: Ordering Functionality
 ### Related User Stories
