@@ -45,7 +45,7 @@
   <header>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid py-2">
-        <div id="nav-logo my-auto">
+        <div>
           <a class="navbar-brand" id="the-roastery-logo" href="{% url 'home' %}" aria-label="To Home Page">the
             roastery</a>
         </div>
@@ -85,18 +85,14 @@
               <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
             </li>
             <li class="nav-item">
-              <button class="btn-coffee">
-                <a class="nav-link" id="sign-up-link" href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-              </button>
+                <a class="nav-link btn btn-coffee" id="sign-up-link" href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
             </li>
             {% else %}
             <li class="nav-item">
               <a href="{% url 'account_login' %}">Login</a>
             </li>
             <li class="nav-item">
-              <button class="btn-coffee">
-                <a class="nav-link" id="sign-up-link" href="{% url 'account_signup' %}">Sign Up</a>
-              </button>
+                <a class="nav-link btn btn-coffee" id="sign-up-link" href="{% url 'account_signup' %}">Sign Up</a>
             </li>
             {% endif %}
           </ul>
