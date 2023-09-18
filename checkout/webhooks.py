@@ -18,7 +18,6 @@ def webhook(request):
 
     # Get the webhook data and verify its signature
     payload = request.body.decode('utf-8')
-    print(payload)
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
 
@@ -26,7 +25,6 @@ def webhook(request):
         event = stripe.Webhook.construct_event(
             payload, sig_header, wh_secret
         )
-        print(event)
     except ValueError as e:
         return HttpResponse(content=e, status=400)
     except stripe.error.SignatureVerificationError as e:
